@@ -169,12 +169,7 @@ public interface Inventory extends Iterable<ItemStack> {
     public boolean contains(ItemStack item, int amount);
 
     /**
-     * Returns a HashMap with all slots and ItemStacks in the inventory with
-     * given materialId.
-     * <p />
-     * The HashMap contains entries where, the key is the slot index, and the
-     * value is the ItemStack in that slot. If no matching ItemStack with the
-     * given materialId is found, an empty map is returned.
+     * Checks if the inventory contains any ItemStacks matching the given ItemStack and at least the minimum amount specified
      *
      * @param item The ItemStack to match against
      * @param amount The minimum amount
@@ -183,7 +178,12 @@ public interface Inventory extends Iterable<ItemStack> {
     public boolean containsAtLeast(ItemStack item, int amount);
 
     /**
-     * Find all slots in the inventory containing any ItemStacks with the given materialId.
+     * Returns a HashMap with all slots and ItemStacks in the inventory with
+     * given materialId.
+     * <p />
+     * The HashMap contains entries where, the key is the slot index, and the
+     * value is the ItemStack in that slot. If no matching ItemStack with the
+     * given materialId is found, an empty map is returned.
      *
      * @param materialId The materialId to look for
      * @return A HashMap containing the slot index, ItemStack pairs
