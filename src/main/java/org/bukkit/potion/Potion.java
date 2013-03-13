@@ -10,7 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import com.google.common.collect.ImmutableList;
 
 /**
- * Represents a minecraft potion
+ * Represents a potion in Minecraft, with a type, level, name, and can be extended or can be a "splash" potion.
  */
 public class Potion {
     private boolean extended = false;
@@ -251,8 +251,7 @@ public class Potion {
      * Sets whether this potion is a splash potion. Splash potions can be thrown
      * for a radius effect.
      *
-     * @param isSplash
-     *            Whether this is a splash potion
+     * @param isSplash Whether this is a splash potion
      */
     public void setSplash(boolean isSplash) {
         splash = isSplash;
@@ -273,8 +272,7 @@ public class Potion {
     /**
      * Sets the {@link PotionType} of this potion.
      *
-     * @param type
-     *            The new type of this potion
+     * @param type The new type of this potion
      */
     public void setType(PotionType type) {
         this.type = type;
@@ -294,7 +292,7 @@ public class Potion {
 
     /**
      * Converts this potion to a valid potion damage short, usable for potion
-     * item stacks.
+     * item stacks and {@link #fromDamage(int)}.
      *
      * @return The damage value of this potion
      */
@@ -330,6 +328,7 @@ public class Potion {
         return new ItemStack(Material.POTION, amount, toDamageValue());
     }
 
+    /** @deprecated in favor of integers **/
     @Deprecated
     public enum Tier {
         ONE(0),
@@ -363,6 +362,9 @@ public class Potion {
     private static final int TIER_SHIFT = 5;
     private static final int NAME_BIT = 0x3F;
 
+    /**
+     * Create a Potion based on its damage value in an inventory.
+     */
     public static Potion fromDamage(int damage) {
         PotionType type = PotionType.getByDamageValue(damage & POTION_BIT);
         Potion potion;
@@ -382,6 +384,9 @@ public class Potion {
         return potion;
     }
 
+    /**
+     * Create a Potion based on an ItemStack.
+     */
     public static Potion fromItemStack(ItemStack item) {
         Validate.notNull(item, "item cannot be null");
         if (item.getType() != Material.POTION)
