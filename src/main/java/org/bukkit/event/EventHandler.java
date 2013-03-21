@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface EventHandler {
-    
+
     /**
      * Define the priority of the event.
      * <p />
@@ -27,11 +27,12 @@ public @interface EventHandler {
      * </ol>
      */
     EventPriority priority() default EventPriority.NORMAL;
-    
+
     /**
      * Define if we must ignore if the event is cancelled or not.
      * <p />
-     * If ignoreCancelled = true , isCancelled() method is ignore.
+     * If ignoreCancelled = true and the event is cancelled,
+     * your method is not call.
      */
     boolean ignoreCancelled() default false;
 }
