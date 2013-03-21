@@ -11,7 +11,21 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface EventHandler {
+    
+    /**
+     * Define the priority of the event,
+     * 
+     * First execution to the last: LOWEST -> LOW -> NORMAL -> HIGH -> HIGHEST -> MONITOR
+     * 
+     */
     EventPriority priority() default EventPriority.NORMAL;
-
+    
+    
+    /**
+     * Define if we must ignore if the event is cancelled or not
+     * 
+     * true -> ignoreCancelled / false -> Do not ignoreCancelled
+     * 
+     */
     boolean ignoreCancelled() default false;
 }
