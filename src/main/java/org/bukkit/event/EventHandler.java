@@ -13,19 +13,24 @@ import java.lang.annotation.Target;
 public @interface EventHandler {
     
     /**
-     * Define the priority of the event,
-     * 
-     * First execution to the last: LOWEST -> LOW -> NORMAL -> HIGH -> HIGHEST -> MONITOR
-     * 
+     * Define the priority of the event.
+     * <p />
+     * First Priority to the last priority executed:
+     * <p />
+     * <ol>
+     * <li>LOWEST</li>
+     * <li>LOW</li>
+     * <li>NORMAL</li>
+     * <li>HIGH</li>
+     * <li>HIGHEST</li>
+     * </ol>
      */
     EventPriority priority() default EventPriority.NORMAL;
     
-    
     /**
-     * Define if we must ignore if the event is cancelled or not
-     * 
-     * true -> ignoreCancelled / false -> Do not ignoreCancelled
-     * 
+     * Define if we must ignore if the event is cancelled or not.
+     * <p />
+     * If ignoreCancelled = true , isCancelled() method is ignore.
      */
     boolean ignoreCancelled() default false;
 }
