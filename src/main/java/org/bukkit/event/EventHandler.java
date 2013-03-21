@@ -33,6 +33,8 @@ public @interface EventHandler {
      * <p />
      * If ignoreCancelled = true and the event is cancelled,
      * your method is not call.
+     * <p />
+     * Otherwise, your method is always call.
      */
     boolean ignoreCancelled() default false;
 }
