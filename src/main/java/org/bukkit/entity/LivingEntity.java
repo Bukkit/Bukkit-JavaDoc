@@ -17,23 +17,23 @@ public interface LivingEntity extends Entity, Damageable {
     /**
      * Gets the height of the living entity's head above its Location.
      *
-     * @return Height of the living entity's eyes above its Location.
+     * @return height of the living entity's eyes above its location
      */
     public double getEyeHeight();
 
     /**
      * Gets the height of the living entity's head above its Location.
      *
-     * @param ignoreSneaking If set to true, the effects of sneaking will be ignored.
+     * @param ignoreSneaking if set to true, the effects of sneaking will be ignored
      * 
-     * @return Height of the living entity's eyes above its Location.
+     * @return height of the living entity's eyes above its location
      */
     public double getEyeHeight(boolean ignoreSneaking);
 
     /**
      * Get a Location detailing the current eye position of the living entity.
      *
-     * @return A Location at the eyes of the living entity.
+     * @return a location at the eyes of the living entity
      */
     public Location getEyeLocation();
 
@@ -41,20 +41,20 @@ public interface LivingEntity extends Entity, Damageable {
      * Gets all blocks along the living entity's line of sight.
      * List iterates from the living entity's position to target inclusive.
      *
-     * @param transparent HashSet containing all transparent block IDs. If set to null only air is considered transparent.
-     * @param maxDistance This is the maximum distance to scan. This may be further limited by the server, but never to less than 100 blocks.
+     * @param transparent HashSet containing all transparent block IDs (set to null for only air)
+     * @param maxDistance this is the maximum distance to scan (may be limited by server by at least 100 blocks, no less)
      * 
-     * @return List containing all blocks along the living entity's line of sight.
+     * @return list containing all blocks along the living entity's line of sight
      */
     public List<Block> getLineOfSight(HashSet<Byte> transparent, int maxDistance);
 
     /**
      * Gets the block that the living entity has targeted.
      *
-     * @param transparent HashSet containing all transparent block IDs. If set to null only air is considered transparent.
-     * @param maxDistance This is the maximum distance to scan. This may be further limited by the server, but never to less than 100 blocks.
+     * @param transparent HashSet containing all transparent block IDs (set to null for only air)
+     * @param maxDistance this is the maximum distance to scan (may be limited by server by at least 100 blocks, no less)
      * 
-     * @return Block that the living entity has targeted.
+     * @return block that the living entity has targeted
      */
     public Block getTargetBlock(HashSet<Byte> transparent, int maxDistance);
 
@@ -62,18 +62,18 @@ public interface LivingEntity extends Entity, Damageable {
      * Gets the last two blocks along the living entity's line of sight.
      * The target block will be the last block in the list.
      *
-     * @param transparent HashSet containing all transparent block IDs. If set to null only air is considered transparent.
-     * @param maxDistance This is the maximum distance to scan. This may be further limited by the server, but never to less than 100 blocks.
+     * @param transparent HashSet containing all transparent block IDs (set to null for only air)
+     * @param maxDistance this is the maximum distance to scan. This may be further limited by the server, but never to less than 100 blocks
      * 
-     * @return List containing the last 2 blocks along the living entity's line of sight.
+     * @return list containing the last 2 blocks along the living entity's line of sight
      */
     public List<Block> getLastTwoTargetBlocks(HashSet<Byte> transparent, int maxDistance);
 
     /**
      * Throws an egg from the living entity.
      *
-     * @deprecated Use launchProjectile(Egg.class) instead.
-     * @return The egg thrown.
+     * @deprecated use launchProjectile(Egg.class) instead
+     * @return the egg thrown
      */
     @Deprecated
     public Egg throwEgg();
@@ -81,8 +81,8 @@ public interface LivingEntity extends Entity, Damageable {
     /**
      * Throws a snowball from the living entity.
      *
-     * @deprecated Use launchProjectile(Snowball.class) instead.
-     * @return The snowball thrown.
+     * @deprecated use launchProjectile(Snowball.class) instead
+     * @return the snowball thrown
      */
     @Deprecated
     public Snowball throwSnowball();
@@ -90,8 +90,8 @@ public interface LivingEntity extends Entity, Damageable {
     /**
      * Shoots an arrow from the living entity.
      *
-     * @deprecated Use launchProjectile(Arrow.class) instead.
-     * @return The arrow shot.
+     * @deprecated use launchProjectile(Arrow.class) instead
+     * @return the arrow shot
      */
     @Deprecated
     public Arrow shootArrow();
@@ -99,37 +99,37 @@ public interface LivingEntity extends Entity, Damageable {
     /**
      * Launches a {@link Projectile} from the living entity.
      *
-     * @param projectile Class of the projectile to launch.
+     * @param projectile class of the projectile to launch
      *
-     * @return The launched projectile.
+     * @return the launched projectile
      */
     public <T extends Projectile> T launchProjectile(Class<? extends T> projectile);
 
     /**
      * Returns the amount of air that the living entity has remaining, in ticks.
      *
-     * @return Amount of air remaining.
+     * @return amount of air remaining
      */
     public int getRemainingAir();
 
     /**
      * Sets the amount of air that the living entity has remaining, in ticks.
      *
-     * @param ticks Amount of air remaining.
+     * @param ticks amount of air remaining
      */
     public void setRemainingAir(int ticks);
 
     /**
      * Returns the maximum amount of air the living entity can have, in ticks.
      *
-     * @return Maximum amount of air.
+     * @return maximum amount of air
      */
     public int getMaximumAir();
 
     /**
      * Sets the maximum amount of air the living entity can have, in ticks.
      *
-     * @param ticks Maximum amount of air.
+     * @param ticks maximum amount of air
      */
     public void setMaximumAir(int ticks);
 
@@ -139,14 +139,14 @@ public interface LivingEntity extends Entity, Damageable {
      * This is the time in ticks the living entity will become unable to take.
      * equal or less damage than the last damage.
      *
-     * @return Maximum no damage ticks.
+     * @return maximum no damage ticks
      */
     public int getMaximumNoDamageTicks();
 
     /**
      * Sets the living entity's current maximum no damage ticks.
      *
-     * @param ticks Maximum amount of no damage ticks.
+     * @param ticks maximum amount of no damage ticks
      */
     public void setMaximumNoDamageTicks(int ticks);
 
@@ -155,28 +155,28 @@ public interface LivingEntity extends Entity, Damageable {
      * 
      * Only damage higher than this amount will further damage the living entity.
      *
-     * @return Damage taken since the last no damage ticks time period.
+     * @return damage taken since the last no damage ticks time period
      */
     public int getLastDamage();
 
     /**
      * Sets the damage dealt within the current no damage ticks time period.
      *
-     * @param damage Amount of damage.
+     * @param damage amount of damage
      */
     public void setLastDamage(int damage);
 
     /**
      * Returns the living entity's current no damage ticks.
      *
-     * @return Amount of no damage ticks.
+     * @return amount of no damage ticks
      */
     public int getNoDamageTicks();
 
     /**
      * Sets the living entity's current no damage ticks.
      *
-     * @param ticks Amount of no damage ticks.
+     * @param ticks amount of no damage ticks
      */
     public void setNoDamageTicks(int ticks);
 
@@ -185,7 +185,7 @@ public interface LivingEntity extends Entity, Damageable {
      * <p />
      * May be null.
      *
-     * @return Killer player, or null if none found.
+     * @return killer player, or null if none found
      */
     public Player getKiller();
 
@@ -193,8 +193,8 @@ public interface LivingEntity extends Entity, Damageable {
      * Adds the given {@link PotionEffect} to the living entity.
      * Only one potion effect can be present for a given {@link PotionEffectType}.
      *
-     * @param effect PotionEffect to be added.
-     * @return Whether the effect could be added.
+     * @param effect PotionEffect to be added
+     * @return whether the effect could be added
      */
     public boolean addPotionEffect(PotionEffect effect);
 
@@ -202,17 +202,17 @@ public interface LivingEntity extends Entity, Damageable {
      * Adds the given {@link PotionEffect} to the living entity.
      * Only one potion effect can be present for a given {@link PotionEffectType}.
      *
-     * @param effect PotionEffect to be added.
-     * @param force Whether conflicting effects should be removed.
-     * @return Whether the effect could be added.
+     * @param effect PotionEffect to be added
+     * @param force whether conflicting effects should be removed
+     * @return whether the effect could be added
      */
     public boolean addPotionEffect(PotionEffect effect, boolean force);
 
     /**
      * Attempts to add all of the given {@link PotionEffect} to the living entity.
      *
-     * @param effects The effects to add.
-     * @return Whether all of the effects could be added.
+     * @param effects the effects to add
+     * @return whether all of the effects could be added
      */
     public boolean addPotionEffects(Collection<PotionEffect> effects);
 
@@ -220,22 +220,22 @@ public interface LivingEntity extends Entity, Damageable {
      * Returns whether the living entity already has an existing
      * effect of the given {@link PotionEffectType} applied to it.
      *
-     * @param type The potion type to check.
-     * @return Whether the living entity has this potion effect active on them.
+     * @param type the potion type to check
+     * @return whether the living entity has this potion effect active on them
      */
     public boolean hasPotionEffect(PotionEffectType type);
 
     /**
      * Removes any effects present of the given {@link PotionEffectType}.
      *
-     * @param type The potion type to remove.
+     * @param type the potion type to remove
      */
     public void removePotionEffect(PotionEffectType type);
 
     /**
      * Returns all currently active {@link PotionEffect}s on the living entity.
      *
-     * @return A collection of {@link PotionEffect}s.
+     * @return a collection of {@link PotionEffect}s
      */
     public Collection<PotionEffect> getActivePotionEffects();
 
@@ -243,8 +243,8 @@ public interface LivingEntity extends Entity, Damageable {
      * Checks whether the living entity has block line of sight to another.<br />
      * This uses the same algorithm that hostile mobs use to find the closest player.
      *
-     * @param other The entity to determine line of sight to.
-     * @return True if there is a line of sight, false if not.
+     * @param other the entity to determine line of sight to
+     * @return true if there is a line of sight, false if not
      */
     public boolean hasLineOfSight(Entity other);
 
@@ -252,35 +252,35 @@ public interface LivingEntity extends Entity, Damageable {
      * Returns if the living entity despawns when away from players or not.<br />
      * By default animals are not removed while other mobs are.
      *
-     * @return True if the living entity is removed when away from players.
+     * @return true if the living entity is removed when away from players
      */
     public boolean getRemoveWhenFarAway();
 
     /**
      * Sets whether or not the living entity despawns when away from players or not.
      *
-     * @param remove The removal status.
+     * @param remove the removal status
      */
     public void setRemoveWhenFarAway(boolean remove);
 
     /**
      *  Gets the inventory with the equipment worn by the living entity.
      *
-     *  @return The living entity's inventory.
+     *  @return the living entity's inventory
      */
     public EntityEquipment getEquipment();
 
     /**
      * Sets whether or not the living entity can pick up items.
      *
-     * @param pickup Whether or not the living entity can pick up items.
+     * @param pickup whether or not the living entity can pick up items
      */
     public void setCanPickupItems(boolean pickup);
 
     /**
      * Gets if the living entity can pick up items.
      *
-     * @return Whether or not the living entity can pick up items.
+     * @return whether or not the living entity can pick up items
      */
     public boolean getCanPickupItems();
 
@@ -292,7 +292,7 @@ public interface LivingEntity extends Entity, Damageable {
      * <p>
      * This value has no effect on players, they will always use their real
      * name.
-     * @param name The name to set.
+     * @param name the name to set
      */
     public void setCustomName(String name);
 
@@ -302,7 +302,7 @@ public interface LivingEntity extends Entity, Damageable {
      * <p>
      * This value has no effect on players, they will always use their real
      * name.
-     * @return The name of the mob or null.
+     * @return name of the mob or null
      */
     public String getCustomName();
 
@@ -312,7 +312,7 @@ public interface LivingEntity extends Entity, Damageable {
      * <p>
      * This value has no effect on players, they will always display their
      * name.
-     * @param flag Show custom name or not.
+     * @param flag custom name or not
      */
     public void setCustomNameVisible(boolean flag);
 
@@ -321,7 +321,7 @@ public interface LivingEntity extends Entity, Damageable {
      * <p>
      * This value has no effect on players, they will always display their
      * name.
-     * @return If the custom name is displayed.
+     * @return if the custom name is displayed
      */
     public boolean isCustomNameVisible();
 }
