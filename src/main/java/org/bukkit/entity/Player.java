@@ -270,7 +270,7 @@ public interface Player extends HumanEntity, Conversable, CommandSender, Offline
 
     /**
      * Render a map and send it to the player in its entirety. This may be used
-     * when streaming the map in the normal manner is not desirbale.
+     * when streaming the map in the normal manner is not desirable.
      *
      * @param map The map to be sent
      */
