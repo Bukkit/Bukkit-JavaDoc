@@ -97,10 +97,11 @@ public interface World extends PluginMessageRecipient, Metadatable {
     public Block getHighestBlockAt(Location location);
 
     /**
-     * Gets the {@link Chunk} at the given coordinates
+     * Gets the {@link Chunk} at the given coordinates.
+     * <b>Note:</b> coordinates are in chunks, not blocks.
      *
-     * @param x X-coordinate of the chunk
-     * @param z Z-coordinate of the chunk
+     * @param x X-coordinate in chunks of the chunk
+     * @param z Z-coordinate in chunks of the chunk
      * @return Chunk at the given coordinates
      */
     public Chunk getChunkAt(int x, int z);
@@ -144,10 +145,11 @@ public interface World extends PluginMessageRecipient, Metadatable {
     public void loadChunk(Chunk chunk);
 
     /**
-     * Checks if the {@link Chunk} at the specified coordinates is loaded
+     * Checks if the {@link Chunk} at the specified coordinates is loaded.
+     * <b>Note:</b> coordinates are in chunks, not blocks.
      *
-     * @param x X-coordinate of the chunk
-     * @param z Z-coordinate of the chunk
+     * @param x X-coordinate in chunks of the chunk
+     * @param z Z-coordinate in chunks of the chunk
      * @return true if the chunk is loaded, otherwise false
      */
     public boolean isChunkLoaded(int x, int z);
