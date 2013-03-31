@@ -5,6 +5,8 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
 
 /**
+ * Triggers when a entity gets damaged.
+ * 
  * Stores data for damage events
  */
 public class EntityDamageEvent extends EntityEvent implements Cancellable {
