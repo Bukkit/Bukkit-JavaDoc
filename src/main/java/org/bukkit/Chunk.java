@@ -10,16 +10,18 @@ import org.bukkit.entity.Entity;
 public interface Chunk {
 
     /**
-     * Gets the X-coordinate of this chunk
+     * Gets the X-coordinate of this chunk.
+     * <b>Note:</b> This is the lowest block coordinate inside the chunk
      *
-     * @return X-coordinate
+     * @return X-coordinate in blocks
      */
     int getX();
 
     /**
-     * Gets the Z-coordinate of this chunk
+     * Gets the Z-coordinate of this chunk.
+     * <b>Note:</b> This is the lowest block coordinate inside the chunk
      *
-     * @return Z-coordinate
+     * @return Z-coordinate in blocks
      */
     int getZ();
 
