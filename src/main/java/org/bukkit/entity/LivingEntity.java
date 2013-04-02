@@ -176,7 +176,7 @@ public interface LivingEntity extends Entity, Damageable {
 
     /**
      * Gets the player identified as the killer of this entity.
-     * <p />
+     * <p>
      * May be null.
      *
      * @return Killer player, or null if none found.
