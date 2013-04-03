@@ -11,6 +11,7 @@ public interface Chunk {
 
     /**
      * Gets the X-coordinate of this chunk.
+     * <p>
      * <b>Note:</b> This is the lowest block coordinate inside the chunk
      *
      * @return X-coordinate in blocks
@@ -19,6 +20,7 @@ public interface Chunk {
 
     /**
      * Gets the Z-coordinate of this chunk.
+     * <p>
      * <b>Note:</b> This is the lowest block coordinate inside the chunk
      *
      * @return Z-coordinate in blocks

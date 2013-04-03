@@ -98,7 +98,6 @@ public interface World extends PluginMessageRecipient, Metadatable {
 
     /**
      * Gets the {@link Chunk} at the given coordinates.
-     * <b>Note:</b> coordinates are in chunks, not blocks.
      *
      * @param x X-coordinate in chunks of the chunk
      * @param z Z-coordinate in chunks of the chunk
@@ -146,7 +145,6 @@ public interface World extends PluginMessageRecipient, Metadatable {
 
     /**
      * Checks if the {@link Chunk} at the specified coordinates is loaded.
-     * <b>Note:</b> coordinates are in chunks, not blocks.
      *
      * @param x X-coordinate in chunks of the chunk
      * @param z Z-coordinate in chunks of the chunk
@@ -157,37 +155,37 @@ public interface World extends PluginMessageRecipient, Metadatable {
     /**
      * Checks if the {@link Chunk} at the specified coordinates is loaded and in use by one or more players
      *
-     * @param x X-coordinate of the chunk
-     * @param z Z-coordinate of the chunk
+     * @param x X-coordinate in chunks of the chunk
+     * @param z Z-coordinate in chunks of the chunk
      * @return true if the chunk is loaded and in use by one or more players, otherwise false
      */
     public boolean isChunkInUse(int x, int z);
 
     /**
-     * Loads the {@link Chunk} at the specified coordinates
-     * <p />
+     * Loads the {@link Chunk} at the specified coordinates.
+     * <p>
      * If the chunk does not exist, it will be generated.
      * This method is analogous to {@link #loadChunk(int, int, boolean)} where generate is true.
      *
-     * @param x X-coordinate of the chunk
-     * @param z Z-coordinate of the chunk
+     * @param x X-coordinate in chunks of the chunk
+     * @param z Z-coordinate in chunks of the chunk
      */
     public void loadChunk(int x, int z);
 
     /**
      * Loads the {@link Chunk} at the specified coordinates
      *
-     * @param x X-coordinate of the chunk
-     * @param z Z-coordinate of the chunk
+     * @param x X-coordinate in chunks of the chunk
+     * @param z Z-coordinate in chunks of the chunk
      * @param generate Whether or not to generate a chunk if it doesn't already exist
      * @return true if the chunk has loaded successfully, otherwise false
      */
     public boolean loadChunk(int x, int z, boolean generate);
 
     /**
-     * Safely unloads and saves the {@link Chunk} at the specified coordinates
-     * <p />
-     * This method is analogous to {@link #unloadChunk(int, int, boolean, boolean)} where safe and saveis true
+     * Safely unloads and saves the {@link Chunk} at the specified coordinates.
+     * <p>
+     * This method is analogous to {@link #unloadChunk(int, int, boolean, boolean)} where safe and save is true.
      *
      * @param chunk the chunk to unload
      * @return true if the chunk has unloaded successfully, otherwise false
@@ -195,23 +193,23 @@ public interface World extends PluginMessageRecipient, Metadatable {
     public boolean unloadChunk(Chunk chunk);
 
     /**
-     * Safely unloads and saves the {@link Chunk} at the specified coordinates
-     * <p />
-     * This method is analogous to {@link #unloadChunk(int, int, boolean, boolean)} where safe and saveis true
+     * Safely unloads and saves the {@link Chunk} at the specified coordinates.
+     * <p>
+     * This method is analogous to {@link #unloadChunk(int, int, boolean, boolean)} where safe and save is true.
      *
-     * @param x X-coordinate of the chunk
-     * @param z Z-coordinate of the chunk
+     * @param x X-coordinate in chunks of the chunk
+     * @param z Z-coordinate in chunks of the chunk
      * @return true if the chunk has unloaded successfully, otherwise false
      */
     public boolean unloadChunk(int x, int z);
 
     /**
-     * Safely unloads and optionally saves the {@link Chunk} at the specified coordinates
-     * <p />
-     * This method is analogous to {@link #unloadChunk(int, int, boolean, boolean)} where save is true
+     * Safely unloads and optionally saves the {@link Chunk} at the specified coordinates.
+     * <p>
+     * This method is analogous to {@link #unloadChunk(int, int, boolean, boolean)} where save is true.
      *
-     * @param x X-coordinate of the chunk
-     * @param z Z-coordinate of the chunk
+     * @param x X-coordinate in chunks of the chunk
+     * @param z Z-coordinate in chunks of the chunk
      * @param save Whether or not to save the chunk
      * @return true if the chunk has unloaded successfully, otherwise false
      */
@@ -220,8 +218,8 @@ public interface World extends PluginMessageRecipient, Metadatable {
     /**
      * Unloads and optionally saves the {@link Chunk} at the specified coordinates
      *
-     * @param x X-coordinate of the chunk
-     * @param z Z-coordinate of the chunk
+     * @param x X-coordinate in chunks of the chunk
+     * @param z Z-coordinate in chunks of the chunk
      * @param save Controls whether the chunk is saved
      * @param safe Controls whether to unload the chunk when players are nearby
      * @return true if the chunk has unloaded successfully, otherwise false
@@ -229,12 +227,12 @@ public interface World extends PluginMessageRecipient, Metadatable {
     public boolean unloadChunk(int x, int z, boolean save, boolean safe);
 
     /**
-     * Safely queues the {@link Chunk} at the specified coordinates for unloading
-     * <p />
-     * This method is analogous to {@link #unloadChunkRequest(int, int, boolean)} where safe is true
+     * Safely queues the {@link Chunk} at the specified coordinates for unloading.
+     * <p>
+     * This method is analogous to {@link #unloadChunkRequest(int, int, boolean)} where safe is true.
      *
-     * @param x X-coordinate of the chunk
-     * @param z Z-coordinate of the chunk
+     * @param x X-coordinate in chunks of the chunk
+     * @param z Z-coordinate in chunks of the chunk
      * @return true is the queue attempt was successful, otherwise false
      */
     public boolean unloadChunkRequest(int x, int z);
@@ -242,8 +240,8 @@ public interface World extends PluginMessageRecipient, Metadatable {
     /**
      * Queues the {@link Chunk} at the specified coordinates for unloading
      *
-     * @param x X-coordinate of the chunk
-     * @param z Z-coordinate of the chunk
+     * @param x X-coordinate in chunks of the chunk
+     * @param z Z-coordinate in chunks of the chunk
      * @param safe Controls whether to queue the chunk when players are nearby
      * @return Whether the chunk was actually queued
      */
@@ -252,8 +250,8 @@ public interface World extends PluginMessageRecipient, Metadatable {
     /**
      * Regenerates the {@link Chunk} at the specified coordinates
      *
-     * @param x X-coordinate of the chunk
-     * @param z Z-coordinate of the chunk
+     * @param x X-coordinate in chunks of the chunk
+     * @param z Z-coordinate in chunks of the chunk
      * @return Whether the chunk was actually regenerated
      */
     public boolean regenerateChunk(int x, int z);
@@ -261,8 +259,8 @@ public interface World extends PluginMessageRecipient, Metadatable {
     /**
      * Resends the {@link Chunk} to all clients
      *
-     * @param x X-coordinate of the chunk
-     * @param z Z-coordinate of the chunk
+     * @param x X-coordinate in chunks of the chunk
+     * @param z Z-coordinate in chunks of the chunk
      * @return Whether the chunk was actually refreshed
      */
     public boolean refreshChunk(int x, int z);
@@ -440,7 +438,7 @@ public interface World extends PluginMessageRecipient, Metadatable {
 
     /**
      * Gets the relative in-game time of this world.
-     * <p />
+     * <p>
      * The relative time is analogous to hours * 1000
      *
      * @return The current relative time
@@ -450,9 +448,9 @@ public interface World extends PluginMessageRecipient, Metadatable {
 
     /**
      * Sets the relative in-game time on the server.
-     * <p />
+     * <p>
      * The relative time is analogous to hours * 1000
-     * <p />
+     * <p>
      * Note that setting the relative time below the current relative time will
      * actually move the clock forward a day. If you require to rewind time, please
      * see setFullTime
@@ -471,8 +469,8 @@ public interface World extends PluginMessageRecipient, Metadatable {
     public long getFullTime();
 
     /**
-     * Sets the in-game time on the server
-     * <p />
+     * Sets the in-game time on the server.
+     * <p>
      * Note that this sets the full time of the world, which may cause adverse
      * effects such as breaking redstone clocks and any scheduled events
      *
@@ -657,7 +655,7 @@ public interface World extends PluginMessageRecipient, Metadatable {
     /**
      * Spawn a {@link FallingBlock} entity at the given {@link Location} of the specified {@link Material}.
      * The material dictates what is falling. When the FallingBlock hits the ground, it will place that block.
-     * <p />
+     * <p>
      * The Material must be a block type, check with {@link Material#isBlock() material.isBlock()}.
      * The Material may not be air.
      *
@@ -763,7 +761,7 @@ public interface World extends PluginMessageRecipient, Metadatable {
     Biome getBiome(int x, int z);
 
     /**
-     * Sets the biome for the given block coordinates
+     * Sets the biome for the given block coordinates.
      *
      * @param x X coordinate of the block
      * @param z Z coordinate of the block
@@ -773,7 +771,7 @@ public interface World extends PluginMessageRecipient, Metadatable {
 
     /**
      * Gets the temperature for the given block coordinates.
-     * <p />
+     * <p>
      * It is safe to run this method when the block does not exist, it will not create the block.
      *
      * @param x X coordinate of the block
@@ -784,7 +782,7 @@ public interface World extends PluginMessageRecipient, Metadatable {
 
     /**
      * Gets the humidity for the given block coordinates.
-     * <p />
+     * <p>
      * It is safe to run this method when the block does not exist, it will not create the block.
      *
      * @param x X coordinate of the block
@@ -795,7 +793,7 @@ public interface World extends PluginMessageRecipient, Metadatable {
 
     /**
      * Gets the maximum height of this world.
-     * <p />
+     * <p>
      * If the max height is 100, there are only blocks from y=0 to y=99.
      *
      * @return Maximum height of the world
@@ -804,7 +802,7 @@ public interface World extends PluginMessageRecipient, Metadatable {
 
     /**
      * Gets the sea level for this world.
-     * <p />
+     * <p>
      * This is often half of {@link #getMaxHeight()}
      *
      * @return Sea level
@@ -875,10 +873,10 @@ public interface World extends PluginMessageRecipient, Metadatable {
     public boolean canGenerateStructures();
 
     /**
-     * Gets the world's ticks per animal spawns value
-     * <p />
+     * Gets the world's ticks per animal spawns value.
+     * <p>
      * This value determines how many ticks there are between attempts to spawn animals.
-     * <p />
+     * <p>
      * <b>Example Usage:</b>
      * <ul>
      * <li>A value of 1 will mean the server will attempt to spawn animals in this world every tick.
@@ -896,17 +894,17 @@ public interface World extends PluginMessageRecipient, Metadatable {
     public long getTicksPerAnimalSpawns();
 
     /**
-     * Sets the world's ticks per animal spawns value
-     * <p />
+     * Sets the world's ticks per animal spawns value.
+     * <p>
      * This value determines how many ticks there are between attempts to spawn animals.
-     * <p />
+     * <p>
      * <b>Example Usage:</b>
      * <ul>
      * <li>A value of 1 will mean the server will attempt to spawn animals in this world every tick.
      * <li>A value of 400 will mean the server will attempt to spawn animals in this world every 400th tick.
      * <li>A value below 0 will be reset back to Minecraft's default.
      * </ul>
-     * <p />
+     * <p>
      * <b>Note:</b>
      * If set to 0, animal spawning will be disabled for this world. We recommend using {@link #setSpawnFlags(boolean, boolean)} to control this instead.
      * <p />
@@ -917,20 +915,20 @@ public interface World extends PluginMessageRecipient, Metadatable {
     public void setTicksPerAnimalSpawns(int ticksPerAnimalSpawns);
 
     /**
-     * Gets the world's ticks per monster spawns value
-     * <p />
+     * Gets the world's ticks per monster spawns value.
+     * <p>
      * This value determines how many ticks there are between attempts to spawn monsters.
-     * <p />
+     * <p>
      * <b>Example Usage:</b>
      * <ul>
      * <li>A value of 1 will mean the server will attempt to spawn monsters in this world every tick.
      * <li>A value of 400 will mean the server will attempt to spawn monsters in this world every 400th tick.
      * <li>A value below 0 will be reset back to Minecraft's default.
      * </ul>
-     * <p />
+     * <p>
      * <b>Note:</b>
      * If set to 0, monsters spawning will be disabled for this world. We recommend using {@link #setSpawnFlags(boolean, boolean)} to control this instead.
-     * <p />
+     * <p>
      * Minecraft default: 1.
      *
      * @return The world's ticks per monster spawns value
@@ -938,20 +936,20 @@ public interface World extends PluginMessageRecipient, Metadatable {
     public long getTicksPerMonsterSpawns();
 
     /**
-     * Sets the world's ticks per monster spawns value
-     * <p />
+     * Sets the world's ticks per monster spawns value.
+     * <p>
      * This value determines how many ticks there are between attempts to spawn monsters.
-     * <p />
+     * <p>
      * <b>Example Usage:</b>
      * <ul>
      * <li>A value of 1 will mean the server will attempt to spawn monsters in this world on every tick.
      * <li>A value of 400 will mean the server will attempt to spawn monsters in this world every 400th tick.
      * <li>A value below 0 will be reset back to Minecraft's default.
      * </ul>
-     * <p />
+     * <p>
      * <b>Note:</b>
      * If set to 0, monsters spawning will be disabled for this world. We recommend using {@link #setSpawnFlags(boolean, boolean)} to control this instead.
-     * <p />
+     * <p>
      * Minecraft default: 1.
      *
      * @param ticksPerMonsterSpawns the ticks per monster spawns value you want to set the world to
@@ -960,43 +958,52 @@ public interface World extends PluginMessageRecipient, Metadatable {
 
     /**
      * Gets limit for number of monsters that can spawn in a chunk in this world
+     * 
      * @return The monster spawn limit
      */
     int getMonsterSpawnLimit();
 
     /**
-     * Sets the limit for number of monsters that can spawn in a chunk in this world
-     * <p />
+     * Sets the limit for number of monsters that can spawn in a chunk in this world.
+     * <p>
      * <b>Note:</b>
      * If set to a negative number the world will use the server-wide spawn limit instead.
+     * 
+     * @param limit monster spawn limit
      */
     void setMonsterSpawnLimit(int limit);
 
     /**
      * Gets the limit for number of animals that can spawn in a chunk in this world
+     * 
      * @return The animal spawn limit
      */
     int getAnimalSpawnLimit();
 
     /**
-     * Sets the limit for number of animals that can spawn in a chunk in this world
-     * <p />
+     * Sets the limit for number of animals that can spawn in a chunk in this world.
+     * <p>
      * <b>Note:</b>
      * If set to a negative number the world will use the server-wide spawn limit instead.
+     * 
+     * @param limit animal spawn limit
      */
     void setAnimalSpawnLimit(int limit);
 
     /**
      * Gets the limit for number of water animals that can spawn in a chunk in this world
+     * 
      * @return The water animal spawn limit
      */
     int getWaterAnimalSpawnLimit();
 
     /**
-     * Sets the limit for number of water animals that can spawn in a chunk in this world
-     * <p />
+     * Sets the limit for number of water animals that can spawn in a chunk in this world.
+     * <p>
      * <b>Note:</b>
      * If set to a negative number the world will use the server-wide spawn limit instead.
+     * 
+     * @param limit water animal spawn limit
      */
     void setWaterAnimalSpawnLimit(int limit);
 
@@ -1007,16 +1014,18 @@ public interface World extends PluginMessageRecipient, Metadatable {
     int getAmbientSpawnLimit();
 
     /**
-     * Sets the limit for number of ambient mobs that can spawn in a chunk in this world
-     * <p />
+     * Sets the limit for number of ambient mobs that can spawn in a chunk in this world.
+     * <p>
      * <b>Note:</b>
      * If set to a negative number the world will use the server-wide spawn limit instead.
+     * 
+     * @param limit ambient spawn limit
      */
     void setAmbientSpawnLimit(int limit);
 
     /**
-     * Play a Sound at the provided Location in the World
-     * <p />
+     * Plays a Sound at the provided Location in the World.
+     * <p>
      * This function will fail silently if Location or Sound are null.
      *
      * @param location The location to play the sound
@@ -1034,8 +1043,8 @@ public interface World extends PluginMessageRecipient, Metadatable {
     public String[] getGameRules();
 
     /**
-     * Gets the current state of the specified rule
-     * <p />
+     * Gets the current state of the specified rule.
+     * <p>
      * Will return null if rule passed is null
      *
      * @param rule Rule to look up value of
@@ -1045,10 +1054,10 @@ public interface World extends PluginMessageRecipient, Metadatable {
 
     /**
      * Set the specified gamerule to specified value.
-     * <p />
+     * <p>
      * The rule may attempt to validate the value passed, will return true if
      * value was set.
-     * <p />
+     * <p>
      * If rule is null, the function will return false.
      *
      * @param rule Rule to set
