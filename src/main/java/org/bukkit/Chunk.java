@@ -11,19 +11,15 @@ public interface Chunk {
 
     /**
      * Gets the X-coordinate of this chunk.
-     * <p>
-     * <b>Note:</b> This is the lowest block coordinate inside the chunk
      *
-     * @return X-coordinate in blocks
+     * @return X-coordinate in chunks
      */
     int getX();
 
     /**
      * Gets the Z-coordinate of this chunk.
-     * <p>
-     * <b>Note:</b> This is the lowest block coordinate inside the chunk
      *
-     * @return Z-coordinate in blocks
+     * @return Z-coordinate in chunks
      */
     int getZ();
 
@@ -38,7 +34,7 @@ public interface Chunk {
      * Gets a block from this chunk
      *
      * @param x 0-15
-     * @param y 0-127
+     * @param y 0-255
      * @param z 0-15
      * @return the Block
      */
