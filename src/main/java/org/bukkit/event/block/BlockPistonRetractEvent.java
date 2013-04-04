@@ -6,7 +6,7 @@ import org.bukkit.block.BlockFace;
 import org.bukkit.event.HandlerList;
 
 /**
- * Called when a Piston retracts in the world 
+ * Called when a Piston retracts in the world
  */
 public class BlockPistonRetractEvent extends BlockPistonEvent {
     private static final HandlerList handlers = new HandlerList();
