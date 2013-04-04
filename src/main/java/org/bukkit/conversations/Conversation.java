@@ -40,6 +40,7 @@ public class Conversation {
 
     /**
      * Initializes a new Conversation.
+     * 
      * @param plugin The plugin that owns this conversation.
      * @param forWhom The entity for whom this conversation is mediating.
      * @param firstPrompt The first prompt in the conversation graph.
@@ -50,6 +51,7 @@ public class Conversation {
 
     /**
      * Initializes a new Conversation.
+     * 
      * @param plugin The plugin that owns this conversation.
      * @param forWhom The entity for whom this conversation is mediating.
      * @param firstPrompt The first prompt in the conversation graph.
@@ -67,6 +69,7 @@ public class Conversation {
 
     /**
      * Gets the entity for whom this conversation is mediating.
+     * 
      * @return The entity.
      */
     public Conversable getForWhom() {
@@ -76,6 +79,7 @@ public class Conversation {
     /**
      * Gets the modality of this conversation. If a conversation is modal, all messages directed to the player
      * are suppressed for the duration of the conversation.
+     * 
      * @return The conversation modality.
      */
     public boolean isModal() {
@@ -85,6 +89,7 @@ public class Conversation {
     /**
      * Sets the modality of this conversation.  If a conversation is modal, all messages directed to the player
      * are suppressed for the duration of the conversation.
+     * 
      * @param modal The new conversation modality.
      */
     void setModal(boolean modal) {
@@ -94,6 +99,7 @@ public class Conversation {
     /**
      * Gets the status of local echo for this conversation. If local echo is enabled, any text submitted to a conversation
      * gets echoed back into the submitter's chat window.
+     * 
      * @return The status of local echo.
      */
     public boolean isLocalEchoEnabled() {
@@ -103,6 +109,7 @@ public class Conversation {
     /**
      * Sets the status of local echo for this conversation. If local echo is enabled, any text submitted to a conversation
      * gets echoed back into the submitter's chat window.
+     * 
      * @param localEchoEnabled The status of local echo.
      */
     public void setLocalEchoEnabled(boolean localEchoEnabled) {
@@ -111,6 +118,7 @@ public class Conversation {
 
     /**
      * Gets the {@link ConversationPrefix} that prepends all output from this conversation.
+     * 
      * @return The ConversationPrefix in use.
      */
     public ConversationPrefix getPrefix() {
@@ -119,6 +127,7 @@ public class Conversation {
 
     /**
      * Sets the {@link ConversationPrefix} that prepends all output from this conversation.
+     * 
      * @param prefix The ConversationPrefix to use.
      */
     void setPrefix(ConversationPrefix prefix) {
@@ -127,6 +136,7 @@ public class Conversation {
 
     /**
      * Adds a {@link ConversationCanceller} to the cancellers collection.
+     * 
      * @param canceller The {@link ConversationCanceller} to add.
      */
     void addConversationCanceller(ConversationCanceller canceller) {
@@ -136,6 +146,7 @@ public class Conversation {
 
     /**
      * Gets the list of {@link ConversationCanceller}s
+     * 
      * @return The list.
      */
     public List<ConversationCanceller> getCancellers() {
@@ -144,6 +155,7 @@ public class Conversation {
 
     /**
      * Returns the Conversation's {@link ConversationContext}.
+     * 
      * @return The ConversationContext.
      */
     public ConversationContext getContext() {
@@ -163,6 +175,7 @@ public class Conversation {
 
     /**
      * Returns Returns the current state of the conversation.
+     * 
      * @return The current state of the conversation.
      */
     public ConversationState getState() {
@@ -178,6 +191,7 @@ public class Conversation {
     /**
      * Passes player input into the current prompt. The next prompt (as determined by the current prompt) is then
      * displayed to the user.
+     * 
      * @param input The user's chat text.
      */
     public void acceptInput(String input) {
@@ -204,6 +218,7 @@ public class Conversation {
 
     /**
      * Adds a {@link ConversationAbandonedListener}.
+     * 
      * @param listener The listener to add.
      */
     public synchronized void addConversationAbandonedListener(ConversationAbandonedListener listener) {
@@ -212,6 +227,7 @@ public class Conversation {
 
     /**
      * Removes a {@link ConversationAbandonedListener}.
+     * 
      * @param listener The listener to remove.
      */
     public synchronized void removeConversationAbandonedListener(ConversationAbandonedListener listener) {
@@ -227,6 +243,7 @@ public class Conversation {
 
     /**
      * Abandons and resets the current conversation. Restores the user's normal chat behavior.
+     * 
      * @param details Details about why the conversation was abandoned
      */
     public synchronized void abandon(ConversationAbandonedEvent details) {
