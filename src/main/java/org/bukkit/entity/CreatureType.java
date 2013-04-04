@@ -6,6 +6,7 @@ import java.util.Map;
 
 /**
  * Represents a type of creature.
+ *
  * @deprecated Use EntityType instead.
  */
 @Deprecated
@@ -57,6 +58,11 @@ public enum CreatureType {
         this.typeId = (short) typeId;
     }
 
+    /**
+     * Returns the name of the creature.
+     *
+     * @return name
+     */ 
     public String getName() {
         return name;
     }

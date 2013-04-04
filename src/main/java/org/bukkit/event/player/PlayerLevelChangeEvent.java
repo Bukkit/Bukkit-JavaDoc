@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 
 /**
- * Called when a players level changes
+ * Called when a player's level changes
  */
 public class PlayerLevelChangeEvent extends PlayerEvent {
     private static final HandlerList handlers = new HandlerList();
