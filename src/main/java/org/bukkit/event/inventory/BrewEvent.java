@@ -6,6 +6,9 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.block.BlockEvent;
 import org.bukkit.inventory.BrewerInventory;
 
+/**
+ * Called when an item is brewed in its inventory.
+ */ 
 public class BrewEvent extends BlockEvent implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
     private BrewerInventory contents;
@@ -16,6 +19,11 @@ public class BrewEvent extends BlockEvent implements Cancellable {
         this.contents = contents;
     }
 
+    /**
+     * Returns the contents of the brewer inventory.
+     * 
+     * @return contents of the brewer inventory.
+     */ 
     public BrewerInventory getContents() {
         return contents;
     }
