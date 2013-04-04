@@ -19,7 +19,7 @@ public class PlayerChangedWorldEvent extends PlayerEvent {
     /**
      * Gets the world the player is teleporting from
      * 
-     * @return worls player is teleporting from
+     * @return world player is teleporting from
      */ 
     public World getFrom() {
         return from;
