@@ -6,6 +6,8 @@ package org.bukkit.entity;
 public interface Slime extends LivingEntity {
 
     /**
+     * Returns the size of the slime
+     * 
      * @return The size of the slime
      */
     public int getSize();
