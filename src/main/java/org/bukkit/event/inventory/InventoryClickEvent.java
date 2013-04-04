@@ -56,6 +56,8 @@ public class InventoryClickEvent extends InventoryEvent implements Cancellable {
     }
 
     /**
+     * Returns if the click is a right-click.
+     * 
      * @return True if the click is a right-click.
      */
     public boolean isRightClick() {
@@ -63,6 +65,8 @@ public class InventoryClickEvent extends InventoryEvent implements Cancellable {
     }
 
     /**
+     * Returns if the click is a left-click.
+     * 
      * @return True if the click is a left-click.
      */
     public boolean isLeftClick() {
