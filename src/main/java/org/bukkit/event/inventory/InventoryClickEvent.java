@@ -29,7 +29,7 @@ public class InventoryClickEvent extends InventoryEvent implements Cancellable {
 
     /**
      * Get the type of slot that was clicked.
-     * 
+     *
      * @return The slot type.
      */
     public SlotType getSlotType() {
@@ -38,7 +38,7 @@ public class InventoryClickEvent extends InventoryEvent implements Cancellable {
 
     /**
      * Get the current item on the cursor.
-     * 
+     *
      * @return The cursor item
      */
     public ItemStack getCursor() {
@@ -47,7 +47,7 @@ public class InventoryClickEvent extends InventoryEvent implements Cancellable {
 
     /**
      * Get the current item in the clicked slot.
-     * 
+     *
      * @return The slot item.
      */
     public ItemStack getCurrentItem() {
@@ -57,7 +57,7 @@ public class InventoryClickEvent extends InventoryEvent implements Cancellable {
 
     /**
      * Returns if the click is a right-click.
-     * 
+     *
      * @return True if the click is a right-click.
      */
     public boolean isRightClick() {
@@ -66,7 +66,7 @@ public class InventoryClickEvent extends InventoryEvent implements Cancellable {
 
     /**
      * Returns if the click is a left-click.
-     * 
+     *
      * @return True if the click is a left-click.
      */
     public boolean isLeftClick() {
@@ -75,7 +75,7 @@ public class InventoryClickEvent extends InventoryEvent implements Cancellable {
 
     /**
      * Shift can be combined with right-click or left-click as a modifier.
-     * 
+     *
      * @return True if the click is a shift-click.
      */
     public boolean isShiftClick() {
@@ -92,7 +92,7 @@ public class InventoryClickEvent extends InventoryEvent implements Cancellable {
 
     /**
      * Get the player who performed the click.
-     * 
+     *
      * @return The clicking player.
      */
     public HumanEntity getWhoClicked() {
@@ -101,7 +101,7 @@ public class InventoryClickEvent extends InventoryEvent implements Cancellable {
 
     /**
      * Set the item on the cursor.
-     * 
+     *
      * @param what The new cursor item.
      */
     public void setCursor(ItemStack what) {
@@ -110,7 +110,7 @@ public class InventoryClickEvent extends InventoryEvent implements Cancellable {
 
     /**
      * Set the current item in the slot.
-     * 
+     *
      * @param what The new slot item.
      */
     public void setCurrentItem(ItemStack what) {
@@ -129,7 +129,7 @@ public class InventoryClickEvent extends InventoryEvent implements Cancellable {
     /**
      * The slot number that was clicked, ready for passing to {@link Inventory#getItem(int)}. Note
      * that there may be two slots with the same slot number, since a view links two different inventories.
-     * 
+     *
      * @return The slot number.
      */
     public int getSlot() {
@@ -138,7 +138,7 @@ public class InventoryClickEvent extends InventoryEvent implements Cancellable {
 
     /**
      * The raw slot number, which is unique for the view.
-     * 
+     *
      * @return The slot number.
      */
     public int getRawSlot() {
