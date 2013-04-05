@@ -84,6 +84,7 @@ public class HandlerList {
 
     /**
      * Create a new handler list and initialize using EventPriority
+     * <p>
      * The HandlerList is then added to meta-list for use in bakeAll()
      */
     public HandlerList() {
