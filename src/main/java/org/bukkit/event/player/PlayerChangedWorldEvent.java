@@ -15,7 +15,7 @@ public class PlayerChangedWorldEvent extends PlayerEvent {
         super(player);
         this.from = from;
     }
-    
+
     /**
      * Gets the world the player is teleporting from
      *
