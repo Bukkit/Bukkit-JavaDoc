@@ -7,7 +7,7 @@ import org.bukkit.util.Vector;
 
 /**
  * Called when the velocity of a player changes
- */ 
+ */
 public class PlayerVelocityEvent extends PlayerEvent implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
     private boolean cancel = false;
