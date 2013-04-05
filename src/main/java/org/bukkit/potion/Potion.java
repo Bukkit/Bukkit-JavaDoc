@@ -23,7 +23,7 @@ public class Potion {
      * Construct a new potion of the given type. Unless the type is {@link PotionType#WATER},
      * it will be level one, without extended duration. Don't use this constructor to create
      * a no-effect potion other than water bottle.
-     * 
+     *
      * @param type The potion type
      * @see #Potion(int)
      */
@@ -68,7 +68,7 @@ public class Potion {
 
     /**
      * Create a new potion of the given type and level.
-     * 
+     *
      * @param type The type of potion.
      * @param level The potion's level.
      */
@@ -82,7 +82,7 @@ public class Potion {
 
     /**
      * Create a new potion of the given type and level.
-     * 
+     *
      * @param type The type of potion.
      * @param level The potion's level.
      * @param splash Whether it is a splash potion.
@@ -96,7 +96,7 @@ public class Potion {
 
     /**
      * Create a new potion of the given type and level.
-     * 
+     *
      * @param type The type of potion.
      * @param level The potion's level.
      * @param splash Whether it is a splash potion.
@@ -112,7 +112,7 @@ public class Potion {
 
     /**
      * Create a potion with a specific name.
-     * 
+     *
      * @param name The name index (0-63)
      */
     public Potion(int name) {
@@ -126,7 +126,7 @@ public class Potion {
 
     /**
      * Chain this to the constructor to make the potion a splash potion.
-     * 
+     *
      * @return The potion.
      */
     public Potion splash() {
@@ -136,7 +136,7 @@ public class Potion {
 
     /**
      * Chain this to the constructor to extend the potion's duration.
-     * 
+     *
      * @return The potion.
      */
     public Potion extend() {
