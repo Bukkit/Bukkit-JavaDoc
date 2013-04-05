@@ -7,14 +7,14 @@ public interface Slime extends LivingEntity {
 
     /**
      * Returns the size of the slime
-     * 
+     *
      * @return The size of the slime
      */
     public int getSize();
 
     /**
      * Sets the new size of the slime
-     * 
+     *
      * @param sz The new size of the slime.
      */
     public void setSize(int sz);
