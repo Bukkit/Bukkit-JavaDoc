@@ -50,7 +50,7 @@ public @interface Warning {
 
         /**
          * This method checks the provided warning should be printed for this state
-         * 
+         *
          * @param warning The warning annotation added to a deprecated item
          * @return ON is always True<br>
          *  OFF is always false<br>
@@ -65,7 +65,7 @@ public @interface Warning {
 
         /**
          * This method returns the corresponding warning state for the given string value.
-         * 
+         *
          * @param value The string value to check
          * @return {@link #DEFAULT} if not found, or the respective WarningState
          */
@@ -83,14 +83,14 @@ public @interface Warning {
 
     /**
      * This sets if the deprecation warnings when registering events gets printed when the setting is in the default state.
-     * 
+     *
      * @return false normally, or true to encourage warning printout
      */
     boolean value() default false;
 
     /**
      * This can provide detailed information on why the event is deprecated.
-     * 
+     *
      * @return The reason an event is deprecated
      */
     String reason() default "";
