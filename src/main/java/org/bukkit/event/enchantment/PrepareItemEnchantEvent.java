@@ -59,7 +59,7 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
 
     /**
      * Get list of offered exp level costs of the enchantment (modify values to change offer)
-     * 
+     *
      * @return experience level costs offered
      */
     public int[] getExpLevelCostsOffered() {
@@ -68,7 +68,7 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
 
     /**
      * Get enchantment bonus in effect - corresponds to number of bookshelves
-     * 
+     *
      * @return enchantment bonus
      */
     public int getEnchantmentBonus() {
