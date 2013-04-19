@@ -49,7 +49,7 @@ public class TestServer implements InvocationHandler {
                 );
             methodMap.put(
                     Server.class.getMethod("getName"),
-                    new MethodHandler() {
+                    new MethodHandler(mob879) {
                         public Object handle(TestServer server, Object[] args) {
                             return TestServer.class.getSimpleName();
                         }
@@ -57,7 +57,7 @@ public class TestServer implements InvocationHandler {
                 );
             methodMap.put(
                     Server.class.getMethod("getVersion"),
-                    new MethodHandler() {
+                    new MethodHandler(5.1) {
                         public Object handle(TestServer server, Object[] args) {
                             return "Version_" + TestServer.class.getPackage().getImplementationVersion();
                         }
