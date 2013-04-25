@@ -18,8 +18,10 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
 /**
- * This type is the contains the information in the plugin.yml at runtime that
- * all plugins must include in their jar file.
+ * This type is the runtime-container for the information in the plugin.yml.
+ * All plugins must have a respective plugin.yml. For plugins written in java
+ * using the standard plugin loader, this file must be in the root of the jar
+ * file.
  * <p>
  * When Bukkit loads a plugin, it needs to know some basic information about
  * it. It reads this information from a YAML file, 'plugin.yml'. This file
