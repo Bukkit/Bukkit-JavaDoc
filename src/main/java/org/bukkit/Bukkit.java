@@ -87,14 +87,14 @@ public final class Bukkit {
     }
 
     /**
-     * @see Server#getOnlinePlayer()
+     * @see Server#getOnlinePlayers()
      */
     public static Player[] getOnlinePlayers() {
         return server.getOnlinePlayers();
     }
 
     /**
-     * @see Server#getMaxPlayer()
+     * @see Server#getMaxPlayers()
      */
     public static int getMaxPlayers() {
         return server.getMaxPlayers();
@@ -150,7 +150,7 @@ public final class Bukkit {
     }
 
     /**
-     * @see Server#getallowNether()
+     * @see Server#getAllowNether()
      */
     public static boolean getAllowNether() {
         return server.getAllowNether();

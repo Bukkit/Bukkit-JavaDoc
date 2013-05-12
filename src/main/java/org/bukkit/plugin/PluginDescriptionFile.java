@@ -197,7 +197,8 @@ public final class PluginDescriptionFile {
      * Loads a PluginDescriptionFile from the specified reader
      *
      * @param reader The reader
-     * @throws InvalidDescriptionException If the PluginDescriptionFile is invalid
+     * @throws InvalidDescriptionException If the PluginDescriptionFile is
+     *     invalid
      */
     public PluginDescriptionFile(final Reader reader) throws InvalidDescriptionException {
         loadMap(asMap(yaml.load(reader)));
@@ -430,7 +431,7 @@ public final class PluginDescriptionFile {
      *- OnePlugin
      *- AnotherPlugin</pre></blockquote>
      *
-     * @return
+     * @return immutable list of the plugin's dependencies
      */
     public List<String> getDepend() {
         return depend;
@@ -459,7 +460,7 @@ public final class PluginDescriptionFile {
      * Example:
      * <blockquote><pre>softdepend: [OnePlugin, AnotherPlugin]</pre></blockquote>
      *
-     * @return
+     * @return immutable list of the plugin's preferred dependencies
      */
     public List<String> getSoftDepend() {
         return softDepend;
@@ -487,7 +488,8 @@ public final class PluginDescriptionFile {
      *- OnePlugin
      *- AnotherPlugin</pre></blockquote>
      *
-     * @return immutable list of plugins that should consider this plugin a soft-dependency
+     * @return immutable list of plugins that should consider this plugin a
+     *     soft-dependency
      */
     public List<String> getLoadBefore() {
         return loadBefore;
