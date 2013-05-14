@@ -31,9 +31,9 @@ import com.google.common.collect.ImmutableMap;
  * Every (almost* every) method corresponds with a specific entry in the
  * plugin.yml. These are the <b>required</b> entries for every plugin.yml:
  * <ul>
- * <li>{@link #getName()} - <code>name</code></li>
- * <li>{@link #getVersion()} - <code>version</code></li>
- * <li>{@link #getMain()} - <code>main</code></li>
+ * <li>{@link #getName()} - <code>name</code>
+ * <li>{@link #getVersion()} - <code>version</code>
+ * <li>{@link #getMain()} - <code>main</code>
  * </ul>
  * <p>
  * Failing to include any of these items will throw an exception and cause the
@@ -43,79 +43,65 @@ import com.google.common.collect.ImmutableMap;
  * the respective method documentations:
  * <table>
  * <tr>
- * <th>Node</th>
- * <th>Method</th>
- * <th>Summary</th>
- * </tr>
- * <tr>
- * <td><code>name</code></td>
- * <td>{@link #getName()}</td>
- * <td>The unique name of plugin</td>
- * </tr>
- * <tr>
- * <td><code>version</code></td>
- * <td>{@link #getVersion()}</td>
- * <td>A plugin revision identifier</td>
- * </tr>
- * <tr>
- * <td><code>main</code></td>
- * <td>{@link #getMain()}</td>
- * <td>The plugin's initial class file</td>
- * </tr>
- * <tr>
- * <td><code>author</code><br><code>authors</code></td>
- * <td>{@link #getAuthors()}</td>
- * <td>The plugin contributors</td>
- * </tr>
- * <tr>
- * <td><code>description</code></td>
- * <td>{@link #getDescription()}</td>
- * <td>Human readable plugin summary</td>
- * </tr>
- * <tr>
- * <td><code>website</code></td>
- * <td>{@link #getWebsite()}</td>
- * <td>The URL to the plugin's site</td>
- * </tr>
- * <tr>
- * <td><code>prefix</code></td>
- * <td>{@link #getPrefix()}</td>
- * <td>The token to prefix plugin log entries</td>
- * </tr>
- * <tr>
- * <td><code>database</code></td>
- * <td>{@link #isDatabaseEnabled()}</td>
- * <td>Indicator to enable database support</td>
- * </tr>
- * <tr>
- * <td><code>load</code></td>
- * <td>{@link #getLoad()}</td>
- * <td>The phase of server-startup this plugin will load during</td>
- * </tr>
- * <tr>
- * <td><code>depend</code></td>
- * <td>{@link #getDepend()}</td>
- * <td>Other required plugins</td>
- * </tr>
- * <tr>
- * <td><code>softdepend</code></td>
- * <td>{@link #getSoftDepend()}</td>
- * <td>Other plugins that add functionality</td>
- * </tr>
- * <tr>
- * <td><code>loadbefore</code></td>
- * <td>{@link #getLoadBefore()}</td>
- * <td>The inverse softdepend</td>
- * </tr>
- * <tr>
- * <td><code>commands</code></td>
- * <td>{@link #getCommands()}</td>
- * <td>The commands the plugin will register</td>
- * </tr>
- * <tr>
- * <td><code>permissions</code></td>
- * <td>{@link #getPermissions()}</td>
- * <td>The permissions the plugin will register</td>
+ *     <th>Node</th>
+ *     <th>Method</th>
+ *     <th>Summary</th>
+ * </tr><tr>
+ *     <td><code>name</code></td>
+ *     <td>{@link #getName()}</td>
+ *     <td>The unique name of plugin</td>
+ * </tr><tr>
+ *     <td><code>version</code></td>
+ *     <td>{@link #getVersion()}</td>
+ *     <td>A plugin revision identifier</td>
+ * </tr><tr>
+ *     <td><code>main</code></td>
+ *     <td>{@link #getMain()}</td>
+ *     <td>The plugin's initial class file</td>
+ * </tr><tr>
+ *     <td><code>author</code><br><code>authors</code></td>
+ *     <td>{@link #getAuthors()}</td>
+ *     <td>The plugin contributors</td>
+ * </tr><tr>
+ *     <td><code>description</code></td>
+ *     <td>{@link #getDescription()}</td>
+ *     <td>Human readable plugin summary</td>
+ * </tr><tr>
+ *     <td><code>website</code></td>
+ *     <td>{@link #getWebsite()}</td>
+ *     <td>The URL to the plugin's site</td>
+ * </tr><tr>
+ *     <td><code>prefix</code></td>
+ *     <td>{@link #getPrefix()}</td>
+ *     <td>The token to prefix plugin log entries</td>
+ * </tr><tr>
+ *     <td><code>database</code></td>
+ *     <td>{@link #isDatabaseEnabled()}</td>
+ *     <td>Indicator to enable database support</td>
+ * </tr><tr>
+ *     <td><code>load</code></td>
+ *     <td>{@link #getLoad()}</td>
+ *     <td>The phase of server-startup this plugin will load during</td>
+ * </tr><tr>
+ *     <td><code>depend</code></td>
+ *     <td>{@link #getDepend()}</td>
+ *     <td>Other required plugins</td>
+ * </tr><tr>
+ *     <td><code>softdepend</code></td>
+ *     <td>{@link #getSoftDepend()}</td>
+ *     <td>Other plugins that add functionality</td>
+ * </tr><tr>
+ *     <td><code>loadbefore</code></td>
+ *     <td>{@link #getLoadBefore()}</td>
+ *     <td>The inverse softdepend</td>
+ * </tr><tr>
+ *     <td><code>commands</code></td>
+ *     <td>{@link #getCommands()}</td>
+ *     <td>The commands the plugin will register</td>
+ * </tr><tr>
+ *     <td><code>permissions</code></td>
+ *     <td>{@link #getPermissions()}</td>
+ *     <td>The permissions the plugin will register</td>
  * </tr>
  * </table>
  * <p>
@@ -221,18 +207,18 @@ public final class PluginDescriptionFile {
      * Gives the name of the plugin. This name is a unique identifier for
      * plugins.
      * <ul>
-     * <li>Must consist of all alphanumeric characters and underscores
-     * (a-z,A-Z,0-9, _). Any other character will cause the plugin.yml to fail
-     * loading.</li>
+     * <li>Must consist of all alphanumeric characters, underscores, hyphon,
+     *     and period (a-z,A-Z,0-9, _.-). Any other character will cause the
+     *     plugin.yml to fail loading.
      * <li>Used to determine the name of the plugin's data folder. Data
-     * folders are placed in the ./plugins/ directory by default, but this
-     * behavior should not be relied on. {@link Plugin#getDataFolder()} should
-     * be used to reference the data folder.</li>
+     *     folders are placed in the ./plugins/ directory by default, but this
+     *     behavior should not be relied on. {@link Plugin#getDataFolder()}
+     *     should be used to reference the data folder.
      * <li>It is good practice to name your jar the same as this, for example
-     * 'MyPlugin.jar'.</li>
-     * <li>Case sensitive.</li>
+     *     'MyPlugin.jar'.
+     * <li>Case sensitive.
      * <li>The is the token referenced in {@link #getDepend()}, {@link
-     * #getSoftDepend()}, and {@link #getLoadBefore()}.</li>
+     *     #getSoftDepend()}, and {@link #getLoadBefore()}.
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>name</code>.
@@ -249,10 +235,10 @@ public final class PluginDescriptionFile {
      * Gives the version of the plugin.
      * <ul>
      * <li>Version is an arbitrary string, however the most common format is
-     * MajorRelease.MinorRelease.Build (eg: 1.4.1).</li>
+     *     MajorRelease.MinorRelease.Build (eg: 1.4.1).
      * <li>Typically you will increment this every time you release a new
-     * feature or bug fix.</li>
-     * <li>Displayed when a user types <code>/version PluginName</code></li>
+     *     feature or bug fix.
+     * <li>Displayed when a user types <code>/version PluginName</code>
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>version</code>.
@@ -272,12 +258,12 @@ public final class PluginDescriptionFile {
      * class that extends {@link JavaPlugin}.
      * <ul>
      * <li>This must contain the full namespace including the class file
-     * itself.</li>
+     *     itself.
      * <li>If your namespace is <code>org.bukkit.plugin</code>, and your class
-     * file is called <code>MyPlugin</code> then this must be
-     * <code>org.bukkit.plugin.MyPlugin</code></li>
+     *     file is called <code>MyPlugin</code> then this must be
+     *     <code>org.bukkit.plugin.MyPlugin</code>
      * <li>No plugin can use <code>org.bukkit.</code> as a base package for
-     * <b>any class</b>, including the main class.</li>
+     *     <b>any class</b>, including the main class.
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>main</code>.
@@ -295,8 +281,8 @@ public final class PluginDescriptionFile {
      * Gives a human-friendly description of the functionality the plugin
      * provides.
      * <ul>
-     * <li>The description can have multiple lines.</li>
-     * <li>Displayed when a user types <code>/version PluginName</code></li>
+     * <li>The description can have multiple lines.
+     * <li>Displayed when a user types <code>/version PluginName</code>
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>description</code>.
@@ -313,14 +299,14 @@ public final class PluginDescriptionFile {
     /**
      * Gives the phase of server startup that the plugin should be loaded.
      * <ul>
-     * <li>Possible values are in {@link PluginLoadOrder}.</li>
-     * <li>Defaults to {@link PluginLoadOrder#POSTWORLD}.</li>
-     * <li>Certain caveats apply to each phase.</li>
+     * <li>Possible values are in {@link PluginLoadOrder}.
+     * <li>Defaults to {@link PluginLoadOrder#POSTWORLD}.
+     * <li>Certain caveats apply to each phase.
      * <li>When different, {@link #getDepend()}, {@link #getSoftDepend()}, and
-     * {@link #getLoadBefore()} become relative in order loaded per-phase. If
-     * a plugin loads at <code>STARTUP</code>, but a dependency loads at
-     * <code>POSTWORLD</code>, the dependency will not be loaded before the
-     * plugin is loaded.</li>
+     *     {@link #getLoadBefore()} become relative in order loaded per-phase.
+     *     If a plugin loads at <code>STARTUP</code>, but a dependency loads
+     *     at <code>POSTWORLD</code>, the dependency will not be loaded before
+     *     the plugin is loaded.
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>load</code>.
@@ -336,15 +322,14 @@ public final class PluginDescriptionFile {
     /**
      * Gives the list of authors for the plugin.
      * <ul>
-     * <li>Gives credit to the developer.</li>
+     * <li>Gives credit to the developer.
      * <li>Used in some server error messages to provide helpful feedback on
-     * who to contact when an error occurs.</li>
-     * <li>A bukkit.org forum handle or email address is recommended.</li>
+     *     who to contact when an error occurs.
+     * <li>A bukkit.org forum handle or email address is recommended.
      * <li>Is displayed when a user types <code>/version PluginName</code>
-     * </li>
      * <li><code>authors</code> must be in <a
-     * href="http://en.wikipedia.org/wiki/YAML#Lists">YAML list format</a>.
-     * </li>i>
+     *     href="http://en.wikipedia.org/wiki/YAML#Lists">YAML list
+     *     format</a>.
      * </ul>
      * <p>
      * In the plugin.yml, this has two entries, <code>author</code> and
@@ -373,8 +358,8 @@ public final class PluginDescriptionFile {
      * Gives the plugin's or plugin's author's website.
      * <ul>
      * <li>A link to the Curse page that includes documentation and downloads
-     * is highly recommended.</li>
-     * <li>Displayed when a user types <code>/version PluginName</code></li>
+     *     is highly recommended.
+     * <li>Displayed when a user types <code>/version PluginName</code>
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>website</code>.
@@ -391,8 +376,8 @@ public final class PluginDescriptionFile {
     /**
      * Gives if the plugin uses a database.
      * <ul>
-     * <li>Using a database is non-trivial.</li>
-     * <li>Valid values include <code>true</code> and <code>false</code></li>
+     * <li>Using a database is non-trivial.
+     * <li>Valid values include <code>true</code> and <code>false</code>
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>database</code>.
@@ -411,17 +396,17 @@ public final class PluginDescriptionFile {
      * Gives a list of other plugins that the plugin requires.
      * <ul>
      * <li>Use the value in the {@link #getName()} of the target plugin to
-     * specify the dependency.</li>
+     *     specify the dependency.
      * <li>If any plugin listed here is not found, your plugin will fail to
-     * load at startup.</li>
+     *     load at startup.
      * <li>If multiple plugins list each other in <code>depend</code>,
-     * creating a network with no individual plugin does not list another
-     * plugin in the <a
-     * href=https://en.wikipedia.org/wiki/Circular_dependency>network</a>, all
-     * plugins in that network will fail.</li>
+     *     creating a network with no individual plugin does not list another
+     *     plugin in the <a
+     *     href=https://en.wikipedia.org/wiki/Circular_dependency>network</a>,
+     *     all plugins in that network will fail.
      * <li><code>depend</code> must be in must be in <a
-     * href="http://en.wikipedia.org/wiki/YAML#Lists">YAML list format</a>.
-     * </li>
+     *     href="http://en.wikipedia.org/wiki/YAML#Lists">YAML list
+     *     format</a>.
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>depend</code>.
@@ -444,15 +429,15 @@ public final class PluginDescriptionFile {
      * will never fail because of one of these entries.
      * <ul>
      * <li>Use the value in the {@link #getName()} of the target plugin to
-     * specify the dependency.</li>
+     *     specify the dependency.
      * <li>When an unresolvable plugin is listed, it will be ignored and does
-     * not affect load order.</li>
+     *     not affect load order.
      * <li>When a circular dependency occurs (a network of plugins depending
-     * or soft-dependending each other), it will arbitrarily choose a plugin
-     * that can be resolved when ignoring soft-dependencies.</li>
+     *     or soft-dependending each other), it will arbitrarily choose a
+     *     plugin that can be resolved when ignoring soft-dependencies.
      * <li><code>softdepend</code> must be in <a
-     * href="http://en.wikipedia.org/wiki/YAML#Lists">YAML list format</a>.
-     * </li>
+     *     href="http://en.wikipedia.org/wiki/YAML#Lists">YAML list
+     *     format</a>.
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>softdepend</code>.
@@ -471,14 +456,14 @@ public final class PluginDescriptionFile {
      * soft-dependency.
      * <ul>
      * <li>Use the value in the {@link #getName()} of the target plugin to
-     * specify the dependency.</li>
-     * <li>The plugin should load before any other plugins listed here.</li>
+     *     specify the dependency.
+     * <li>The plugin should load before any other plugins listed here.
      * <li>Specifying another plugin here is strictly equivalent to having the
-     * specified plugin's {@link #getSoftDepend()} include {@link #getName()
-     * this plugin}.</li>
+     *     specified plugin's {@link #getSoftDepend()} include {@link
+     *     #getName() this plugin}.
      * <li><code>loadbefore</code> must be in <a
-     * href="http://en.wikipedia.org/wiki/YAML#Lists">YAML list format</a>.
-     * </li>
+     *     href="http://en.wikipedia.org/wiki/YAML#Lists">YAML list
+     *     format</a>.
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>loadbefore</code>.
@@ -498,10 +483,10 @@ public final class PluginDescriptionFile {
     /**
      * Gives the token to prefix plugin-specific logging messages with.
      * <ul>
-     * <li>This includes all messages using {@link Plugin#getLogger()}.</li>
+     * <li>This includes all messages using {@link Plugin#getLogger()}.
      * <li>If not specified, the server uses the plugin's {@link #getName()
-     * name}.</li>
-     * <li>This should clearly indicate what plugin is being logged.</li>
+     *     name}.
+     * <li>This should clearly indicate what plugin is being logged.
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>prefix</code>.
