@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.permissions.Permission;
@@ -499,6 +501,118 @@ public final class PluginDescriptionFile {
         return prefix;
     }
 
+    /**
+     * Gives the map of command-name to command-properties. Each entry in this
+     * map corresponds to a single command and the respective values are the
+     * properties of the command. Each property, <i>with the exception of
+     * aliases</i>, can be defined at runtime using methods in {@link
+     * PluginCommand} and are defined here only as a convenience.
+     *
+     * <table>
+     * <tr>
+     *     <th>Node</th>
+     *     <th>Method</th>
+     *     <th>Type</th>
+     *     <th>Description</th>
+     *     <th>Example</th>
+     * </tr><tr>
+     *     <td><code>description</code></td>
+     *     <td>{@link PluginCommand#setDescription(String)}</td>
+     *     <td>String</td>
+     *     <td>A user-friendly description for a command. It is useful for
+     *         documentation purposes as well as in-game help.</td>
+     *     <td><blockquote><pre>description: Set yourself on fire</pre></blockquote></td>
+     * </tr><tr>
+     *     <td><code>aliases</code></td>
+     *     <td>{@link PluginCommand#setAliases(List)}</td>
+     *     <td>String or <a
+     *         href="http://en.wikipedia.org/wiki/YAML#Lists">List</a> of
+     *         strings</td>
+     *     <td>Alternative command names, with special usefulness for commands
+     *         that are already registered. <i>Aliases are not effective when
+     *         defined at runtime,</i> so the plugin description file is the
+     *         only way to have them properly defined.</td>
+     *     <td>Single alias format:
+     *         <blockquote><pre>aliases: combust_me</pre></blockquote> or
+     *         multiple alias format:
+     *         <blockquote><pre>aliases: [combust_me, combustMe]</pre></blockquote></td>
+     * </tr><tr>
+     *     <td><code>permission</code></td>
+     *     <td>{@link PluginCommand#setPermission(String)}</td>
+     *     <td>String</td>
+     *     <td>The name of the {@link Permission} required to use the command.
+     *         A user without the permission will receive the specified
+     *         message (see {@linkplain
+     *         PluginCommand#setPermissionMessage(String) below}), or a
+     *         standard one if no specific message is defined. Without the
+     *         permission node, no {@link
+     *         PluginCommand#setExecutor(CommandExecutor) CommandExecutor} or
+     *         {@link PluginCommand#setTabCompleter(TabCompleter)
+     *         TabCompleter} will be called.</td>
+     *     <td><blockquote><pre>permission: inferno.flagrate</pre></blockquote></td>
+     * </tr><tr>
+     *     <td><code>permission-message</code></td>
+     *     <td>{@link PluginCommand#setPermissionMessage(String)}</td>
+     *     <td>String</td>
+     *     <td><ul>
+     *         <li>Displayed to a player that attempts to use a command, but
+     *             does not have the required permission. See {@link
+     *             PluginCommand#getPermission() above}.
+     *         <li>&lt;permission&gt; is a macro that is replaced with the
+     *             permission node required to use the command.
+     *         <li>Using empty quotes is a valid way to indicate nothing
+     *             should be displayed to a player.
+     *         </ul></td>
+     *     <td><blockquote><pre>permission-message: You do not have /&lt;permission&gt;</pre></blockquote></td>
+     * </tr><tr>
+     *     <td><code>usage</code></td>
+     *     <td>{@link PluginCommand#setUsage(String)}</td>
+     *     <td>String</td>
+     *     <td>This message is displayed to a player when the {@link
+     *         PluginCommand#setExecutor(CommandExecutor)} {@linkplain
+     *         CommandExecutor#onCommand(CommandSender,Command,String,String[])
+     *         returns false}. &lt;command&gt; is a macro that is replaced
+     *         the command issued.</td>
+     *     <td><blockquote><pre>usage: Syntax error! Perhaps you meant /&lt;command&gt; PlayerName?</pre></blockquote>
+     *         It is worth noting that to use a colon in a yaml, like
+     *         <code>`usage: Usage: /god [player]'</code>, you need to
+     *         <a href="http://yaml.org/spec/current.html#id2503232">surround
+     *         the message with double-quote</a>:
+     *         <blockquote><pre>usage: "Usage: /god [player]"</pre></blockquote></td>
+     * </tr>
+     * </table>
+     * The commands are structured as a hiearchy of <a
+     * href="http://yaml.org/spec/current.html#id2502325">nested mappings</a>.
+     * The primary (top-level, no intendentation) node is
+     * `<code>commands</code>', while each individual command name is
+     * indented, indicating it maps to some value (in our case, the
+     * properties of the table above). Here is an example bringing together
+     * the piecemeal examples above, as well as few more definitions:
+     * <blockquote><pre>
+     *commands:
+     *  flagrate:
+     *    description: Set yourself on fire.
+     *    aliases: [combust_me, combustMe]
+     *    permission: inferno.flagrate
+     *    permission-message: You do not have /&lt;permission&gt;
+     *    usage: Syntax error! Perhaps you meant /&lt;command&gt; PlayerName?
+     *  burningdeaths:
+     *    description: List how many times you have died by fire.
+     *    aliases:
+     *    - burning_deaths
+     *    - burningDeaths
+     *    permission: inferno.burningdeaths
+     *    usage: |
+     *      /&lt;command&gt; [player]
+     *      Example: /&lt;command&gt; - see how many times you have burned to death
+     *      Example: /&lt;command&gt; CaptainIce - see how many times CaptainIce has burned to death
+     *  # The next command has no description, aliases, etc. defined, but is still valid
+     *  # Having an empty declaration is useful for defining the description, permission, and messages from a configuration dynamically
+     *  apocalypse:
+     *</pre></blockquote>
+     *
+     * @return the commands this plugin will register
+     */
     public Map<String, Map<String, Object>> getCommands() {
         return commands;
     }
