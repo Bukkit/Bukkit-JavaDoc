@@ -65,7 +65,7 @@ public abstract class Event {
      * <li>Some implementations may selectively declare a specific event use
      *     as asynchronous. This behavior should be clearly defined.
      * <li>Asynchronous calls are not calculated in the plugin timing system.
-     * </url>
+     * </ul>
      *
      * @return false by default, true if the event fires asynchronously
      */
