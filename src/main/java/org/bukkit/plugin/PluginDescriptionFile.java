@@ -617,6 +617,10 @@ public final class PluginDescriptionFile {
         return commands;
     }
 
+    /**
+     * An example set of nested definitions can be found <a
+     * href="doc-files/permissions-example_plugin.yml">here</a>.
+     */
     public List<Permission> getPermissions() {
         if (permissions == null) {
             if (lazyPermissions == null) {
