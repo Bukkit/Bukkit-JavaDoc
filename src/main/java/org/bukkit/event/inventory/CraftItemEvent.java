@@ -5,6 +5,9 @@ import org.bukkit.inventory.CraftingInventory;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.Recipe;
 
+/**
+ * Called when an item is crafted.
+ */
 public class CraftItemEvent extends InventoryClickEvent {
     private Recipe recipe;
 
@@ -14,6 +17,8 @@ public class CraftItemEvent extends InventoryClickEvent {
     }
 
     /**
+     * Returns a copy of the current recipe on the craftng matrix.
+     *
      * @return A copy of the current recipe on the crafting matrix.
      */
     public Recipe getRecipe() {

@@ -5,6 +5,9 @@ import org.bukkit.inventory.CraftingInventory;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.Recipe;
 
+/**
+ * Called when an item is prepared for crafting inside the crafting matrix.
+ */
 public class PrepareItemCraftEvent extends InventoryEvent {
     private static final HandlerList handlers = new HandlerList();
     private boolean repair;
@@ -19,6 +22,7 @@ public class PrepareItemCraftEvent extends InventoryEvent {
     /**
      * Get the recipe that has been formed. If this event was triggered by a tool repair, this
      * will be a temporary shapeless recipe representing the repair.
+     *
      * @return The recipe being crafted.
      */
     public Recipe getRecipe() {
@@ -26,6 +30,8 @@ public class PrepareItemCraftEvent extends InventoryEvent {
     }
 
     /**
+     * Returns the crafting inventory on which the crafting recipe was formed upon.
+     *
      * @return The crafting inventory on which the recipe was formed.
      */
     @Override
@@ -35,6 +41,7 @@ public class PrepareItemCraftEvent extends InventoryEvent {
 
     /**
      * Check if this event was triggered by a tool repair operation rather than a crafting recipe.
+     *
      * @return True if this is a repair.
      */
     public boolean isRepair() {

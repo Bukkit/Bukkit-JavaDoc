@@ -84,6 +84,7 @@ public class HandlerList {
 
     /**
      * Create a new handler list and initialize using EventPriority
+     * <p>
      * The HandlerList is then added to meta-list for use in bakeAll()
      */
     public HandlerList() {
@@ -193,7 +194,6 @@ public class HandlerList {
      * Get a specific plugin's registered listeners associated with this handler list
      *
      * @param plugin the plugin to get the listeners of
-     *
      * @return the list of registered listeners
      */
     public static ArrayList<RegisteredListener> getRegisteredListeners(Plugin plugin) {
