@@ -56,6 +56,9 @@ permissions:
           scrapbukkit.clear.other:
             description: Allows the player to clear other players inventory
 
-      scrapbukkit.some.standard.perm: true
+      scrapbukkit.some.standard.perm: {}
       scrapbukkit.some.other.perm: true
       scrapbukkit.some.bad.perm: false
+  # This is defined here individually, as simply giving it an association will not cause it to exist at runtime
+  scrapbukkit.some.bad.perm: {}
+  scrapbukkit.some.other.perm: {}
