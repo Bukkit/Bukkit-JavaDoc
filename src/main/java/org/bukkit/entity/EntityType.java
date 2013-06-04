@@ -35,7 +35,7 @@ public enum EntityType {
      */
     ARROW("Arrow", Arrow.class, 10),
     /**
-     * A flyinf snowball.
+     * A flying snowball.
      */
     SNOWBALL("Snowball", Snowball.class, 11),
     /**
