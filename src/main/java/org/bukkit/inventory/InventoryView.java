@@ -179,6 +179,14 @@ public abstract class InventoryView {
         return getTopInventory().getSize() + getBottomInventory().getSize();
     }
 
+    /**
+     *  Sets an extra property of this inventory if supported by that
+     *  inventory, for example the state of a progress bar.
+     *  @param prop the window property to update
+     *  @param value the new value for the window property
+     *  @return true if the property was updated successfully, false if the
+     *  property is not supported by that inventory
+     */
     public final boolean setProperty(Property prop, int value) {
         return getPlayer().setWindowProperty(prop, value);
     }
