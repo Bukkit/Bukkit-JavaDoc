@@ -5,7 +5,11 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
 
 /**
- * Represents a player animation event
+ * This event is called when a player's animation changes.
+ * <p>
+ * If this event is cancelled, other players will not be shown the animation.
+ *
+ * @see PlayerAnimationType
  */
 public class PlayerAnimationEvent extends PlayerEvent implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
