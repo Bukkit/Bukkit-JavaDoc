@@ -5,7 +5,12 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
 
 /**
- * Called when a player toggles their sneaking state
+ * Called when a player attempts to change their sneaking state. If they are
+ * trying to start sneaking, {@link #isSneaking() event.isSneaking()} will be
+ * true; if they are trying to stop, it will be false.
+ * <p>
+ * If the event is cancelled, the current sneaking state will be retained
+ * (visible via {@link Player#isSneaking() event.getPlayer().isSneaking()}.)
  */
 public class PlayerToggleSneakEvent extends PlayerEvent implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
@@ -18,9 +23,9 @@ public class PlayerToggleSneakEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
-     * Returns whether the player is now sneaking or not.
+     * The new sneaking state that the player is attempting to change to.
      *
-     * @return sneaking state
+     * @return new sneaking state
      */
     public boolean isSneaking() {
         return isSneaking;
