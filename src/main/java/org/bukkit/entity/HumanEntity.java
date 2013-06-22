@@ -141,7 +141,10 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, Permissible, Inv
     public GameMode getGameMode();
 
     /**
-     * Sets this humans current {@link GameMode}
+     * Sets this human's current {@link GameMode}.
+     * <p>
+     * <b>This method will call a {@link PlayerGameModeChangeEvent}</b> if the
+     * new gamemode is different from the current.
      *
      * @param mode New game mode
      */
