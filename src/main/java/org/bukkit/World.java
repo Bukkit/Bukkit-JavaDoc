@@ -469,10 +469,7 @@ public interface World extends PluginMessageRecipient, Metadatable {
     public long getFullTime();
 
     /**
-     * Sets the in-game time on the server
-     * <p>
-     * Note that this sets the full time of the world, which may cause adverse
-     * effects such as breaking redstone clocks and any scheduled events
+     * Sets the full in-game time on this world
      *
      * @param time The new absolute time to set this world to
      * @see #setTime(long) Sets the relative time of this world
