@@ -18,7 +18,6 @@ public class EntityChangeBlockEvent extends EntityEvent implements Cancellable {
     private final byte data;
 
     /**
-     *
      * @param what the LivingEntity causing the change
      * @param block the block (before the change)
      * @param to the future material being changed to
@@ -30,7 +29,6 @@ public class EntityChangeBlockEvent extends EntityEvent implements Cancellable {
     }
 
     /**
-     *
      * @param what the Entity causing the change
      * @param block the block (before the change)
      * @param to the future material being changed to
