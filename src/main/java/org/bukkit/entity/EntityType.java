@@ -223,6 +223,7 @@ public enum EntityType {
      * Some entities cannot be spawned using {@link World#spawnEntity(Location, EntityType)}
      * or {@link World#spawn(Location, Class)}, usually
      * because they require additional information in order to spawn.
+     *
      * @return False if the entity type cannot be spawned
      */
     public boolean isSpawnable() {
