@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 
 /**
- * Represents a player related event
+ * An abstract base for player-related events.
  */
 public abstract class PlayerEvent extends Event {
     protected Player player;
@@ -20,7 +20,10 @@ public abstract class PlayerEvent extends Event {
     }
 
     /**
-     * Returns the player involved in this event
+     * Returns the player involved in this event. If multiple players are
+     * involved, the "primary" player is preferred, or if both players are
+     * equal in involvement, there is no distinction as to which is returned
+     * here.
      *
      * @return Player who is involved in this event
      */

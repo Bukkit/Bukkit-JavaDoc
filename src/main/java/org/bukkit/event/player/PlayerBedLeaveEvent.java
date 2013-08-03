@@ -5,7 +5,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 
 /**
- * This event is fired when the player is leaving a bed.
+ * This event is called when a player leaves a bed.
+ * <p>
+ * This event may not be cancelled.
  */
 public class PlayerBedLeaveEvent extends PlayerEvent {
     private static final HandlerList handlers = new HandlerList();
@@ -19,7 +21,7 @@ public class PlayerBedLeaveEvent extends PlayerEvent {
     /**
      * Returns the bed block involved in this event.
      *
-     * @return the bed block involved in this event
+     * @return one of the two blocks of the bed
      */
     public Block getBed() {
         return bed;
