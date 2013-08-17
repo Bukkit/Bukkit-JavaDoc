@@ -5,6 +5,9 @@ import org.bukkit.entity.Item;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
 
+/**
+ * Called when an item de-spawns from the world.
+ */
 public class ItemDespawnEvent extends EntityEvent implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
     private boolean canceled;

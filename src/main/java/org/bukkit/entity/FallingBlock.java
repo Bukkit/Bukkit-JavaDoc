@@ -6,6 +6,7 @@ import org.bukkit.Material;
  * Represents a falling block
  */
 public interface FallingBlock extends Entity {
+
     /**
      * Get the Material of the falling block
      *
