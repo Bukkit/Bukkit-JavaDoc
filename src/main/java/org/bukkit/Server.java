@@ -36,6 +36,7 @@ import org.bukkit.inventory.meta.ItemMeta;
  * Represents a server implementation
  */
 public interface Server extends PluginMessageRecipient {
+
     /**
      * Used for all administrative messages, such as an operator using a command.
      * <p>
