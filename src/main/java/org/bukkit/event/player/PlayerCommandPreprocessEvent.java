@@ -10,8 +10,8 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
 
 /**
- * This event is called whenever a player runs a command (by placing a slash at
- * the start of their message). It is called early in the command handling
+ * This event is called whenever a player runs a command (by placing a slash
+ * at the start of their message). It is called early in the command handling
  * process, and modifications in this event (via {@link #setMessage(String)})
  * will be shown in the behavior.
  * <p>
@@ -20,26 +20,26 @@ import org.bukkit.event.HandlerList;
  * <p>
  * Some examples of valid uses for this event are:
  * <ul>
- * <li>Logging executed commands to a separate file</li>
- * <li>Variable substitution (for example, replacing "
- * <code>${nearbyPlayer}</code>" with the name of the nearest other player)</li>
- * <li>Conditionally blocking commands belonging to other plugins (for example,
- * you may not use <code>/home</code> in the combat arena)</li>
- * <li>Per-sender command aliases (for example, after a player the 'calias'
- * command for 'cr' -> 'gamemode creative', start replacing <code>/cr</code>
- * with <code>/gamemode creative</code>).</li>
+ * <li>Logging executed commands to a separate file
+ * <li>Variable substitution (for example, replacing ' ${nearbyPlayer}' with
+ * the name of the nearest other player)
+ * <li>Conditionally blocking commands belonging to other plugins (for
+ * example, you may not use the '/home' command in the combat arena)
+ * <li>Per-sender command aliases (for example, after a player runs the
+ * 'calias' command for 'cr' -> 'gamemode creative', start replacing '/cr'
+ * with '/gamemode creative').
  * </ul>
  * <p>
  * Examples of incorrect uses are:
  * <ul>
- * <li>Using this event to run command logic</li>
+ * <li>Using this event to run command logic
  * </ul>
  * <p>
  * If the event is cancelled, processing of the command will halt.
  * <p>
- * The state of whether or not there is a slash at the beginning of the message
- * should be preserved. If a slash is added or removed, unexpected behavior may
- * result.
+ * The state of whether or not there is a slash (<code>/</code>) at the
+ * beginning of the message should be preserved. If a slash is added or
+ * removed, unexpected behavior may result.
  */
 public class PlayerCommandPreprocessEvent extends PlayerEvent implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
