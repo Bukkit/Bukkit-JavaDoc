@@ -169,14 +169,14 @@ public interface Inventory extends Iterable<ItemStack> {
     /**
      * Checks if the inventory contains at least the minimum amount specified
      * of exactly matching ItemStacks.
-     *
+     * <p>
      * An ItemStack only counts if both the type and the amount of the stack
      * match.
      *
      * @param item The ItemStack to match against
      * @param amount How many identical stacks to check for
      * @return false if item is null, true if amount less than 1, true if
-     *         amount of exactly matching ItemStacks were found.
+     *     amount of exactly matching ItemStacks were found.
      * @see #containsAtLeast(ItemStack, int)
      */
     public boolean contains(ItemStack item, int amount);
@@ -188,7 +188,7 @@ public interface Inventory extends Iterable<ItemStack> {
      * @param item The ItemStack to match against
      * @param amount The minimum amount
      * @return false if item is null, true if amount less than 1, true if
-     *         enough ItemStacks were found to add to the given amount
+     *     enough ItemStacks were found to add to the given amount
      */
     public boolean containsAtLeast(ItemStack item, int amount);
 
