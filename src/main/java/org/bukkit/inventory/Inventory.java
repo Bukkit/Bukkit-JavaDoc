@@ -182,9 +182,8 @@ public interface Inventory extends Iterable<ItemStack> {
     public boolean contains(ItemStack item, int amount);
 
     /**
-     * Checks if the inventory contains any ItemStacks matching the given
-     * ItemStack in every respect except amount, and their amounts sum to at
-     * least the minimum amount specified
+     * Checks if the inventory contains ItemStacks matching the given
+     * ItemStack whose amounts sum to at least the minimum amount specified
      *
      * @param item The ItemStack to match against
      * @param amount The minimum amount
