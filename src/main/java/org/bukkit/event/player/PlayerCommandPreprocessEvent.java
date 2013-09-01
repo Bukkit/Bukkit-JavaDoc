@@ -10,8 +10,36 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
 
 /**
- * Called early in the command handling process. This event is only
- * for very exceptional cases and you should not normally use it.
+ * This event is called whenever a player runs a command (by placing a slash at
+ * the start of their message). It is called early in the command handling
+ * process, and modifications in this event (via {@link #setMessage(String)})
+ * will be shown in the behavior.
+ * <p>
+ * Many plugins will have <b>no use for this event</b>, and you should attempt
+ * to avoid using it if it is not necessary.
+ * <p>
+ * Some examples of valid uses for this event are:
+ * <ul>
+ * <li>Logging executed commands to a separate file</li>
+ * <li>Variable substitution (for example, replacing "
+ * <code>${nearbyPlayer}</code>" with the name of the nearest other player)</li>
+ * <li>Conditionally blocking commands belonging to other plugins (for example,
+ * you may not use <code>/home</code> in the combat arena)</li>
+ * <li>Per-sender command aliases (for example, after a player the 'calias'
+ * command for 'cr' -> 'gamemode creative', start replacing <code>/cr</code>
+ * with <code>/gamemode creative</code>).</li>
+ * </ul>
+ * <p>
+ * Examples of incorrect uses are:
+ * <ul>
+ * <li>Using this event to run command logic</li>
+ * </ul>
+ * <p>
+ * If the event is cancelled, processing of the command will halt.
+ * <p>
+ * The state of whether or not there is a slash at the beginning of the message
+ * should be preserved. If a slash is added or removed, unexpected behavior may
+ * result.
  */
 public class PlayerCommandPreprocessEvent extends PlayerEvent implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
