@@ -168,9 +168,10 @@ public interface Inventory extends Iterable<ItemStack> {
 
     /**
      * Checks if the inventory contains at least the minimum amount specified
-     * of exactly matching ItemStacks, including their amounts.
+     * of exactly matching ItemStacks.
      *
-     * This will only match if both the type and the amount of the stack match
+     * An ItemStack only counts if both the type and the amount of the stack
+     * match.
      *
      * @param item The ItemStack to match against
      * @param amount How many identical stacks to check for
