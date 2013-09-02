@@ -1,5 +1,12 @@
 package org.bukkit;
 
+/**
+ * The Travel Agent handles the creation and the research of Nether and End portals.
+ * <p>
+ * It is used in {@link org.bukkit.event.entity.EntityPortalEvent} and in
+ * {@link org.bukkit.event.player.PlayerPortalEvent} to help developers reproduce
+ * and/or modify Vanilla behaviour.
+ */
 public interface TravelAgent {
 
     /**
@@ -66,7 +73,7 @@ public interface TravelAgent {
      * Attempt to create a portal near the given location.
      *
      * @param location The desired location of the portal.
-     * @return True if a nether portal was successfully created.
+     * @return True if a portal was successfully created.
      */
     public boolean createPortal(Location location);
 }

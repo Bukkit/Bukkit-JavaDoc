@@ -20,18 +20,48 @@ public class EntityPortalEvent extends EntityTeleportEvent {
         this.travelAgent = pta;
     }
 
+    /**
+     * Sets whether or not the Travel Agent will be used.
+     * <p>
+     * If this is set to true, the TravelAgent will try to find a Portal at
+     * the {@link #to} Location, and will try to create one if there is none.
+     * <p>
+     * If this is set to false, the {@link #entity} will be teleported to the {@link #to} Location.
+     *
+     * @param useTravelAgent Whether to use the Travel Agent
+     */
     public void useTravelAgent(boolean useTravelAgent) {
         this.useTravelAgent = useTravelAgent;
     }
 
+    /**
+     * Gets whether or not the Travel Agent will be used.
+     * <p>
+     * If this is set to true, the TravelAgent will try to find a Portal at
+     * the {@link #to} Location, and will try to create one if there is none.
+     * <p>
+     * If this is set to false, the {@link #entity} will be teleported to the {@link #to} Location.
+     *
+     * @return Whether to use the Travel Agent
+     */
     public boolean useTravelAgent() {
         return useTravelAgent;
     }
 
+    /**
+     * Gets the Travel Agent used (or not) in this event.
+     *
+     * @return The Travel Agent used (or not) in this event
+     */
     public TravelAgent getPortalTravelAgent() {
         return this.travelAgent;
     }
 
+    /**
+     * Sets the Travel Agent used (or not) in this event.
+     *
+     * @param travelAgent The Travel Agent used (or not) in this event
+     */
     public void setPortalTravelAgent(TravelAgent travelAgent) {
         this.travelAgent = travelAgent;
     }
