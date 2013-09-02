@@ -1,11 +1,12 @@
 package org.bukkit;
 
 /**
- * The Travel Agent handles the creation and the research of Nether and End portals.
+ * The Travel Agent handles the creation and the research of Nether and End portals
+ * when Entities try to use one.
  * <p>
- * It is used in {@link org.bukkit.event.entity.EntityPortalEvent} and in
- * {@link org.bukkit.event.player.PlayerPortalEvent} to help developers reproduce
- * and/or modify Vanilla behaviour.
+ * It is used in {@link org.bukkit.event.entity.EntityPortalEvent EntityPortalEvent}
+ * and in {@link org.bukkit.event.player.PlayerPortalEvent PlayerPortalEvent} to
+ * help developers reproduce and/or modify Vanilla behaviour.
  */
 public interface TravelAgent {
 

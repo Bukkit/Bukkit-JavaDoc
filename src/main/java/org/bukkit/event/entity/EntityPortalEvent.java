@@ -24,9 +24,9 @@ public class EntityPortalEvent extends EntityTeleportEvent {
      * Sets whether or not the Travel Agent will be used.
      * <p>
      * If this is set to true, the TravelAgent will try to find a Portal at
-     * the {@link #to} Location, and will try to create one if there is none.
+     * the {@link #to To} Location, and will try to create one if there is none.
      * <p>
-     * If this is set to false, the {@link #entity} will be teleported to the {@link #to} Location.
+     * If this is set to false, the {@link #entity Entity} will only be teleported to the To Location.
      *
      * @param useTravelAgent Whether to use the Travel Agent
      */
@@ -38,9 +38,9 @@ public class EntityPortalEvent extends EntityTeleportEvent {
      * Gets whether or not the Travel Agent will be used.
      * <p>
      * If this is set to true, the TravelAgent will try to find a Portal at
-     * the {@link #to} Location, and will try to create one if there is none.
+     * the {@link #to To} Location, and will try to create one if there is none.
      * <p>
-     * If this is set to false, the {@link #entity} will be teleported to the {@link #to} Location.
+     * If this is set to false, the {@link #entity Entity} will only be teleported to the To Location.
      *
      * @return Whether to use the Travel Agent
      */
