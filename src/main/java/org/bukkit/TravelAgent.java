@@ -56,6 +56,8 @@ public interface TravelAgent {
 
     /**
      * Attempt to find a portal near the given location, if a portal is not found it will attempt to create one.
+     * <p>
+     * {@see #createPortal(Location) createPortal}
      *
      * @param location The location where the search for a portal should begin.
      * @return Returns the location of a portal which has been found or returns the location passed to the method if unsuccessful.
@@ -72,6 +74,10 @@ public interface TravelAgent {
 
     /**
      * Attempt to create a portal near the given location.
+     * <p>
+     * In the case of a Nether portal teleportation, this will attempt to create a Nether portal.
+     * In the case of an Ender portal teleportation, this will (re-)create the obsidian platform
+     * and clean blocks above it.
      *
      * @param location The desired location of the portal.
      * @return True if a portal was successfully created.
