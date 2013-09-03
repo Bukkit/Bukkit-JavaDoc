@@ -6,9 +6,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 
 /**
- * Called when a player is about to teleport because it is in contact with a portal
+ * Called when a player is about to teleport because it is in contact with a
+ * portal.
  * <p>
- * For other entities see {@link org.bukkit.event.entity.EntityPortalEvent EntityPortalEvent}
+ * For other entities see {@link org.bukkit.event.entity.EntityPortalEvent}
  */
 public class PlayerPortalEvent extends PlayerTeleportEvent {
     private static final HandlerList handlers = new HandlerList();
@@ -29,11 +30,13 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
      * Sets whether or not the Travel Agent will be used.
      * <p>
      * If this is set to true, the TravelAgent will try to find a Portal at
-     * the {@link #to To} Location, and will try to create one if there is none.
+     * the {@link #getTo()} Location, and will try to create one if there is
+     * none.
      * <p>
-     * If this is set to false, the {@link #player Player} will only be teleported to the {@link #to To} Location.
+     * If this is set to false, the {@link #getPlayer()} will only be
+     * teleported to the {@link #getTo()} Location.
      *
-     * @param useTravelAgent Whether to use the Travel Agent
+     * @param useTravelAgent whether to use the Travel Agent
      */
     public void useTravelAgent(boolean useTravelAgent) {
         this.useTravelAgent = useTravelAgent;
@@ -43,11 +46,13 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
      * Gets whether or not the Travel Agent will be used.
      * <p>
      * If this is set to true, the TravelAgent will try to find a Portal at
-     * the {@link #to To} Location, and will try to create one if there is none.
+     * the {@link #getTo()} Location, and will try to create one if there is
+     * none.
      * <p>
-     * If this is set to false, the {@link #player Player} will only be teleported to the {@link #to To} Location.
+     * If this is set to false, the {@link #getPlayer()}} will only be
+     * teleported to the {@link #getTo()} Location.
      *
-     * @return Whether to use the Travel Agent
+     * @return whether to use the Travel Agent
      */
     public boolean useTravelAgent() {
         return useTravelAgent && travelAgent != null;
@@ -56,7 +61,7 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
     /**
      * Gets the Travel Agent used (or not) in this event.
      *
-     * @return The Travel Agent used (or not) in this event
+     * @return the Travel Agent used (or not) in this event
      */
     public TravelAgent getPortalTravelAgent() {
         return this.travelAgent;
@@ -65,7 +70,7 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
     /**
      * Sets the Travel Agent used (or not) in this event.
      *
-     * @param travelAgent The Travel Agent used (or not) in this event
+     * @param travelAgent the Travel Agent used (or not) in this event
      */
     public void setPortalTravelAgent(TravelAgent travelAgent) {
         this.travelAgent = travelAgent;
