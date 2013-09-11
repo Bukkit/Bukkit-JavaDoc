@@ -198,6 +198,11 @@ public enum EntityType {
         }
     }
 
+    /**
+     *
+     * @deprecated Magic value
+     */
+    @Deprecated
     public String getName() {
         return name;
     }
@@ -206,10 +211,20 @@ public enum EntityType {
         return clazz;
     }
 
+    /**
+     *
+     * @deprecated Magic value
+     */
+    @Deprecated
     public short getTypeId() {
         return typeId;
     }
 
+    /**
+     *
+     * @deprecated Magic value
+     */
+    @Deprecated
     public static EntityType fromName(String name) {
         if (name == null) {
             return null;
@@ -217,6 +232,11 @@ public enum EntityType {
         return NAME_MAP.get(name.toLowerCase());
     }
 
+    /**
+     *
+     * @deprecated Magic value
+     */
+    @Deprecated
     public static EntityType fromId(int id) {
         if (id > Short.MAX_VALUE) {
             return null;

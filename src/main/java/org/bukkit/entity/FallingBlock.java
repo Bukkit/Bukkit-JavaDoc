@@ -18,14 +18,18 @@ public interface FallingBlock extends Entity {
      * Get the ID of the falling block
      *
      * @return ID type of the block
+     * @deprecated Magic value
      */
+    @Deprecated
     int getBlockId();
 
     /**
      * Get the data for the falling block
      *
      * @return data of the block
+     * @deprecated Magic value
      */
+    @Deprecated
     byte getBlockData();
 
     /**

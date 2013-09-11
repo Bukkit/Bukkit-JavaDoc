@@ -357,7 +357,9 @@ public interface Server extends PluginMessageRecipient {
      *
      * @param id ID of the map to get.
      * @return The MapView if it exists, or null otherwise.
+     * @deprecated Magic value
      */
+    @Deprecated
     public MapView getMap(short id);
 
     /**
