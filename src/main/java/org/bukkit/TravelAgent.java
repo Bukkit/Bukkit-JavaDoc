@@ -14,31 +14,30 @@ public interface TravelAgent {
      * Set the Block radius to search in for available portals.
      *
      * @param radius the radius in which to search for a portal from the
-     *               location.
-     * @return this travel agent.
+     *     location
+     * @return this travel agent
      */
     public TravelAgent setSearchRadius(int radius);
 
     /**
      * Gets the search radius value for finding an available portal.
      *
-     * @return the currently set search radius.
+     * @return the currently set search radius
      */
     public int getSearchRadius();
 
     /**
      * Sets the maximum radius from the given location to create a portal.
      *
-     * @param radius the radius in which to create a portal from the
-     *               location.
-     * @return this travel agent.
+     * @param radius the radius in which to create a portal from the location
+     * @return this travel agent
      */
     public TravelAgent setCreationRadius(int radius);
 
     /**
      * Gets the maximum radius from the given location to create a portal.
      *
-     * @return the currently set creation radius.
+     * @return the currently set creation radius
      */
     public int getCreationRadius();
 
@@ -47,7 +46,7 @@ public interface TravelAgent {
      * portal or not.
      *
      * @return whether the TravelAgent should create a destination portal or
-     *         not.
+     *     not
      */
     public boolean getCanCreatePortal();
 
@@ -56,28 +55,26 @@ public interface TravelAgent {
      * portal or not.
      *
      * @param create Sets whether the TravelAgent should create a destination
-     *               portal or not.
+     *     portal or not
      */
     public void setCanCreatePortal(boolean create);
 
     /**
      * Attempt to find a portal near the given location, if a portal is not
      * found it will attempt to create one.
-     * <p>
-     * {@see #createPortal(Location)}
      *
-     * @param location the location where the search for a portal should
-     *                 begin.
-     * @return the location of a portal which has been found or returns
-     *         the location passed to the method if unsuccessful.
+     * @param location the location where the search for a portal should begin
+     * @return the location of a portal which has been found or returns the
+     *     location passed to the method if unsuccessful
+     * @see #createPortal(Location)
      */
     public Location findOrCreate(Location location);
 
     /**
      * Attempt to find a portal near the given location.
      *
-     * @param location the desired location of the portal.
-     * @return the location of the nearest portal to the location.
+     * @param location the desired location of the portal
+     * @return the location of the nearest portal to the location
      */
     public Location findPortal(Location location);
 
@@ -86,11 +83,12 @@ public interface TravelAgent {
      * <p>
      * In the case of a Nether portal teleportation, this will attempt to
      * create a Nether portal.
-     * In the case of an Ender portal teleportation, this will (re-)create
-     * the obsidian platform and clean blocks above it.
+     * <p>
+     * In the case of an Ender portal teleportation, this will (re-)create the
+     * obsidian platform and clean blocks above it.
      *
-     * @param location the desired location of the portal.
-     * @return true if a portal was successfully created.
+     * @param location the desired location of the portal
+     * @return true if a portal was successfully created
      */
     public boolean createPortal(Location location);
 }
