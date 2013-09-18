@@ -15,19 +15,24 @@ import org.bukkit.event.HandlerList;
  * process, and modifications in this event (via {@link #setMessage(String)})
  * will be shown in the behavior.
  * <p>
- * Many plugins will have <b>no use for this event</b>, and you should attempt
- * to avoid using it if it is not necessary.
+ * Many plugins will have <b>no use for this event</b>, and you should
+ * attempt to avoid using it if it is not necessary.
  * <p>
  * Some examples of valid uses for this event are:
  * <ul>
  * <li>Logging executed commands to a separate file
- * <li>Variable substitution (for example, replacing ' ${nearbyPlayer}' with
- * the name of the nearest other player)
- * <li>Conditionally blocking commands belonging to other plugins (for
- * example, you may not use the '/home' command in the combat arena)
- * <li>Per-sender command aliases (for example, after a player runs the
- * 'calias' command for 'cr' -> 'gamemode creative', start replacing '/cr'
- * with '/gamemode creative').
+ * <li>Variable substitution. For example, replacing
+ *     <code>${nearbyPlayer}</code> with the name of the nearest other
+ *     player, or simulating the <code>@a</code> and <code>@p</code>
+ *     decorators used by Command Blocks in plugins that do not handle it.
+ * <li>Conditionally blocking commands belonging to other plugins. For
+ *     example, blocking the use of the <code>/home</code> command in a
+ *     combat arena.
+ * <li>Per-sender command aliases. For example, after a player runs the
+ *     command <code>/calias cr gamemode creative</code>, the next time they
+ *     run <code>/cr</code>, it gets replaced into
+ *     <code>/gamemode creative</code>. (Global command aliases should be
+ *     done by registering the alias.)
  * </ul>
  * <p>
  * Examples of incorrect uses are:
