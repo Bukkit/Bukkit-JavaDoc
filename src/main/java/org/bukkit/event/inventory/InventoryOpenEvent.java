@@ -25,6 +25,17 @@ public class InventoryOpenEvent extends InventoryEvent implements Cancellable {
     public final HumanEntity getPlayer() {
         return transaction.getPlayer();
     }
+    
+    
+    /**
+     * Returns the Inventory Type in this event
+     *
+     * @return Inventory Type in this event
+     */
+    
+    public InventoryType getInventoryType(){
+        return transaction.getType();
+    }
 
     /**
      * Gets the cancellation state of this event. A cancelled event will not
