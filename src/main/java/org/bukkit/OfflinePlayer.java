@@ -29,7 +29,8 @@ public interface OfflinePlayer extends ServerOperator, AnimalTamer, Configuratio
     public boolean isBanned();
 
     /**
-     * Bans or unbans this player
+     * Bans or unbans this player using default settings. For more settings
+     * use {@link #setBanned(boolean, String, String)}. Best for unbanning.
      *
      * @param banned true if banned
      */
