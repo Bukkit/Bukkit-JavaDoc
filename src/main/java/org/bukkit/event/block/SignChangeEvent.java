@@ -45,7 +45,8 @@ public class SignChangeEvent extends BlockEvent implements Cancellable {
      *
      * @param index index of the line to get
      * @return The String containing the line of text associated with the provided index
-     * @throws IndexOutOfBoundsException thrown when the provided index is > 4 and < 0
+     * @throws IndexOutOfBoundsException thrown when the provided index is > 3
+     *     and < 0
      */
     public String getLine(int index) throws IndexOutOfBoundsException {
         return lines[index];
@@ -56,7 +57,8 @@ public class SignChangeEvent extends BlockEvent implements Cancellable {
      *
      * @param index index of the line to set
      * @param line text to set
-     * @throws IndexOutOfBoundsException thrown when the provided index is > 4 and < 0
+     * @throws IndexOutOfBoundsException thrown when the provided index is > 3
+     *     and < 0
      */
     public void setLine(int index, String line) throws IndexOutOfBoundsException {
         lines[index] = line;
