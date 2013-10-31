@@ -51,7 +51,7 @@ public final class Bukkit {
 
     /**
      * Attempts to set the {@link Server} singleton.
-     * <p>
+     * 
      * This cannot be done if the Server is already set.
      *
      * @param server Server instance
