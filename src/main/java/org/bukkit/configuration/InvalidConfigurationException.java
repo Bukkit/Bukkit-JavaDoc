@@ -7,8 +7,8 @@ package org.bukkit.configuration;
 public class InvalidConfigurationException extends Exception {
 
     /**
-     * Creates a new instance of InvalidConfigurationException without a message
-     * or cause.
+     * Creates a new instance of InvalidConfigurationException without a
+     * message or cause.
      */
     public InvalidConfigurationException() {}
 

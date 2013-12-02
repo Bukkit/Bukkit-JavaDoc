@@ -143,7 +143,8 @@ public interface Block extends Metadatable {
     Location getLocation();
 
     /**
-     * Stores the location of the block in the provided Location object.<br />
+     * Stores the location of the block in the provided Location object.
+     * <p>
      * If the provided Location is null this method does nothing and returns
      * null.
      *

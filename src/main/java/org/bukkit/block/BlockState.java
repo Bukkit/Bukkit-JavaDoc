@@ -92,7 +92,7 @@ public interface BlockState extends Metadatable {
 
     /**
      * Stores the location of this block in the provided Location object.
-     * <br />
+     * <p>
      * If the provided Location is null this method does nothing and returns
      * null.
      *

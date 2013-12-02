@@ -52,8 +52,8 @@ public class MemorySection implements ConfigurationSection {
      * @param parent Parent section that contains this own section.
      * @param path Path that you may access this section from via the root
      *     {@link Configuration}.
-     * @throws IllegalArgumentException Thrown is parent or path is null, or if
-     *     parent contains no root Configuration.
+     * @throws IllegalArgumentException Thrown is parent or path is null, or
+     *     if parent contains no root Configuration.
      */
     protected MemorySection(ConfigurationSection parent, String path) {
         Validate.notNull(parent, "Parent cannot be null");

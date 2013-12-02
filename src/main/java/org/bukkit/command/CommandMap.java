@@ -6,9 +6,14 @@ public interface CommandMap {
 
     /**
      * Registers all the commands belonging to a certain plugin.
+     * <p>
      * Caller can use:-
-     * command.getName() to determine the label registered for this command
-     * command.getAliases() to determine the aliases which where registered
+     * <ul>
+     * <li>command.getName() to determine the label registered for this
+     *     command
+     * <li>command.getAliases() to determine the aliases which where
+     *     registered
+     * </ul>
      *
      * @param fallbackPrefix a prefix which is prepended to each command with
      *     a ':' one or more times to make the command unique
@@ -21,10 +26,12 @@ public interface CommandMap {
      * taken and fallback had to be used.
      * <p>
      * Caller can use:-
-     * <br>
-     * command.getName() to determine the label registered for this command
-     * <br>
-     * command.getAliases() to determine the aliases which where registered
+     * <ul>
+     * <li>command.getName() to determine the label registered for this
+     *     command
+     * <li>command.getAliases() to determine the aliases which where
+     *     registered
+     * </ul>
      *
      * @param label the label of the command, without the '/'-prefix.
      * @param fallbackPrefix a prefix which is prepended to the command with a
@@ -41,10 +48,12 @@ public interface CommandMap {
      * taken and fallback had to be used.
      * <p>
      * Caller can use:-
-     * <br>
-     * command.getName() to determine the label registered for this command
-     * <br>
-     * command.getAliases() to determine the aliases which where registered
+     * <ul>
+     * <li>command.getName() to determine the label registered for this
+     *     command
+     * <li>command.getAliases() to determine the aliases which where
+     *     registered
+     * </ul>
      *
      * @param fallbackPrefix a prefix which is prepended to the command with a
      *     ':' one or more times to make the command unique
