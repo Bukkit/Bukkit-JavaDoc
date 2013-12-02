@@ -776,8 +776,8 @@ public interface ConfigurationSection {
     public boolean isConfigurationSection(String path);
 
     /**
-     * Gets the equivalent {@link ConfigurationSection} from the default {@link
-     * Configuration} defined in {@link #getRoot()}.
+     * Gets the equivalent {@link ConfigurationSection} from the default
+     * {@link Configuration} defined in {@link #getRoot()}.
      * <p>
      * If the root contains no defaults, or the defaults doesn't contain a
      * value for this path, or the value at this path is not a {@link
