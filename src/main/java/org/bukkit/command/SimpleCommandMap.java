@@ -125,11 +125,10 @@ public class SimpleCommandMap implements CommandMap {
      *     ':' one or more times to make the command unique
      * @param command the command to register
      * @return true if command was registered with the passed in label, false
-     *     otherwise.
-     *     If isAlias was true a return of false indicates no command was
-     *     registered
-     *     If isAlias was false a return of false indicates the fallbackPrefix
-     *     was used one or more times to create a unique name for the command
+     *     otherwise. If isAlias was true a return of false indicates no
+     *     command was registered. If isAlias was false a return of false
+     *     indicates the fallbackPrefix was used one or more times to create a
+     *     unique name for the command
      */
     private synchronized boolean register(String label, String fallbackPrefix, Command command, boolean isAlias) {
         String lowerLabel = label.trim().toLowerCase();
