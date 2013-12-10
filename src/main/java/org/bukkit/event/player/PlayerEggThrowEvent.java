@@ -101,10 +101,12 @@ public class PlayerEggThrowEvent extends PlayerEvent {
 
     /**
      * Get the number of mob hatches from the egg. By default the number will
-     * be he number the server would've done
-     * <p>
-     * 7/8 chance of being 0, 31/256 ~= 1/8 chance to be 1, 1/256 chance to be
-     * 4.
+     * be the number the server would've done
+     * <ul>
+     * <li>7/8 chance of being 0
+     * <li>31/256 ~= 1/8 chance to be 1
+     * <li>1/256 chance to be 4
+     * </ul>
      *
      * @return The number of mobs going to be hatched by the egg
      */
