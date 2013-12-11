@@ -160,7 +160,8 @@ public final class MapPalette {
     }
 
     /**
-     * Get the index of the closest matching color in the palette to the given color.
+     * Get the index of the closest matching color in the palette to the given
+     * color.
      *
      * @param r The red component of the color.
      * @param b The blue component of the color.
@@ -174,7 +175,8 @@ public final class MapPalette {
     }
 
     /**
-     * Get the index of the closest matching color in the palette to the given color.
+     * Get the index of the closest matching color in the palette to the given
+     * color.
      *
      * @param color The Color to match.
      * @return The index in the palette.
