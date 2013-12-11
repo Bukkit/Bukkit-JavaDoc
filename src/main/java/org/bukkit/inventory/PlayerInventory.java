@@ -3,8 +3,7 @@ package org.bukkit.inventory;
 import org.bukkit.entity.HumanEntity;
 
 /**
- * Interface to the inventory of a Player. (Includes 4 interface to the four
- * armor slots)
+ * Interface to the inventory of a Player, including the four armor slots.
  */
 public interface PlayerInventory extends Inventory {
 
