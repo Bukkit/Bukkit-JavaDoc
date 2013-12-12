@@ -102,7 +102,7 @@ public interface BukkitScheduler {
      *     thread.
      * <li>Note2: There is at least an average of 10ms latency until the
      *     isDone() method returns true.
-     *
+     * </ul>
      * @param <T> The callable's return type
      * @param plugin Plugin that owns the task
      * @param task Task to be executed

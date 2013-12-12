@@ -44,7 +44,7 @@ public abstract class MetadataStoreBase<T> {
     }
 
     /**
-     * Returns all metadata values attached to an object. If multiple 
+     * Returns all metadata values attached to an object. If multiple
      * have attached metadata, each will value will be included.
      *
      * @param subject the object being interrogated.
