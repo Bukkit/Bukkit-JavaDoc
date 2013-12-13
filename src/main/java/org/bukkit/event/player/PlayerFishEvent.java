@@ -41,7 +41,8 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
      * <p>
      * If player has fished successfully, the result may be cast to {@link Item}.
      *
-     * @return Entity caught by the player, Entity if fishing, and null if bobber has gotten stuck in the ground or nothing has been caught
+     * @return Entity caught by the player, Entity if fishing, and null if bobber
+     * has gotten stuck in the ground or nothing has been caught
      */
     public Entity getCaught() {
         return entity;
