@@ -19,7 +19,7 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
 
     /**
      * @deprecated replaced by {@link #PlayerFishEvent(Player, Entity, Fish,
-     * State)} to include the {@link Fish} hook entity.
+     *     State)} to include the {@link Fish} hook entity.
      * @param player
      * @param entity
      * @param state
@@ -67,7 +67,8 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
     /**
      * Gets the amount of experience received when fishing.
      * <p>
-     * Note: This value has no default effect unless the event state is {@link State#CAUGHT_FISH}.
+     * Note: This value has no default effect unless the event state is {@link
+     * State#CAUGHT_FISH}.
      *
      * @return the amount of experience to drop
      */
@@ -78,7 +79,8 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
     /**
      * Sets the amount of experience received when fishing.
      * <p>
-     * Note: This value has no default effect unless the event state is {@link State#CAUGHT_FISH}.
+     * Note: This value has no default effect unless the event state is {@link
+     * State#CAUGHT_FISH}.
      *
      * @param amount the amount of experience to drop
      */
@@ -126,7 +128,8 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
          */
         IN_GROUND,
         /**
-         * When a player fails to catch anything while fishing usually due to poor aiming or timing
+         * When a player fails to catch anything while fishing usually due to
+         * poor aiming or timing
          */
         FAILED_ATTEMPT,
     }
