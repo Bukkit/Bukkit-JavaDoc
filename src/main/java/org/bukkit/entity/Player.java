@@ -703,6 +703,13 @@ public interface Player extends HumanEntity, Conversable, CommandSender, Offline
 
     /**
      * Sets the player's visible Scoreboard.
+     * <p>
+     * A player must always have a scoreboard set, even if it does not display
+     * anything. So in order to 'remove' a scoreboard from a player, without
+     * setting a new custom scoreboard, you must set them back to using the
+     * {@link org.bukkit.scoreboard.ScoreboardManager#getMainScoreboard() main
+     * scoreboard}.
+     * </p>
      *
      * @param scoreboard New Scoreboard for the player
      * @throws IllegalArgumentException if scoreboard is null
