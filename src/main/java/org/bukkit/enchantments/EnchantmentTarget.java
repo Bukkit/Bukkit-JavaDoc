@@ -128,7 +128,6 @@ public enum EnchantmentTarget {
                 || item.equals(Material.DIAMOND_AXE)
                 || item.equals(Material.GOLD_AXE)
                 || item.equals(Material.SHEARS)           // NOTE: No vanilla enchantments for this
-                || item.equals(Material.FISHING_ROD)      // NOTE: No vanilla enchantments for this
                 || item.equals(Material.FLINT_AND_STEEL); // NOTE: No vanilla enchantments for this
         }
     },
@@ -140,6 +139,16 @@ public enum EnchantmentTarget {
         @Override
         public boolean includes(Material item) {
             return item.equals(Material.BOW);
+        }
+    },
+
+    /**
+     * Allows the Enchantment to be placed on fishing rods.
+     */
+    FISHING_ROD {
+        @Override
+        public boolean includes(Material item) {
+            return item.equals(Material.FISHING_ROD);
         }
     };
 
