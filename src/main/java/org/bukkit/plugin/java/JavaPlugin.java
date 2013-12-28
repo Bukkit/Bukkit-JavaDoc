@@ -446,9 +446,9 @@ public abstract class JavaPlugin extends PluginBase {
     }
 
     /**
-     * This method provides fast access to the plugin that has {@link
-     * #getProvidingPlugin(Class) provided} the given plugin class, which is
-     * usually the plugin that implemented it.
+     * This method provides fast access to the plugin that has provided the
+     * given class.
+     *
      * @throws IllegalArgumentException if the class is not provided by a
      *     JavaPlugin
      * @throws IllegalArgumentException if class is null
