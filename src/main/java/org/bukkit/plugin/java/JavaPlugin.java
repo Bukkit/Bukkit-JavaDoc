@@ -417,14 +417,15 @@ public abstract class JavaPlugin extends PluginBase {
      * resided in a different jar / classloader.
      *
      * @param clazz the class desired
-     * @return the plugin that provides and implements said class, or null
-     *     if called from an inconsistent static initialization block
+     * @return the plugin that provides and implements said class
      * @throws IllegalArgumentException if clazz is null
      * @throws IllegalArgumentException if clazz does not extend {@link
      *     JavaPlugin}
      * @throws IllegalStateException if clazz was not provided by a plugin,
      *     for example, if called with
      *     <code>JavaPlugin.getPlugin(JavaPlugin.class)</code>
+     * @throws IllegalStateException if called from the static initializer for
+     *     given JavaPlugin
      * @throws ClassCastException if plugin that provided the class does not
      *     extend the class
      */
