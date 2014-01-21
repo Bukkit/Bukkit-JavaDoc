@@ -169,7 +169,7 @@ public interface Plugin extends TabExecutor {
     public ChunkGenerator getDefaultWorldGenerator(String worldName, String id);
 
     /**
-     * Returns the plugin logger associated with this server's logger. The 
+     * Returns the plugin logger associated with this server's logger. The
      * returned logger automatically tags all log messages with the plugin's
      * name.
      *
