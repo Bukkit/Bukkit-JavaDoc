@@ -25,7 +25,7 @@ public class Vine extends MaterialData {
      * @deprecated Magic value
      */
     @Deprecated
-    public Vine(int type, byte data){
+    public Vine(int type, byte data) {
         super(type, data);
     }
 

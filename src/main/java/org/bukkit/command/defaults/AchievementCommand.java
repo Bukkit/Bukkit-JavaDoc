@@ -87,7 +87,7 @@ public class AchievementCommand extends VanillaCommand {
                 return true;
             }
             player.awardAchievement(achievement);
-                
+
             Command.broadcastCommandMessage(sender, String.format("Successfully given %s the stat %s", player.getName(), statisticString));
             return true;
         }

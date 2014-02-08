@@ -247,7 +247,7 @@ Here are a few tips you should keep in mind or common areas you should focus on:
 ##### General Guidelines
 When editing Minecraft's classes, we have a set of rules and guidelines that need to be followed to keep us sane when it comes time for us to update Bukkit.  
 
-**CraftBukkit comments**  
+**CraftBukkit comments**
 Changes to a Minecraft class should be clearly marked using CraftBukkit comments. Here are a few tips to help explain what kind of CraftBukkit comment to use and where to use them:
 
 * Regardless of what kind of CraftBukkit comment you use, please take care to be explicit and exact with your usage. If the "C" in "CraftBukkit" is capitalised in the example, you should capitalise it when you use it. If the "start" begins with a lowercase "s", you should make sure yours does too.
@@ -331,7 +331,7 @@ Changes to a Minecraft class should be clearly marked using CraftBukkit comments
                         }
     ```
 
-**Other guidelines**  
+**Other guidelines**
 
 * When adding imports to a Minecraft class, they should be organised by alphabetical order, separated and grouped by package.
 

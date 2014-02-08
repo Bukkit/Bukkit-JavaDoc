@@ -44,7 +44,7 @@ public class PotionTest {
 
     @Test
     public void setExtended() {
-        PotionEffectType.registerPotionEffectType(new PotionEffectType(19){
+        PotionEffectType.registerPotionEffectType(new PotionEffectType(19) {
             @Override
             public double getDurationModifier() {
                 return 1;
