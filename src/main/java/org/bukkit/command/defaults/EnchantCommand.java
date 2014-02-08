@@ -56,7 +56,7 @@ public class EnchantCommand extends VanillaCommand {
                 Enchantment enchantment = getEnchantment(args[1].toUpperCase());
                 if (enchantment == null) {
                     sender.sendMessage(String.format("Enchantment does not exist: %s", args[1]));
-                }  else {
+                } else {
                     String enchantmentName = enchantment.getName().replaceAll("_", " ");
                     enchantmentName = WordUtils.capitalizeFully(enchantmentName);
 

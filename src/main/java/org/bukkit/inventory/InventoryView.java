@@ -179,11 +179,17 @@ public abstract class InventoryView {
             return slot;
         }
         if (getType() == InventoryType.CRAFTING) {
-            if(slot < 4) return 39 - slot;
-            else slot -= 4;
+            if (slot < 4) {
+                return 39 - slot;
+            } else {
+                slot -= 4;
+            }
         }
-        if (slot >= 27) slot -= 27;
-        else slot += 9;
+        if (slot >= 27) {
+            slot -= 27;
+        } else {
+            slot += 9;
+        }
         return slot;
     }
 

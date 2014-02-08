@@ -19,7 +19,6 @@ public interface Villager extends Ageable, NPC {
      */
     public void setProfession(Profession profession);
 
-
     /**
      * Represents the various different Villager professions there may be.
      */

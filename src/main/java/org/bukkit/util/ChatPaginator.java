@@ -120,7 +120,7 @@ public class ChatPaginator {
             }
         }
 
-        if(line.length() > 0) { // Only add the last line if there is anything to add
+        if (line.length() > 0) { // Only add the last line if there is anything to add
             lines.add(line.toString());
         }
 

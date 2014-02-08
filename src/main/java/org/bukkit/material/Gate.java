@@ -18,7 +18,7 @@ public class Gate extends MaterialData implements Directional, Openable {
         super(Material.FENCE_GATE);
     }
 
-    public Gate(int type, byte data){
+    public Gate(int type, byte data) {
         super(type, data);
     }
 

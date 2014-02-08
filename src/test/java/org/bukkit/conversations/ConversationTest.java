@@ -27,7 +27,7 @@ public class ConversationTest {
         assertEquals("SecondPrompt", forWhom.lastSentMessage);
         assertEquals(conversation, forWhom.abandonedConverstion);
     }
-    
+
     @Test
     public void testConversationFactory() {
         FakeConversable forWhom = new FakeConversable();
