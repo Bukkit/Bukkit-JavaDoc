@@ -69,7 +69,7 @@ public interface BanEntry {
      * Sets the date this ban expires on. Null values are considered "infinite" bans.<br />
      * Use {@link #save()} to save the changes.
      *
-     * @param expiry The new expiration date, or null to indicate an eternity
+     * @param expiration The new expiration date, or null to indicate an eternity
      */
     public void setExpiration(Date expiration);
 
