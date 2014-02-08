@@ -92,9 +92,12 @@ public interface BanEntry {
     public Date getExpiration();
 
     /**
-     * Sets the date this ban expires on. Null values are considered "infinite" bans.
+     * Sets the date this ban expires on. Null values are considered
+     * "infinite" bans.
      *
-     * @param expiration the new expiration date, or null to indicate an eternity
+     * @param expiration the new expiration date, or null to indicate an
+     *     eternity
+     * @see #save() saving changes
      */
     public void setExpiration(Date expiration);
 
