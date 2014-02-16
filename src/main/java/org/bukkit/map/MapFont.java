@@ -46,6 +46,7 @@ public class MapFont {
      *
      * @param text The text.
      * @return The width in pixels.
+     * @throws IllegalArgumentException if text returns invalid.
      */
     public int getWidth(String text) {
         if (!isValid(text)) {
