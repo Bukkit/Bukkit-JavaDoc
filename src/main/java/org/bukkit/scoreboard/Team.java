@@ -39,7 +39,7 @@ public interface Team {
     void setDisplayName(String displayName) throws IllegalStateException, IllegalArgumentException;
 
     /**
-     * Sets the prefix prepended to the display of players on this team.
+     * Gets the prefix prepended to the display of players on this team.
      *
      * @return Team prefix
      * @throws IllegalStateException if this team has been unregistered
