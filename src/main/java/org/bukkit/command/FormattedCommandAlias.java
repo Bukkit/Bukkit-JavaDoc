@@ -23,24 +23,6 @@ public class FormattedCommandAlias extends Command {
         ArrayList<String> commands = new ArrayList<String>();
         for (String formatString : formatStrings) {
             try {
-                if (sender instanceof Player) {
-                    PlayerCommandPreprocessEvent event = new PlayerCommandPreprocessEvent((Player) sender, "/" + formatString);
-                    Bukkit.getPluginManager().callEvent(event);
-                    if (event.isCancelled()) {
-                        return false;
-                    } else {
-                        formatString = event.getMessage().substring(1);
-                    }
-                } else if (sender instanceof RemoteConsoleCommandSender) {
-                    RemoteServerCommandEvent event = new RemoteServerCommandEvent(sender, formatString);
-                    Bukkit.getPluginManager().callEvent(event);
-                    formatString = event.getCommand();
-                } else if (sender instanceof ConsoleCommandSender) {
-                    ServerCommandEvent event = new ServerCommandEvent(sender, formatString);
-                    Bukkit.getPluginManager().callEvent(event);
-                    formatString = event.getCommand();
-                }
-
                 commands.add(buildCommand(formatString, args));
             } catch (Throwable throwable) {
                 if (throwable instanceof IllegalArgumentException) {
@@ -48,7 +30,6 @@ public class FormattedCommandAlias extends Command {
                 } else {
                     sender.sendMessage(org.bukkit.ChatColor.RED + "An internal error occurred while attempting to perform this command");
                 }
-                Bukkit.getLogger().log(Level.WARNING, "Failed to parse command alias " + commandLabel + ": " + formatString, throwable);
                 return false;
             }
         }
@@ -65,6 +46,12 @@ public class FormattedCommandAlias extends Command {
         while (index != -1) {
             int start = index;
 
+            if (index > 0 && formatString.charAt(start - 1) == '\\') {
+                formatString = formatString.substring(0, start - 1) + formatString.substring(start);
+                index = formatString.indexOf("$", index);
+                continue;
+            }
+
             boolean required = false;
             if (formatString.charAt(index + 1) == '$') {
                 required = true;
@@ -74,9 +61,26 @@ public class FormattedCommandAlias extends Command {
 
             // Move index past the $
             index++;
-            int position = Character.getNumericValue(formatString.charAt(index)) - 1;
-            // Move index past the position
-            index++;
+            int argStart = index;
+            while (index < formatString.length() && inRange(((int) formatString.charAt(index)) - 48, 0, 9)) {
+                // Move index past current digit
+                index++;
+            }
+
+            // No numbers found
+            if (argStart == index) {
+                throw new IllegalArgumentException("Invalid replacement token");
+            }
+
+            int position = Integer.valueOf(formatString.substring(argStart, index));
+
+            // Arguments are not 0 indexed
+            if (position == 0) {
+                throw new IllegalArgumentException("Invalid replacement token");
+            }
+
+            // Convert position to 0 index
+            position--;
 
             boolean rest = false;
             if (index < formatString.length() && formatString.charAt(index) == '-') {
@@ -91,29 +95,30 @@ public class FormattedCommandAlias extends Command {
                 throw new IllegalArgumentException("Missing required argument " + (position + 1));
             }
 
-            String replacement = null;
+            StringBuilder replacement = new StringBuilder();
             if (rest && position < args.length) {
-                StringBuilder builder = new StringBuilder();
                 for (int i = position; i < args.length; i++) {
                     if (i != position) {
-                        builder.append(' ');
+                        replacement.append(' ');
                     }
-                    builder.append(args[i]);
+                    replacement.append(args[i]);
                 }
-                replacement = builder.toString();
             } else if (position < args.length) {
-                replacement = args[position];
+                replacement.append(args[position]);
             }
 
-            if (replacement != null && replacement.length() > 0) {
-                formatString = formatString.substring(0, start) + replacement + formatString.substring(end);
-                // Move index past the replaced data so we don't process it again
-                index = start + replacement.length();
-            }
+            formatString = formatString.substring(0, start) + replacement.toString() + formatString.substring(end);
+            // Move index past the replaced data so we don't process it again
+            index = start + replacement.length();
 
+            // Move to the next replacement token
             index = formatString.indexOf("$", index);
         }
 
         return formatString;
+    }
+
+    private static boolean inRange(int i, int j, int k) {
+        return i >= j && i <= k;
     }
 }

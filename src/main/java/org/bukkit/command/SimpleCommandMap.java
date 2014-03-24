@@ -3,7 +3,6 @@ package org.bukkit.command;
 import static org.bukkit.util.Java15Compat.Arrays_copyOfRange;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -101,13 +100,13 @@ public class SimpleCommandMap implements CommandMap {
      * {@inheritDoc}
      */
     public boolean register(String label, String fallbackPrefix, Command command) {
-        label = label.toLowerCase();
-        boolean registered = register(label, command, false);
-        knownCommands.put(fallbackPrefix + ":" + label, command);
+        label = label.toLowerCase().trim();
+        fallbackPrefix = fallbackPrefix.toLowerCase().trim();
+        boolean registered = register(label, command, false, fallbackPrefix);
 
         Iterator<String> iterator = command.getAliases().iterator();
         while (iterator.hasNext()) {
-            if (!register(iterator.next(), command, true)) {
+            if (!register(iterator.next(), command, true, fallbackPrefix)) {
                 iterator.remove();
             }
         }
@@ -124,15 +123,21 @@ public class SimpleCommandMap implements CommandMap {
     }
 
     /**
-     * Registers a command with the given name is possible.
+     * Registers a command with the given name is possible. Also uses
+     * fallbackPrefix to create a unique name.
      *
      * @param label the name of the command, without the '/'-prefix.
      * @param command the command to register
+     * @param isAlias whether the command is an alias
+     * @param fallbackPrefix a prefix which is prepended to the command for a
+     *     unique address
      * @return true if command was registered, false otherwise.
      */
-    private synchronized boolean register(String label, Command command, boolean isAlias) {
-        if (isAlias && knownCommands.containsKey(label)) {
-            // Request is for an alias and it conflicts with a existing command or previous alias ignore it
+    private synchronized boolean register(String label, Command command, boolean isAlias, String fallbackPrefix) {
+        knownCommands.put(fallbackPrefix + ":" + label, command);
+        if ((command instanceof VanillaCommand || isAlias) && knownCommands.containsKey(label)) {
+            // Request is for an alias/fallback command and it conflicts with
+            // a existing command or previous alias ignore it
             // Note: This will mean it gets removed from the commands list of active aliases
             return false;
         }
@@ -257,6 +262,11 @@ public class SimpleCommandMap implements CommandMap {
         Map<String, String[]> values = server.getCommandAliases();
 
         for (String alias : values.keySet()) {
+            if (alias.contains(":") || alias.contains(" ")) {
+                server.getLogger().warning("Could not register alias " + alias + " because it contains illegal characters");
+                continue;
+            }
+
             String[] commandStrings = values.get(alias);
             List<String> targets = new ArrayList<String>();
             StringBuilder bad = new StringBuilder();
@@ -275,15 +285,16 @@ public class SimpleCommandMap implements CommandMap {
                 }
             }
 
+            if (bad.length() > 0) {
+                server.getLogger().warning("Could not register alias " + alias + " because it contains commands that do not exist: " + bad);
+                continue;
+            }
+
             // We register these as commands so they have absolute priority.
             if (targets.size() > 0) {
                 knownCommands.put(alias.toLowerCase(), new FormattedCommandAlias(alias.toLowerCase(), targets.toArray(new String[targets.size()])));
             } else {
                 knownCommands.remove(alias.toLowerCase());
-            }
-
-            if (bad.length() > 0) {
-                server.getLogger().warning("The following command(s) could not be aliased under '" + alias + "' because they do not exist: " + bad);
             }
         }
     }
