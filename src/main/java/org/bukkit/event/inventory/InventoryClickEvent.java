@@ -94,7 +94,7 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      * Gets the ItemStack currently in the clicked slot.
      *
      * @return the item in the clicked slot. Air for empty slots, null for
-	 *     clicking outside the inventory
+     *     clicking outside the inventory
      */
     public ItemStack getCurrentItem() {
         if (slot_type == SlotType.OUTSIDE) {
