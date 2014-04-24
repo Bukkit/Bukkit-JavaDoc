@@ -179,7 +179,8 @@ public interface EntityEquipment {
      *     A drop chance of 0F will never drop
      * </li><li>
      *     A drop chance of 1F will always drop
-     * </li></ul>
+     * </li>
+     * </ul>
      *
      * @param chance of the chest plate being dropped
      * @throws UnsupportedOperationException when called on players
@@ -209,7 +210,8 @@ public interface EntityEquipment {
      *     A drop chance of 0F will never drop
      * </li><li>
      *     A drop chance of 1F will always drop
-     * </li></ul>
+     * </li>
+     * </ul>
      *
      * @param chance chance of the leggings being dropped
      * @throws UnsupportedOperationException when called on players
