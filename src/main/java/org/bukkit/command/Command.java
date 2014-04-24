@@ -57,6 +57,9 @@ public abstract class Command {
     public abstract boolean execute(CommandSender sender, String commandLabel, String[] args);
 
     /**
+     * @param sender source object which is executing this command
+     * @param args all arguments passed to the command, split via ' '
+     * @return null
      * @deprecated This method is not supported and returns null
      */
     @Deprecated

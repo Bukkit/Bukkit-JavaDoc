@@ -17,13 +17,22 @@ public @interface EventHandler {
      * <p>
      * First priority to the last priority executed:
      * <ol>
-     * <li>LOWEST
-     * <li>LOW
-     * <li>NORMAL
-     * <li>HIGH
-     * <li>HIGHEST
-     * <li>MONITOR
+     * <li>
+     *     LOWEST
+     * </li><li>
+     *     LOW
+     * </li><li>
+     *     NORMAL
+     * </li><li>
+     *     HIGH
+     * </li><li>
+     *     HIGHEST
+     * </li><li>
+     *     MONITOR
+     * </li>
      * </ol>
+     *
+     * @return the event priority
      */
     EventPriority priority() default EventPriority.NORMAL;
 
@@ -32,6 +41,8 @@ public @interface EventHandler {
      * <p>
      * If ignoreCancelled is true and the event is cancelled, the method is
      * not called. Otherwise, the method is always called.
+     *
+     * @return whether to ignore cancellation of an event
      */
     boolean ignoreCancelled() default false;
 }

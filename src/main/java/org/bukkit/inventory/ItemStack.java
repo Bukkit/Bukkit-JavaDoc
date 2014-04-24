@@ -95,6 +95,10 @@ public class ItemStack implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * @param type the item type
+     * @param amount the amount of the item
+     * @param damage the damage value of the item
+     * @param data the data associated with the item
      * @deprecated this method uses an ambiguous data byte object
      */
     @Deprecated
@@ -109,6 +113,10 @@ public class ItemStack implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * @param type the item type
+     * @param amount the amount of the item
+     * @param damage the damage value of the item
+     * @param data the data associated with the item
      * @deprecated this method uses an ambiguous data byte object
      */
     @Deprecated

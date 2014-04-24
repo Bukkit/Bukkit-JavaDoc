@@ -96,6 +96,7 @@ public interface BlockState extends Metadatable {
      * If the provided Location is null this method does nothing and returns
      * null.
      *
+     * @param loc the Location object
      * @return The Location object provided or null
      */
     Location getLocation(Location loc);

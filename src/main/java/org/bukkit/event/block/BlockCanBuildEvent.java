@@ -9,10 +9,13 @@ import org.bukkit.event.HandlerList;
  * <p>
  * Note:
  * <ul>
- * <li>The Block returned by getBlock() is the block we are trying to place
+ * <li>
+ *     The Block returned by getBlock() is the block we are trying to place
  *     on, not the block we are trying to place.
- * <li>If you want to figure out what is being placed, use {@link
+ * </li><li>
+ *     If you want to figure out what is being placed, use {@link
  *     #getMaterial()} or {@link #getMaterialId()} instead.
+ * </li>
  * </ul>
  */
 public class BlockCanBuildEvent extends BlockEvent {
@@ -27,7 +30,9 @@ public class BlockCanBuildEvent extends BlockEvent {
     protected int material;
 
     /**
-     *
+     * @param block the block
+     * @param id the ID of the block
+     * @param canBuild whether the block can be built or not
      * @deprecated Magic value
      */
     @Deprecated

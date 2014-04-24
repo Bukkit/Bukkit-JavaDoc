@@ -14,6 +14,7 @@ import org.bukkit.event.inventory.InventoryType;
  */
 public abstract class InventoryView {
     public final static int OUTSIDE = -999;
+
     /**
      * Represents various extra properties of certain inventory windows.
      */
@@ -61,7 +62,7 @@ public abstract class InventoryView {
         }
 
         /**
-         *
+         * @return the ID
          * @deprecated Magic value
          */
         @Deprecated

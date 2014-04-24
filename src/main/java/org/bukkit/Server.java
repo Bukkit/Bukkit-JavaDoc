@@ -819,6 +819,7 @@ public interface Server extends PluginMessageRecipient {
     public int getIdleTimeout();
 
     /**
+     * @return {@link UnsafeValues delegates}
      * @see UnsafeValues
      */
     @Deprecated

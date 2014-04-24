@@ -11,6 +11,8 @@ public interface Minecart extends Vehicle {
      * This method exists for legacy reasons to provide backwards
      * compatibility. It will not exist at runtime and should not be used
      * under any circumstances.
+     *
+     * @param damage the damage to give to the minecart
      */
     @Deprecated
     public void _INVALID_setDamage(int damage);
@@ -26,6 +28,8 @@ public interface Minecart extends Vehicle {
      * This method exists for legacy reasons to provide backwards
      * compatibility. It will not exist at runtime and should not be used
      * under any circumstances.
+     *
+     * @return the damage
      */
     @Deprecated
     public int _INVALID_getDamage();

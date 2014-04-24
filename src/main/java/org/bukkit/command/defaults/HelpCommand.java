@@ -164,8 +164,11 @@ public class HelpCommand extends VanillaCommand {
     }
 
     /**
-     * Computes the Dameraur-Levenshtein Distance between two strings. Adapted
-     * from the algorithm at <a href="http://en.wikipedia.org/wiki/Damerau–Levenshtein_distance">Wikipedia: Damerau–Levenshtein distance</a>
+     * Computes the Dameraur-Levenshtein Distance between two strings.
+     * <p>
+     * Adapted from the algorithm at <a
+     * href="http://en.wikipedia.org/wiki/Damerau%2DLevenshtein_distance">
+     * Wikipedia: Damerau–Levenshtein distance</a>
      *
      * @param s1 The first string being compared.
      * @param s2 The second string being compared.

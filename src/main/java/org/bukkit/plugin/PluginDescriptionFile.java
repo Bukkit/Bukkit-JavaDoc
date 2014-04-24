@@ -34,9 +34,13 @@ import com.google.common.collect.ImmutableMap;
  * Every (almost* every) method corresponds with a specific entry in the
  * plugin.yml. These are the <b>required</b> entries for every plugin.yml:
  * <ul>
- * <li>{@link #getName()} - <code>name</code>
- * <li>{@link #getVersion()} - <code>version</code>
- * <li>{@link #getMain()} - <code>main</code>
+ * <li>
+ *     {@link #getName()} - <code>name</code>
+ * </li><li>
+ *     {@link #getVersion()} - <code>version</code>
+ * </li><li>
+ *     {@link #getMain()} - <code>main</code>
+ * </li>
  * </ul>
  * <p>
  * Failing to include any of these items will throw an exception and cause the
@@ -44,7 +48,7 @@ import com.google.common.collect.ImmutableMap;
  * <p>
  * This is a list of the possible yaml keys, with specific details included in
  * the respective method documentations:
- * <table border=1>
+ * <table border=1 summary="Lists possible yaml keys">
  * <tr>
  *     <th>Node</th>
  *     <th>Method</th>
@@ -217,19 +221,26 @@ public final class PluginDescriptionFile {
      * Gives the name of the plugin. This name is a unique identifier for
      * plugins.
      * <ul>
-     * <li>Must consist of all alphanumeric characters, underscores, hyphon,
+     * <li>
+     *     Must consist of all alphanumeric characters, underscores, hyphon,
      *     and period (a-z,A-Z,0-9, _.-). Any other character will cause the
      *     plugin.yml to fail loading.
-     * <li>Used to determine the name of the plugin's data folder. Data
+     * </li><li>
+     *     Used to determine the name of the plugin's data folder. Data
      *     folders are placed in the ./plugins/ directory by default, but this
      *     behavior should not be relied on. {@link Plugin#getDataFolder()}
      *     should be used to reference the data folder.
-     * <li>It is good practice to name your jar the same as this, for example
+     * </li><li>
+     *     It is good practice to name your jar the same as this, for example
      *     'MyPlugin.jar'.
-     * <li>Case sensitive.
-     * <li>The is the token referenced in {@link #getDepend()}, {@link
+     * </li><li>
+     *     Case sensitive.
+     * </li><li>
+     *     The is the token referenced in {@link #getDepend()}, {@link
      *     #getSoftDepend()}, and {@link #getLoadBefore()}.
-     * <li>Using spaces in the plugin's name is deprecated.
+     * </li><li>
+     *     Using spaces in the plugin's name is deprecated.
+     * </li>
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>name</code>.
@@ -245,11 +256,15 @@ public final class PluginDescriptionFile {
     /**
      * Gives the version of the plugin.
      * <ul>
-     * <li>Version is an arbitrary string, however the most common format is
+     * <li>
+     *     Version is an arbitrary string, however the most common format is
      *     MajorRelease.MinorRelease.Build (eg: 1.4.1).
-     * <li>Typically you will increment this every time you release a new
+     * </li><li>
+     *     Typically you will increment this every time you release a new
      *     feature or bug fix.
-     * <li>Displayed when a user types <code>/version PluginName</code>
+     * </li><li>
+     *     Displayed when a user types <code>/version PluginName</code>
+     * </li>
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>version</code>.
@@ -268,13 +283,17 @@ public final class PluginDescriptionFile {
      * to successfully be resolved at runtime. For most plugins, this is the
      * class that extends {@link JavaPlugin}.
      * <ul>
-     * <li>This must contain the full namespace including the class file
+     * <li>
+     *     This must contain the full namespace including the class file
      *     itself.
-     * <li>If your namespace is <code>org.bukkit.plugin</code>, and your class
+     * </li><li>
+     *     If your namespace is <code>org.bukkit.plugin</code>, and your class
      *     file is called <code>MyPlugin</code> then this must be
      *     <code>org.bukkit.plugin.MyPlugin</code>
-     * <li>No plugin can use <code>org.bukkit.</code> as a base package for
+     * </li><li>
+     *     No plugin can use <code>org.bukkit.</code> as a base package for
      *     <b>any class</b>, including the main class.
+     * </li>
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>main</code>.
@@ -292,9 +311,11 @@ public final class PluginDescriptionFile {
      * Gives a human-friendly description of the functionality the plugin
      * provides.
      * <ul>
-     * <li>The description can have multiple lines.
-     * <li>Displayed when a user types <code>/version PluginName</code>
-     * </ul>
+     * <li>
+     *     The description can have multiple lines.
+     * </li><li>
+     *     Displayed when a user types <code>/version PluginName</code>
+     * </li></ul>
      * <p>
      * In the plugin.yml, this entry is named <code>description</code>.
      * <p>
@@ -310,14 +331,19 @@ public final class PluginDescriptionFile {
     /**
      * Gives the phase of server startup that the plugin should be loaded.
      * <ul>
-     * <li>Possible values are in {@link PluginLoadOrder}.
-     * <li>Defaults to {@link PluginLoadOrder#POSTWORLD}.
-     * <li>Certain caveats apply to each phase.
-     * <li>When different, {@link #getDepend()}, {@link #getSoftDepend()}, and
+     * <li>
+     *     Possible values are in {@link PluginLoadOrder}.
+     * </li><li>
+     *     Defaults to {@link PluginLoadOrder#POSTWORLD}.
+     * </li><li>
+     *     Certain caveats apply to each phase.
+     * </li><li>
+     *     When different, {@link #getDepend()}, {@link #getSoftDepend()}, and
      *     {@link #getLoadBefore()} become relative in order loaded per-phase.
      *     If a plugin loads at <code>STARTUP</code>, but a dependency loads
      *     at <code>POSTWORLD</code>, the dependency will not be loaded before
      *     the plugin is loaded.
+     * </li>
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>load</code>.
@@ -333,14 +359,20 @@ public final class PluginDescriptionFile {
     /**
      * Gives the list of authors for the plugin.
      * <ul>
-     * <li>Gives credit to the developer.
-     * <li>Used in some server error messages to provide helpful feedback on
+     * <li>
+     *     Gives credit to the developer.
+     * </li><li>
+     *     Used in some server error messages to provide helpful feedback on
      *     who to contact when an error occurs.
-     * <li>A bukkit.org forum handle or email address is recommended.
-     * <li>Is displayed when a user types <code>/version PluginName</code>
-     * <li><code>authors</code> must be in <a
+     * </li><li>
+     *     A bukkit.org forum handle or email address is recommended.
+     * </li><li>
+     *     Is displayed when a user types <code>/version PluginName</code>
+     * </li><li>
+     *     <code>authors</code> must be in <a
      *     href="http://en.wikipedia.org/wiki/YAML#Lists">YAML list
      *     format</a>.
+     * </li>
      * </ul>
      * <p>
      * In the plugin.yml, this has two entries, <code>author</code> and
@@ -357,7 +389,7 @@ public final class PluginDescriptionFile {
      *- feildmaster
      *- amaranth</pre></blockquote>
      * Is equivilant to this example:
-     * <blockquote><pre>authors: [Grum, feildmaster, aramanth]<pre></blockquote>
+     * <blockquote><pre>authors: [Grum, feildmaster, aramanth]</pre></blockquote>
      *
      * @return an immutable list of the plugin's authors
      */
@@ -368,9 +400,12 @@ public final class PluginDescriptionFile {
     /**
      * Gives the plugin's or plugin's author's website.
      * <ul>
-     * <li>A link to the Curse page that includes documentation and downloads
+     * <li>
+     *     A link to the Curse page that includes documentation and downloads
      *     is highly recommended.
-     * <li>Displayed when a user types <code>/version PluginName</code>
+     * </li><li>
+     *     Displayed when a user types <code>/version PluginName</code>
+     * </li>
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>website</code>.
@@ -387,8 +422,11 @@ public final class PluginDescriptionFile {
     /**
      * Gives if the plugin uses a database.
      * <ul>
-     * <li>Using a database is non-trivial.
-     * <li>Valid values include <code>true</code> and <code>false</code>
+     * <li>
+     *     Using a database is non-trivial.
+     * </li><li>
+     *     Valid values include <code>true</code> and <code>false</code>
+     * </li>
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>database</code>.
@@ -406,18 +444,23 @@ public final class PluginDescriptionFile {
     /**
      * Gives a list of other plugins that the plugin requires.
      * <ul>
-     * <li>Use the value in the {@link #getName()} of the target plugin to
+     * <li>
+     *     Use the value in the {@link #getName()} of the target plugin to
      *     specify the dependency.
-     * <li>If any plugin listed here is not found, your plugin will fail to
+     * </li><li>
+     *     If any plugin listed here is not found, your plugin will fail to
      *     load at startup.
-     * <li>If multiple plugins list each other in <code>depend</code>,
+     * </li><li>
+     *     If multiple plugins list each other in <code>depend</code>,
      *     creating a network with no individual plugin does not list another
      *     plugin in the <a
      *     href=https://en.wikipedia.org/wiki/Circular_dependency>network</a>,
      *     all plugins in that network will fail.
-     * <li><code>depend</code> must be in must be in <a
+     * </li><li>
+     *     <code>depend</code> must be in must be in <a
      *     href="http://en.wikipedia.org/wiki/YAML#Lists">YAML list
      *     format</a>.
+     * </li>
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>depend</code>.
@@ -439,16 +482,21 @@ public final class PluginDescriptionFile {
      * all entries here as if they were a {@link #getDepend() dependency}, but
      * will never fail because of one of these entries.
      * <ul>
-     * <li>Use the value in the {@link #getName()} of the target plugin to
+     * <li>
+     *     Use the value in the {@link #getName()} of the target plugin to
      *     specify the dependency.
-     * <li>When an unresolvable plugin is listed, it will be ignored and does
+     * </li><li>
+     *     When an unresolvable plugin is listed, it will be ignored and does
      *     not affect load order.
-     * <li>When a circular dependency occurs (a network of plugins depending
+     * </li><li>
+     *     When a circular dependency occurs (a network of plugins depending
      *     or soft-dependending each other), it will arbitrarily choose a
      *     plugin that can be resolved when ignoring soft-dependencies.
-     * <li><code>softdepend</code> must be in <a
+     * </li><li>
+     *     <code>softdepend</code> must be in <a
      *     href="http://en.wikipedia.org/wiki/YAML#Lists">YAML list
      *     format</a>.
+     * </li>
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>softdepend</code>.
@@ -466,15 +514,20 @@ public final class PluginDescriptionFile {
      * Gets the list of plugins that should consider this plugin a
      * soft-dependency.
      * <ul>
-     * <li>Use the value in the {@link #getName()} of the target plugin to
+     * <li>
+     *     Use the value in the {@link #getName()} of the target plugin to
      *     specify the dependency.
-     * <li>The plugin should load before any other plugins listed here.
-     * <li>Specifying another plugin here is strictly equivalent to having the
+     * </li><li>
+     *     The plugin should load before any other plugins listed here.
+     * </li><li>
+     *     Specifying another plugin here is strictly equivalent to having the
      *     specified plugin's {@link #getSoftDepend()} include {@link
      *     #getName() this plugin}.
-     * <li><code>loadbefore</code> must be in <a
+     * </li><li>
+     *     <code>loadbefore</code> must be in <a
      *     href="http://en.wikipedia.org/wiki/YAML#Lists">YAML list
      *     format</a>.
+     * </li>
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>loadbefore</code>.
@@ -494,12 +547,15 @@ public final class PluginDescriptionFile {
     /**
      * Gives the token to prefix plugin-specific logging messages with.
      * <ul>
-     * <li>This includes all messages using {@link Plugin#getLogger()}.
-     * <li>If not specified, the server uses the plugin's {@link #getName()
+     * <li>
+     *     This includes all messages using {@link Plugin#getLogger()}.
+     * </li><li>
+     *     If not specified, the server uses the plugin's {@link #getName()
      *     name}.
-     * <li>This should clearly indicate what plugin is being logged.
+     * </li><li>
+     *     This should clearly indicate what plugin is being logged.
+     * </li>
      * </ul>
-     * <p>
      * In the plugin.yml, this entry is named <code>prefix</code>.
      * <p>
      * Example:<blockquote><pre>prefix: ex-why-zee</pre></blockquote>
@@ -516,7 +572,7 @@ public final class PluginDescriptionFile {
      * properties of the command. Each property, <i>with the exception of
      * aliases</i>, can be defined at runtime using methods in {@link
      * PluginCommand} and are defined here only as a convenience.
-     * <table border=1>
+     * <table border=1 summary="Represents respective command values">
      * <tr>
      *     <th>Node</th>
      *     <th>Method</th>
@@ -565,13 +621,17 @@ public final class PluginDescriptionFile {
      *     <td>{@link PluginCommand#setPermissionMessage(String)}</td>
      *     <td>String</td>
      *     <td><ul>
-     *         <li>Displayed to a player that attempts to use a command, but
+     *         <li>
+     *             Displayed to a player that attempts to use a command, but
      *             does not have the required permission. See {@link
      *             PluginCommand#getPermission() above}.
-     *         <li>&lt;permission&gt; is a macro that is replaced with the
+     *         </li><li>
+     *             &lt;permission&gt; is a macro that is replaced with the
      *             permission node required to use the command.
-     *         <li>Using empty quotes is a valid way to indicate nothing
+     *         </li><li>
+     *             Using empty quotes is a valid way to indicate nothing
      *             should be displayed to a player.
+     *         </li>
      *         </ul></td>
      *     <td><blockquote><pre>permission-message: You do not have /&lt;permission&gt;</pre></blockquote></td>
      * </tr><tr>
@@ -639,7 +699,7 @@ public final class PluginDescriptionFile {
      * accepted, unlike the {@link #getCommands() commands} above).
      * <p>
      * A list of optional properties for permissions:
-     * <table border=1>
+     * <table border=1 summary="Lists permissions registered at runtime">
      * <tr>
      *     <th>Node</th>
      *     <th>Description</th>
@@ -656,14 +716,19 @@ public final class PluginDescriptionFile {
      *         the value of {@link PluginDescriptionFile#getPermissionDefault()}.
      *         <p>
      *         For reference:<ul>
-     *         <li><code>true</code> - Represents a positive assignment to
+     *         <li>
+     *             <code>true</code> - Represents a positive assignment to
      *             {@link Permissible permissibles}.
-     *         <li><code>false</code> - Represents no assignment to {@link
+     *         </li><li>
+     *             <code>false</code> - Represents no assignment to {@link
      *             Permissible permissibles}.
-     *         <li><code>op</code> - Represents a positive assignment to
+     *         </li><li>
+     *             <code>op</code> - Represents a positive assignment to
      *             {@link Permissible#isOp() operator permissibles}.
-     *         <li><code>notop</code> - Represents a positive assignment to
+     *         </li><li>
+     *             <code>notop</code> - Represents a positive assignment to
      *             {@link Permissible#isOp() non-operator permissibiles}.
+     *         </li>
      *         </ul></td>
      *     <td><blockquote><pre>default: true</pre></blockquote></td>
      * </tr><tr>
@@ -673,31 +738,39 @@ public final class PluginDescriptionFile {
      *         When a parent permissions is assigned, child permissions are
      *         respectively assigned as well.
      *         <ul>
-     *         <li>When a parent permission is assigned negatively, child
+     *         <li>
+     *             When a parent permission is assigned negatively, child
      *             permissions are assigned based on an inversion of their
      *             association.
-     *         <li>When a parent permission is assigned positively, child
+     *         </li><li>
+     *             When a parent permission is assigned positively, child
      *             permissions are assigned based on their association.
+     *         </li>
      *         </ul>
      *         <p>
      *         Child permissions may be defined in a number of ways:<ul>
-     *         <li>Children may be defined as a <a
+     *         <li>
+     *             Children may be defined as a <a
      *             href="http://en.wikipedia.org/wiki/YAML#Lists">list</a> of
      *             names. Using a list will treat all children associated
      *             positively to their parent.
-     *         <li>Children may be defined as a map. Each permission name maps
+     *         </li><li>
+     *             Children may be defined as a map. Each permission name maps
      *             to either a boolean (representing the association), or a
      *             nested permission definition (just as another permission).
      *             Using a nested definition treats the child as a positive
      *             association.
-     *         <li>A nested permission definition must be a map of these same
+     *         </li><li>
+     *             A nested permission definition must be a map of these same
      *             properties. To define a valid nested permission without
      *             defining any specific property, empty curly-braces (
      *             <code>&#123;&#125;</code> ) must be used.
-     *          <li>A nested permission may carry it's own nested permissions
+     *         </li><li>
+     *              A nested permission may carry it's own nested permissions
      *              as children, as they may also have nested permissions, and
      *              so forth. There is no direct limit to how deep the
      *              permission tree is defined.
+     *         </li>
      *         </ul></td>
      *     <td>As a list:
      *         <blockquote><pre>children: [inferno.flagrate, inferno.burningdeaths]</pre></blockquote>
@@ -750,11 +823,16 @@ public final class PluginDescriptionFile {
      * Gives the default {@link Permission#getDefault() default} state of
      * {@link #getPermissions() permissions} registered for the plugin.
      * <ul>
-     * <li>If not specified, it will be {@link PermissionDefault#OP}.
-     * <li>It is matched using {@link PermissionDefault#getByName(String)}
-     * <li>It only affects permissions that do not define the
+     * <li>
+     *     If not specified, it will be {@link PermissionDefault#OP}.
+     * </li><li>
+     *     It is matched using {@link PermissionDefault#getByName(String)}
+     * </li><li>
+     *     It only affects permissions that do not define the
      *     <code>default</code> node.
-     * <li>It may be any value in {@link PermissionDefault}.
+     * </li><li>
+     *     It may be any value in {@link PermissionDefault}.
+     * </li>
      * </ul>
      * <p>
      * In the plugin.yml, this entry is named <code>default-permission</code>.

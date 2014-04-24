@@ -20,8 +20,11 @@ public class BlockIgniteEvent extends BlockEvent implements Cancellable {
     private boolean cancel;
 
     /**
+     * @param theBlock the block being ignited
+     * @param cause the cause of the ignition
+     * @param thePlayer the plater causing the ignition
      * @deprecated use {@link BlockIgniteEvent#BlockIgniteEvent(Block,
-     * IgniteCause, Entity)} instead.
+     *     IgniteCause, Entity)} instead.
      */
     @Deprecated
     public BlockIgniteEvent(final Block theBlock, final IgniteCause cause, final Player thePlayer) {

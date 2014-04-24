@@ -30,6 +30,7 @@ public interface Entity extends Metadatable {
      * If the provided Location is null this method does nothing and returns
      * null.
      *
+     * @param loc the Location object
      * @return The Location object provided or null
      */
     public Location getLocation(Location loc);
@@ -105,7 +106,7 @@ public interface Entity extends Metadatable {
      * @param x 1/2 the size of the box along x axis
      * @param y 1/2 the size of the box along y axis
      * @param z 1/2 the size of the box along z axis
-     * @return List<Entity> List of entities nearby
+     * @return List&lt;Entity&gt; List of entities nearby
      */
     public List<org.bukkit.entity.Entity> getNearbyEntities(double x, double y, double z);
 

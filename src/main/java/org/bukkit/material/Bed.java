@@ -26,7 +26,7 @@ public class Bed extends MaterialData implements Directional {
     }
 
     /**
-     *
+     * @param type the type
      * @deprecated Magic value
      */
     @Deprecated
@@ -39,7 +39,8 @@ public class Bed extends MaterialData implements Directional {
     }
 
     /**
-     *
+     * @param type the type
+     * @param data the data associated with the material
      * @deprecated Magic value
      */
     @Deprecated
@@ -48,7 +49,8 @@ public class Bed extends MaterialData implements Directional {
     }
 
     /**
-     *
+     * @param type the type
+     * @param data the data associated with the material
      * @deprecated Magic value
      */
     @Deprecated
@@ -77,6 +79,8 @@ public class Bed extends MaterialData implements Directional {
     /**
      * Set which direction the head of the bed is facing. Note that this will
      * only affect one of the two blocks the bed is made of.
+     *
+     * @param face which way the face of the block should face
      */
     public void setFacingDirection(BlockFace face) {
         byte data;
