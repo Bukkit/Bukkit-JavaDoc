@@ -5,7 +5,7 @@ package org.bukkit.conversations;
  * displays text to the user and optionally waits for a user's response.
  * Prompts are chained together into a directed graph that represents the
  * conversation flow. To halt a conversation, END_OF_CONVERSATION is returned
- * in liu of another Prompt object.
+ * in lieu of another Prompt object.
  */
 public interface Prompt extends Cloneable {
 
@@ -26,6 +26,10 @@ public interface Prompt extends Cloneable {
     /**
      * Checks to see if this prompt implementation should wait for user input
      * or immediately display the next prompt.
+     * <p>
+     * If this method returns false,
+     * {@link #acceptInput(ConversationContext, String)} will be called with
+     * null as the second parameter.
      *
      * @param context Context information about the conversation.
      * @return If true, the {@link Conversation} will wait for input before
@@ -38,7 +42,7 @@ public interface Prompt extends Cloneable {
      * Prompt in the prompt graph is returned.
      *
      * @param context Context information about the conversation.
-     * @param input The input text from the user.
+     * @param input The input text from the user, or null if nonblocking.
      * @return The next Prompt in the prompt graph.
      */
     Prompt acceptInput(ConversationContext context, String input);
