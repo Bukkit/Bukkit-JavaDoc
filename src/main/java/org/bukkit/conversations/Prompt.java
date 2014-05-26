@@ -27,9 +27,8 @@ public interface Prompt extends Cloneable {
      * Checks to see if this prompt implementation should wait for user input
      * or immediately display the next prompt.
      * <p>
-     * If this method returns false,
-     * {@link #acceptInput(ConversationContext, String)} will be called with
-     * null as the second parameter.
+     * If this method returns false, {@link #acceptInput(ConversationContext,
+     * String)} will be called with null as the second parameter.
      *
      * @param context Context information about the conversation.
      * @return If true, the {@link Conversation} will wait for input before
