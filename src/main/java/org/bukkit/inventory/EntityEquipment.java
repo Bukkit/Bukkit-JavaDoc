@@ -99,10 +99,12 @@ public interface EntityEquipment {
     /**
      * Gets the chance of the currently held item being dropped upon this
      * creature's death
-     * <p>
      * <ul>
-     * <li>A drop chance of 0F will never drop
-     * <li>A drop chance of 1F will always drop
+     * <li>
+     *     A drop chance of 0F will never drop
+     * </li><li>
+     *     A drop chance of 1F will always drop
+     * </li>
      * </ul>
      *
      * @return chance of the currently held item being dropped (1 for players)
@@ -112,10 +114,12 @@ public interface EntityEquipment {
     /**
      * Sets the chance of the item this creature is currently holding being
      * dropped upon this creature's death
-     * <p>
      * <ul>
-     * <li>A drop chance of 0F will never drop
-     * <li>A drop chance of 1F will always drop
+     * <li>
+     *     A drop chance of 0F will never drop
+     * </li><li>
+     *     A drop chance of 1F will always drop
+     * </li>
      * </ul>
      *
      * @param chance the chance of the currently held item being dropped
@@ -125,10 +129,12 @@ public interface EntityEquipment {
 
     /**
      * Gets the chance of the helmet being dropped upon this creature's death
-     * <p>
      * <ul>
-     * <li>A drop chance of 0F will never drop
-     * <li>A drop chance of 1F will always drop
+     * <li>
+     *     A drop chance of 0F will never drop
+     * </li><li>
+     *     A drop chance of 1F will always drop
+     * </li>
      * </ul>
      *
      * @return the chance of the helmet being dropped (1 for players)
@@ -137,10 +143,12 @@ public interface EntityEquipment {
 
     /**
      * Sets the chance of the helmet being dropped upon this creature's death
-     * <p>
      * <ul>
-     * <li>A drop chance of 0F will never drop
-     * <li>A drop chance of 1F will always drop
+     * <li>
+     *     A drop chance of 0F will never drop
+     * </li><li>
+     *     A drop chance of 1F will always drop
+     * </li>
      * </ul>
      *
      * @param chance of the helmet being dropped
@@ -150,11 +158,13 @@ public interface EntityEquipment {
 
     /**
      * Gets the chance of the chest plate being dropped upon this creature's
-     * death
-     * <p>
+     * death.
      * <ul>
-     * <li>A drop chance of 0F will never drop
-     * <li>A drop chance of 1F will always drop
+     * <li>
+     *     A drop chance of 0F will never drop
+     * </li><li>
+     *     A drop chance of 1F will always drop
+     * </li>
      * </ul>
      *
      * @return the chance of the chest plate being dropped (1 for players)
@@ -163,11 +173,13 @@ public interface EntityEquipment {
 
     /**
      * Sets the chance of the chest plate being dropped upon this creature's
-     * death
-     * <p>
+     * death.
      * <ul>
-     * <li>A drop chance of 0F will never drop
-     * <li>A drop chance of 1F will always drop
+     * <li>
+     *     A drop chance of 0F will never drop
+     * </li><li>
+     *     A drop chance of 1F will always drop
+     * </li>
      * </ul>
      *
      * @param chance of the chest plate being dropped
@@ -177,11 +189,13 @@ public interface EntityEquipment {
 
     /**
      * Gets the chance of the leggings being dropped upon this creature's
-     * death
-     * <p>
+     * death.
      * <ul>
-     * <li>A drop chance of 0F will never drop
-     * <li>A drop chance of 1F will always drop
+     * <li>
+     *     A drop chance of 0F will never drop
+     * </li><li>
+     *     A drop chance of 1F will always drop
+     * </li>
      * </ul>
      *
      * @return the chance of the leggings being dropped (1 for players)
@@ -190,11 +204,13 @@ public interface EntityEquipment {
 
     /**
      * Sets the chance of the leggings being dropped upon this creature's
-     * death
-     * <p>
+     * death.
      * <ul>
-     * <li>A drop chance of 0F will never drop
-     * <li>A drop chance of 1F will always drop
+     * <li>
+     *     A drop chance of 0F will never drop
+     * </li><li>
+     *     A drop chance of 1F will always drop
+     * </li>
      * </ul>
      *
      * @param chance chance of the leggings being dropped
@@ -204,10 +220,12 @@ public interface EntityEquipment {
 
     /**
      * Gets the chance of the boots being dropped upon this creature's death
-     * <p>
      * <ul>
-     * <li>A drop chance of 0F will never drop
-     * <li>A drop chance of 1F will always drop
+     * <li>
+     *     A drop chance of 0F will never drop
+     * </li><li>
+     *     A drop chance of 1F will always drop
+     * </li>
      * </ul>
      *
      * @return the chance of the boots being dropped (1 for players)
@@ -215,11 +233,13 @@ public interface EntityEquipment {
     float getBootsDropChance();
 
     /**
-     * Sets the chance of the boots being dropped upon this creature's death
-     * <p>
+     * Sets the chance of the boots being dropped upon this creature's death.
      * <ul>
-     * <li>A drop chance of 0F will never drop
-     * <li>A drop chance of 1F will always drop
+     * <li>
+     *     A drop chance of 0F will never drop
+     * </li><li>
+     *     A drop chance of 1F will always drop
+     * </li>
      * </ul>
      *
      * @param chance of the boots being dropped

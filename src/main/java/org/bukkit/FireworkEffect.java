@@ -350,6 +350,8 @@ public final class FireworkEffect implements ConfigurationSerializable {
     }
 
     /**
+     * @param map {@link ConfigurationSerializable delegates}
+     * @return {@link ConfigurationSerializable delegates}
      * @see ConfigurationSerializable
      */
     public static ConfigurationSerializable deserialize(Map<String, Object> map) {

@@ -135,7 +135,7 @@ public interface MapView {
     /**
      * Get a list of MapRenderers currently in effect.
      *
-     * @return A List<MapRenderer> containing each map renderer.
+     * @return A List&lt;MapRenderer&gt; containing each map renderer
      */
     public List<MapRenderer> getRenderers();
 

@@ -46,6 +46,8 @@ public class EntityDamageEvent extends EntityEvent implements Cancellable {
      * This method exists for legacy reasons to provide backwards
      * compatibility. It will not exist at runtime and should not be used
      * under any circumstances.
+     *
+     * @return the amount of damage
      */
     @Deprecated
     public int _INVALID_getDamage() {
@@ -65,6 +67,8 @@ public class EntityDamageEvent extends EntityEvent implements Cancellable {
      * This method exists for legacy reasons to provide backwards
      * compatibility. It will not exist at runtime and should not be used
      * under any circumstances.
+     *
+     * @param damage the amount of damage caused by the event
      */
     @Deprecated
     public void _INVALID_setDamage(int damage) {

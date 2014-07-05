@@ -205,11 +205,14 @@ public class Location implements Cloneable {
     /**
      * Sets the pitch of this location, measured in degrees.
      * <ul>
-     * <li>A pitch of 0 represents level forward facing.
-     * <li>A pitch of 90 represents downward facing, or negative y
-     *     direction.
-     * <li>A pitch of -90 represents upward facing, or positive y direction.
-     * <ul>
+     * <li>
+     *     A pitch of 0 represents level forward facing.
+     * </li><li>
+     *     A pitch of 90 represents downward facing, or negative y direction.
+     * </li><li>
+     *     A pitch of -90 represents upward facing, or positive y direction.
+     * </li>
+     * </ul>
      * Increasing pitch values the equivalent of looking down.
      *
      * @param pitch new incline's pitch
@@ -221,11 +224,14 @@ public class Location implements Cloneable {
     /**
      * Gets the pitch of this location, measured in degrees.
      * <ul>
-     * <li>A pitch of 0 represents level forward facing.
-     * <li>A pitch of 90 represents downward facing, or negative y
-     *     direction.
-     * <li>A pitch of -90 represents upward facing, or positive y direction.
-     * <ul>
+     * <li>
+     *     A pitch of 0 represents level forward facing.
+     * </li><li>
+     *     A pitch of 90 represents downward facing, or negative y direction.
+     * </li><li>
+     *     A pitch of -90 represents upward facing, or positive y direction.
+     * </li>
+     * </ul>
      * Increasing pitch values the equivalent of looking down.
      *
      * @return the incline's pitch
@@ -260,6 +266,9 @@ public class Location implements Cloneable {
     /**
      * Sets the {@link #getYaw() yaw} and {@link #getPitch() pitch} to point
      * in the direction of the vector.
+     *
+     * @param vector the vector the pitch and yaw should point to
+     * @return the Location pointing to the vector
      */
     public Location setDirection(Vector vector) {
         /*

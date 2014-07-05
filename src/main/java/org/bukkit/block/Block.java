@@ -148,6 +148,7 @@ public interface Block extends Metadatable {
      * If the provided Location is null this method does nothing and returns
      * null.
      *
+     * @param loc the Location object
      * @return The Location object provided or null
      */
     Location getLocation(Location loc);
@@ -228,7 +229,6 @@ public interface Block extends Metadatable {
      *
      * current.getFace(target) == BlockFace.Up;
      * </pre>
-     * <br />
      * If the given block is not connected to this block, null may be returned
      *
      * @param block Block to compare against this block

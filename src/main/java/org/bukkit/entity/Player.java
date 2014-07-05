@@ -255,6 +255,7 @@ public interface Player extends HumanEntity, Conversable, CommandSender, Offline
     /**
      * Plays an effect to just this player.
      *
+     * @param <T> the specified type
      * @param loc the location to play the effect at
      * @param effect the {@link Effect}
      * @param data a data bit needed for some effects
@@ -343,6 +344,7 @@ public interface Player extends HumanEntity, Conversable, CommandSender, Offline
     /**
      * Gets whether this player has the given achievement.
      *
+     * @param achievement achievement to check for
      * @return whether the player has the achievement
      * @throws IllegalArgumentException if achievement is null
      */
@@ -746,7 +748,7 @@ public interface Player extends HumanEntity, Conversable, CommandSender, Offline
      * Gets the players current saturation level.
      * <p>
      * Saturation is a buffer for food level. Your food level will not drop if
-     * you are saturated > 0.
+     * you are saturated &gt; 0.
      *
      * @return Saturation level
      */

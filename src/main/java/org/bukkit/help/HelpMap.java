@@ -7,16 +7,21 @@ import java.util.List;
  * The HelpMap tracks all help topics registered in a Bukkit server. When the
  * server starts up or is reloaded, help is processed and topics are added in
  * the following order:
- * <p>
  * <ol>
- * <li>General topics are loaded from the help.yml
- * <li>Plugins load and optionally call {@code addTopic()}
- * <li>Registered plugin commands are processed by {@link HelpTopicFactory}
+ * <li>
+ *     General topics are loaded from the help.yml
+ * </li><li>
+ *     Plugins load and optionally call {@code addTopic()}
+ * </li><li>
+ *     Registered plugin commands are processed by {@link HelpTopicFactory}
  *     objects to create topics
- * <li>Topic contents are amended as directed in help.yml
+ * </li><li>
+ *     Topic contents are amended as directed in help.yml
+ * </li>
  * </ol>
  */
 public interface HelpMap {
+
     /**
      * Returns a help topic for a given topic name.
      *

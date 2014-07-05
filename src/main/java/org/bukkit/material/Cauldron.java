@@ -14,7 +14,8 @@ public class Cauldron extends MaterialData {
     }
 
     /**
-     *
+     * @param type the type
+     * @param data the data associated with the material
      * @deprecated Magic value
      */
     @Deprecated
@@ -23,7 +24,7 @@ public class Cauldron extends MaterialData {
     }
 
     /**
-     *
+     * @param data the data associated with the material
      * @deprecated Magic value
      */
     @Deprecated

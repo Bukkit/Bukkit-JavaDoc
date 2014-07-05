@@ -7,7 +7,7 @@ import java.util.Date;
  * an IP ban.
  * <p>
  * Ban entries include the following properties:
- * <table border=1>
+ * <table border=1 summary="Shows the parameters of a ban list entry.">
  * <tr>
  *     <th>Property</th>
  *     <th>Description</th>

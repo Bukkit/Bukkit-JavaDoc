@@ -212,11 +212,15 @@ public class Permission {
      * The data may contain a list of name:data, where the data contains the
      * following keys:
      * <ul>
-     * <li>default: Boolean true or false. If not specified, false.
-     * <li>children: Map<String, Boolean> of child permissions. If not
+     * <li>
+     *     default: Boolean true or false. If not specified, false.
+     * </li><li>
+     *     children: Map&lt;String, Boolean&gt; of child permissions. If not
      *     specified, empty list.
-     * <li>description: Short string containing a very small description of
+     * </li><li>
+     *     description: Short string containing a very small description of
      *     this description. If not specified, empty string.
+     * </li>
      * </ul>
      *
      * @param data Map of permissions
@@ -244,11 +248,16 @@ public class Permission {
      * <p>
      * The data may contain the following keys:
      * <ul>
-     * <li>default: Boolean true or false. If not specified, false.
-     * <li>children: Map<String, Boolean> of child permissions. If not
+     * <li>
+     *     default: Boolean true or false. If not specified, false.
+     * </li><li>
+     *     children: Map&lt;String, Boolean&gt; of child permissions. If not
      *     specified, empty list.
-     * <li>description: Short string containing a very small description of
+     * </li><li>
+     *     description: Short string containing a very small description of
      *     this description. If not specified, empty string.
+     * </li>
+     * </ul>
      *
      * @param name Name of the permission
      * @param data Map of keys
@@ -264,11 +273,15 @@ public class Permission {
      * <p>
      * The data may contain the following keys:
      * <ul>
-     * <li>default: Boolean true or false. If not specified, false.
-     * <li>children: Map<String, Boolean> of child permissions. If not
+     * <li>
+     *     default: Boolean true or false. If not specified, false.
+     * </li><li>
+     *     children: Map&lt;String, Boolean&gt; of child permissions. If not
      *     specified, empty list.
-     * <li>description: Short string containing a very small description of
+     * </li><li>
+     *     description: Short string containing a very small description of
      *     this description. If not specified, empty string.
+     * </li>
      * </ul>
      *
      * @param name Name of the permission

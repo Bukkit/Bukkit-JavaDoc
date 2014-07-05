@@ -402,6 +402,7 @@ public interface World extends PluginMessageRecipient, Metadatable {
      * Get a collection of all entities in this World matching the given
      * class/interface
      *
+     * @param <T> the specified type
      * @param classes The classes representing the types of entity to match
      * @return A List of all Entities currently residing in this world that
      *     match the given class/interface
@@ -413,6 +414,7 @@ public interface World extends PluginMessageRecipient, Metadatable {
      * Get a collection of all entities in this World matching the given
      * class/interface
      *
+     * @param <T> the specified type
      * @param cls The class representing the type of entity to match
      * @return A List of all Entities currently residing in this world that
      *     match the given class/interface
@@ -742,6 +744,7 @@ public interface World extends PluginMessageRecipient, Metadatable {
      * Plays an effect to all players within a default radius around a given
      * location.
      *
+     * @param <T> the specified type
      * @param location the {@link Location} around which players must be to
      *     hear the sound
      * @param effect the {@link Effect}
@@ -752,6 +755,7 @@ public interface World extends PluginMessageRecipient, Metadatable {
     /**
      * Plays an effect to all players within a given radius around a location.
      *
+     * @param <T> the specified type
      * @param location the {@link Location} around which players must be to
      *     hear the effect
      * @param effect the {@link Effect}
@@ -934,11 +938,15 @@ public interface World extends PluginMessageRecipient, Metadatable {
      * <p>
      * <b>Example Usage:</b>
      * <ul>
-     * <li>A value of 1 will mean the server will attempt to spawn animals in
+     * <li>
+     *     A value of 1 will mean the server will attempt to spawn animals in
      *     this world every tick.
-     * <li>A value of 400 will mean the server will attempt to spawn animals
+     * </li><li>
+     *     A value of 400 will mean the server will attempt to spawn animals
      *     in this world every 400th tick.
-     * <li>A value below 0 will be reset back to Minecraft's default.
+     * </li><li>
+     *     A value below 0 will be reset back to Minecraft's default.
+     * </li>
      * </ul>
      * <p>
      * <b>Note:</b>
@@ -960,11 +968,15 @@ public interface World extends PluginMessageRecipient, Metadatable {
      * <p>
      * <b>Example Usage:</b>
      * <ul>
-     * <li>A value of 1 will mean the server will attempt to spawn animals in
+     * <li>
+     *     A value of 1 will mean the server will attempt to spawn animals in
      *     this world every tick.
-     * <li>A value of 400 will mean the server will attempt to spawn animals
+     * </li><li>
+     *     A value of 400 will mean the server will attempt to spawn animals
      *     in this world every 400th tick.
-     * <li>A value below 0 will be reset back to Minecraft's default.
+     * </li><li>
+     *     A value below 0 will be reset back to Minecraft's default.
+     * </li>
      * </ul>
      * <p>
      * <b>Note:</b>
@@ -987,11 +999,15 @@ public interface World extends PluginMessageRecipient, Metadatable {
      * <p>
      * <b>Example Usage:</b>
      * <ul>
-     * <li>A value of 1 will mean the server will attempt to spawn monsters in
+     * <li>
+     *     A value of 1 will mean the server will attempt to spawn monsters in
      *     this world every tick.
-     * <li>A value of 400 will mean the server will attempt to spawn monsters
+     * </li><li>
+     *     A value of 400 will mean the server will attempt to spawn monsters
      *     in this world every 400th tick.
-     * <li>A value below 0 will be reset back to Minecraft's default.
+     * </li><li>
+     *     A value below 0 will be reset back to Minecraft's default.
+     * </li>
      * </ul>
      * <p>
      * <b>Note:</b>
@@ -1013,11 +1029,15 @@ public interface World extends PluginMessageRecipient, Metadatable {
      * <p>
      * <b>Example Usage:</b>
      * <ul>
-     * <li>A value of 1 will mean the server will attempt to spawn monsters in
+     * <li>
+     *     A value of 1 will mean the server will attempt to spawn monsters in
      *     this world on every tick.
-     * <li>A value of 400 will mean the server will attempt to spawn monsters
+     * </li><li>
+     *     A value of 400 will mean the server will attempt to spawn monsters
      *     in this world every 400th tick.
-     * <li>A value below 0 will be reset back to Minecraft's default.
+     * </li><li>
+     *     A value below 0 will be reset back to Minecraft's default.
+     * </li>
      * </ul>
      * <p>
      * <b>Note:</b>
@@ -1046,6 +1066,8 @@ public interface World extends PluginMessageRecipient, Metadatable {
      * <p>
      * <b>Note:</b> If set to a negative number the world will use the
      * server-wide spawn limit instead.
+     *
+     * @param limit the limit of monsters that can spawn in a chunk
      */
     void setMonsterSpawnLimit(int limit);
 
@@ -1063,6 +1085,8 @@ public interface World extends PluginMessageRecipient, Metadatable {
      * <p>
      * <b>Note:</b> If set to a negative number the world will use the
      * server-wide spawn limit instead.
+     *
+     * @param limit the limit of animals that can spawn in a chunk
      */
     void setAnimalSpawnLimit(int limit);
 
@@ -1080,6 +1104,8 @@ public interface World extends PluginMessageRecipient, Metadatable {
      * <p>
      * <b>Note:</b> If set to a negative number the world will use the
      * server-wide spawn limit instead.
+     *
+     * @param limit the number of water animals which can spawn in a chunk
      */
     void setWaterAnimalSpawnLimit(int limit);
 
@@ -1097,6 +1123,8 @@ public interface World extends PluginMessageRecipient, Metadatable {
      * <p>
      * <b>Note:</b> If set to a negative number the world will use the
      * server-wide spawn limit instead.
+     *
+     * @param limit the limit of ambient mobs which can spawn in a chunk
      */
     void setAmbientSpawnLimit(int limit);
 

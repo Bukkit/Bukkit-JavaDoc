@@ -67,7 +67,7 @@ public enum CreatureType {
     }
 
     /**
-     *
+     * @return the type ID
      * @deprecated Magic value
      */
     @Deprecated
@@ -80,7 +80,8 @@ public enum CreatureType {
     }
 
     /**
-     *
+     * @param id the ID of the creature
+     * @return the CreatureType associated with the ID
      * @deprecated Magic value
      */
     @Deprecated

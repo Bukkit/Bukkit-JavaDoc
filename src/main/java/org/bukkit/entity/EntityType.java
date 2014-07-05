@@ -204,7 +204,7 @@ public enum EntityType {
     }
 
     /**
-     *
+     * @return the name of the entity
      * @deprecated Magic value
      */
     @Deprecated
@@ -217,7 +217,7 @@ public enum EntityType {
     }
 
     /**
-     *
+     * @return the type ID of the entity
      * @deprecated Magic value
      */
     @Deprecated
@@ -226,7 +226,8 @@ public enum EntityType {
     }
 
     /**
-     *
+     * @param name the name of the entity
+     * @return the entity associated with the name
      * @deprecated Magic value
      */
     @Deprecated
@@ -238,7 +239,8 @@ public enum EntityType {
     }
 
     /**
-     *
+     * @param id the ID of the entity
+     * @return the entity associated with the ID
      * @deprecated Magic value
      */
     @Deprecated

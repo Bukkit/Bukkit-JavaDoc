@@ -7,8 +7,9 @@ import org.bukkit.block.BlockFace;
  * Material data for the piston base block
  */
 public class PistonBaseMaterial extends MaterialData implements Directional, Redstone {
+
     /**
-     *
+     * @param type the type
      * @deprecated Magic value
      */
     @Deprecated
@@ -21,7 +22,8 @@ public class PistonBaseMaterial extends MaterialData implements Directional, Red
     }
 
     /**
-     *
+     * @param type the type
+     * @param data the data associated with the material
      * @deprecated Magic value
      */
     @Deprecated
@@ -30,7 +32,8 @@ public class PistonBaseMaterial extends MaterialData implements Directional, Red
     }
 
     /**
-     *
+     * @param type the type
+     * @param data the data associated with the material
      * @deprecated Magic value
      */
     @Deprecated
@@ -89,7 +92,7 @@ public class PistonBaseMaterial extends MaterialData implements Directional, Red
     /**
      * Sets the current state of this piston
      *
-     * @param powered true if the piston is extended & powered, or false
+     * @param powered true if the piston is extended &amp; powered, or false
      */
     public void setPowered(boolean powered) {
         setData((byte) (powered ? (getData() | 0x8) : (getData() & ~0x8)));

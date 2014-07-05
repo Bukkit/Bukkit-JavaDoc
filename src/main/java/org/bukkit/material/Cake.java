@@ -8,7 +8,7 @@ public class Cake extends MaterialData {
     }
 
     /**
-     *
+     * @param type the type
      * @deprecated Magic value
      */
     @Deprecated
@@ -21,7 +21,8 @@ public class Cake extends MaterialData {
     }
 
     /**
-     *
+     * @param type the type
+     * @param data the data associated with the material
      * @deprecated Magic value
      */
     @Deprecated
@@ -30,7 +31,8 @@ public class Cake extends MaterialData {
     }
 
     /**
-     *
+     * @param type the type
+     * @param data the data associated with the material
      * @deprecated Magic value
      */
     @Deprecated

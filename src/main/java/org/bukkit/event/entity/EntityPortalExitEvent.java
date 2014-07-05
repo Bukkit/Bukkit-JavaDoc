@@ -44,6 +44,8 @@ public class EntityPortalExitEvent extends EntityTeleportEvent {
 
     /**
      * Sets the velocity that the entity will have after exiting the portal.
+     *
+     * @param after the vector of the velocity
      */
     public void setAfter(Vector after) {
         this.after = after.clone();
