@@ -18,6 +18,7 @@ import org.bukkit.conversations.Conversable;
 import org.bukkit.map.MapView;
 import org.bukkit.plugin.messaging.PluginMessageRecipient;
 import org.bukkit.scoreboard.Scoreboard;
+import org.bukkit.scoreboard.ScoreboardManager;
 
 /**
  * Represents a player, connected or not
@@ -974,20 +975,31 @@ public interface Player extends HumanEntity, Conversable, CommandSender, Offline
     public void setResourcePack(String url);
 
     /**
-     * Gets the Scoreboard displayed to this player
+     * Gets the Scoreboard displayed to this player. The displayed scoreboard
+     * is always one provided by the {@link ScoreboardManager} initially,
+     * therefore it is always a valid parameter for {@link #setScoreboard(
+     * Scoreboard)}.
      *
-     * @return The current scoreboard seen by this player
+     * @return the current scoreboard seen by this player
      */
     public Scoreboard getScoreboard();
 
     /**
      * Sets the player's visible Scoreboard.
+     * <p>
+     * A player always has a scoreboard set, even if it has no objectives.
+     * Initially, this is the {@link ScoreboardManager#getMainScoreboard()
+     * main scoreboard} for the server, which can be manipulated through the
+     * <code>/scoreboard</code> command. The active scoreboard can be switched
+     * to any scoreboard initially provided by the {@link ScoreboardManager},
+     * including the main scoreboard.
+     * </p>
      *
-     * @param scoreboard New Scoreboard for the player
+     * @param scoreboard new Scoreboard for the player
      * @throws IllegalArgumentException if scoreboard is null
      * @throws IllegalArgumentException if scoreboard was not created by the
-     *     {@link org.bukkit.scoreboard.ScoreboardManager scoreboard manager}
-     * @throws IllegalStateException if this is a player that is not logged
+     *     {@link ScoreboardManager scoreboard manager}
+     * @throws IllegalStateException if this is a player that is not logged in
      *     yet or has logged out
      */
     public void setScoreboard(Scoreboard scoreboard) throws IllegalArgumentException, IllegalStateException;
