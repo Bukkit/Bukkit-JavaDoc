@@ -16,7 +16,7 @@ public enum PortalType {
     ENDER,
 
     /**
-     * This is a custom Plugin portal.
+     * This is a custom portal created by a Plugin.
      */
     CUSTOM;
 }

@@ -32,7 +32,7 @@ public enum Effect {
      */
     EXTINGUISH(1004, Type.SOUND),
     /**
-     * A song from a record. Needs the record item ID as additional info
+     * A song from a record. Needs the record item ID as additional info.
      */
     RECORD_PLAY(1005, Type.SOUND, Material.class),
     /**

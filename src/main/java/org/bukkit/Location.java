@@ -19,9 +19,9 @@ public class Location implements Cloneable {
      * Constructs a new Location with the given coordinates
      *
      * @param world The world in which this location resides
-     * @param x The x-coordinate of this new location
-     * @param y The y-coordinate of this new location
-     * @param z The z-coordinate of this new location
+     * @param x the x coordinate of this new location
+     * @param y the y coordinate of this new location
+     * @param z the z coordinate of this new location
      */
     public Location(final World world, final double x, final double y, final double z) {
         this(world, x, y, z, 0, 0);
@@ -31,11 +31,11 @@ public class Location implements Cloneable {
      * Constructs a new Location with the given coordinates and direction
      *
      * @param world The world in which this location resides
-     * @param x The x-coordinate of this new location
-     * @param y The y-coordinate of this new location
-     * @param z The z-coordinate of this new location
-     * @param yaw The absolute rotation on the x-plane, in degrees
-     * @param pitch The absolute rotation on the y-plane, in degrees
+     * @param x the x coordinate of this new location
+     * @param y the y coordinate of this new location
+     * @param z the z coordinate of this new location
+     * @param yaw the absolute rotation on the x-plane, in degrees
+     * @param pitch the absolute rotation on the y-plane, in degrees
      */
     public Location(final World world, final double x, final double y, final double z, final float yaw, final float pitch) {
         this.world = world;
@@ -83,18 +83,18 @@ public class Location implements Cloneable {
     }
 
     /**
-     * Sets the x-coordinate of this location
+     * Sets the x coordinate of this location
      *
-     * @param x X-coordinate
+     * @param x the x coordinate
      */
     public void setX(double x) {
         this.x = x;
     }
 
     /**
-     * Gets the x-coordinate of this location
+     * Gets the x coordinate of this location
      *
-     * @return x-coordinate
+     * @return x coordinate
      */
     public double getX() {
         return x;
@@ -104,25 +104,25 @@ public class Location implements Cloneable {
      * Gets the floored value of the X component, indicating the block that
      * this location is contained with.
      *
-     * @return block X
+     * @return block x
      */
     public int getBlockX() {
         return locToBlock(x);
     }
 
     /**
-     * Sets the y-coordinate of this location
+     * Sets the y coordinate of this location
      *
-     * @param y y-coordinate
+     * @param y the y coordinate
      */
     public void setY(double y) {
         this.y = y;
     }
 
     /**
-     * Gets the y-coordinate of this location
+     * Gets the y coordinate of this location
      *
-     * @return y-coordinate
+     * @return y coordinate
      */
     public double getY() {
         return y;
@@ -139,25 +139,25 @@ public class Location implements Cloneable {
     }
 
     /**
-     * Sets the z-coordinate of this location
+     * Sets the z coordinate of this location
      *
-     * @param z z-coordinate
+     * @param z the z coordinate
      */
     public void setZ(double z) {
         this.z = z;
     }
 
     /**
-     * Gets the z-coordinate of this location
+     * Gets the z coordinate of this location
      *
-     * @return z-coordinate
+     * @return z coordinate
      */
     public double getZ() {
         return z;
     }
 
     /**
-     * Gets the floored value of the Z component, indicating the block that
+     * Gets the floored value of the z component, indicating the block that
      * this location is contained with.
      *
      * @return block z
@@ -327,9 +327,9 @@ public class Location implements Cloneable {
      * Adds the location by another. Not world-aware.
      *
      * @see Vector
-     * @param x X coordinate
-     * @param y Y coordinate
-     * @param z Z coordinate
+     * @param x the x coordinate
+     * @param y the y coordinate
+     * @param z the z coordinate
      * @return the same location
      */
     public Location add(double x, double y, double z) {
@@ -377,9 +377,9 @@ public class Location implements Cloneable {
      * orientation independent.
      *
      * @see Vector
-     * @param x X coordinate
-     * @param y Y coordinate
-     * @param z Z coordinate
+     * @param x the x coordinate
+     * @param y the y coordinate
+     * @param z the z coordinate
      * @return the same location
      */
     public Location subtract(double x, double y, double z) {
