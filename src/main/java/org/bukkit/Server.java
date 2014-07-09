@@ -91,7 +91,7 @@ public interface Server extends PluginMessageRecipient {
      * compatibility. It will not exist at runtime and should not be used
      * under any circumstances.
      *
-     * @Deprecated superseded by {@link #getOnlinePlayers()}
+     * @deprecated superseded by {@link #getOnlinePlayers()}
      * @return an array of Players that are currently online
      */
     @Deprecated

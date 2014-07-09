@@ -1,6 +1,7 @@
 package org.bukkit.event.player;
 
 import org.bukkit.entity.Fish;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.entity.Entity;

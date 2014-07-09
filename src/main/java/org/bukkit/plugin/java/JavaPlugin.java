@@ -161,9 +161,10 @@ public abstract class JavaPlugin extends PluginBase {
 
     /**
      * Provides a reader for a text file located inside the jar. The behavior
-     * of this method adheres to {@link PluginAwareness.Flags#UTF8}, or if not
-     * defined, uses UTF8 if {@link FileConfiguration#UTF8_OVERRIDE} is
-     * specified, or system default otherwise.
+     * of this method adheres to {@link
+     * org.bukkit.plugin.PluginAwareness.Flags#UTF8}, or if not defined, uses
+     * UTF8 if {@link FileConfiguration#UTF8_OVERRIDE} is specified, or system
+     * default otherwise.
      *
      * @param file the filename of the resource to load
      * @return null if {@link #getResource(String)} returns null

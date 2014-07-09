@@ -95,7 +95,7 @@ public final class Bukkit {
      * compatibility. It will not exist at runtime and should not be used
      * under any circumstances.
      *
-     * @Deprecated
+     * @deprecated
      * @see Server#_INVALID_getOnlinePlayers()
      */
     @Deprecated
