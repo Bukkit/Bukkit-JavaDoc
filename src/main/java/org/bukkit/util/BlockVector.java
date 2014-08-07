@@ -4,9 +4,10 @@ import java.util.Map;
 import org.bukkit.configuration.serialization.SerializableAs;
 
 /**
- * A vector with a hash function that floors the X, Y, Z components, a la
- * BlockVector in WorldEdit. BlockVectors can be used in hash sets and
- * hash maps. Be aware that BlockVectors are mutable, but it is important
+ * A vector with a hash function that floors the X, Y, Z components, such that
+ * each component is always equal to a the integer coordinate of the
+ * respective block at that location. BlockVectors can be used in hash sets
+ * and hash maps. Be aware that BlockVectors are mutable, but it is important
  * that BlockVectors are never changed once put into a hash set or hash map.
  */
 @SerializableAs("BlockVector")
