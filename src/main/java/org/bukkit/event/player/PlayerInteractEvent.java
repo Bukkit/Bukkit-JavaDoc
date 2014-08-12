@@ -33,9 +33,9 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
-     * Returns the action type
+     * Gets the action preformed
      *
-     * @return Action returns the type of interaction
+     * @return Action returns the action preformed
      */
     public Action getAction() {
         return action;
@@ -67,19 +67,19 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
-     * Returns the item in hand represented by this event
+     * Gets the item in hand represented by this event
      *
-     * @return ItemStack the item used
+     * @return ItemStack the item involved
      */
     public ItemStack getItem() {
         return this.item;
     }
 
     /**
-     * Convenience method. Returns the material of the item represented by
+     * Convenience method. Gets the material of the item represented by
      * this event
      *
-     * @return Material the material of the item used
+     * @return Material the material of the item involved
      */
     public Material getMaterial() {
         if (!hasItem()) {
@@ -122,16 +122,16 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
-     * Returns the clicked block
+     * Gets the clicked block
      *
-     * @return Block returns the block clicked with this item.
+     * @return Block returns the block clicked.
      */
     public Block getClickedBlock() {
         return blockClicked;
     }
 
     /**
-     * Returns the face of the block that was clicked
+     * Gets the face of the block that was clicked
      *
      * @return BlockFace returns the face of the block that was clicked
      */
@@ -151,6 +151,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * Sets the action to take with the interacted block
      * @param useInteractedBlock the action to take with the interacted block
      */
     public void setUseInteractedBlock(Result useInteractedBlock) {
@@ -170,6 +171,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * Sets the action to take with the item in hand
      * @param useItemInHand the action to take with the item in hand
      */
     public void setUseItemInHand(Result useItemInHand) {
