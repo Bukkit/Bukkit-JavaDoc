@@ -31,6 +31,7 @@ import org.bukkit.plugin.PluginBase;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginLoader;
 import org.bukkit.plugin.PluginLogger;
+import org.bukkit.plugin.saveResourceStatus;
 
 import com.avaje.ebean.EbeanServer;
 import com.avaje.ebean.EbeanServerFactory;
@@ -237,7 +238,28 @@ public abstract class JavaPlugin extends PluginBase {
     }
 
     @Override
-    public void saveResource(String resourcePath, boolean replace) {
+    public void saveConfig() {
+        try {
+            getConfig().save(configFile);
+        } catch (IOException ex) {
+            logger.log(Level.SEVERE, "Could not save config to " + configFile, ex);
+        }
+    }
+
+    @Override
+    public void saveDefaultConfig() {
+        if (!configFile.exists()) {
+            saveResource("config.yml", false);
+        }
+    }
+    
+    /**
+     * Saving resource to data folder.
+     * 
+     * @return resourceSaveStatus - resourceSaveStatus.SUCCESS, resourceSaveStatus.FAIL or resourceSaveStatus.EXISTS
+     */
+    @Override
+    public resourceSaveStatus saveResource(String resourcePath, boolean replace) {
         if (resourcePath == null || resourcePath.equals("")) {
             throw new IllegalArgumentException("ResourcePath cannot be null or empty");
         }
@@ -266,11 +288,14 @@ public abstract class JavaPlugin extends PluginBase {
                 }
                 out.close();
                 in.close();
+                return resourceSaveStatus.SUCESS;
             } else {
                 logger.log(Level.WARNING, "Could not save " + outFile.getName() + " to " + outFile + " because " + outFile.getName() + " already exists.");
+                return resourceSaveStatus.EXISTS;
             }
         } catch (IOException ex) {
             logger.log(Level.SEVERE, "Could not save " + outFile.getName() + " to " + outFile, ex);
+            return resourceSaveStatus.FAIL;
         }
     }
 
