@@ -236,8 +236,17 @@ public abstract class JavaPlugin extends PluginBase {
         }
     }
 
+
+    /**
+     * Saving resource from JAR
+     * 
+     * @param resourcePath - Resource filepath in the jar, also used for extracting
+     * @param replace - true or false, should replace file
+     * 
+     * @return int, 0, 1 or 2. 0 is fail, 1 is already exists, 3 is sucessfull. 
+     */
     @Override
-    public void saveResource(String resourcePath, boolean replace) {
+    public int saveResource(String resourcePath, boolean replace) {
         if (resourcePath == null || resourcePath.equals("")) {
             throw new IllegalArgumentException("ResourcePath cannot be null or empty");
         }
@@ -266,14 +275,26 @@ public abstract class JavaPlugin extends PluginBase {
                 }
                 out.close();
                 in.close();
+                return 2;
             } else {
                 logger.log(Level.WARNING, "Could not save " + outFile.getName() + " to " + outFile + " because " + outFile.getName() + " already exists.");
+                return 1;
             }
         } catch (IOException ex) {
             logger.log(Level.SEVERE, "Could not save " + outFile.getName() + " to " + outFile, ex);
+            return 0;
+            
         }
     }
-
+    
+    
+    /**
+     * Gets resource from data folder
+     * 
+     * @param filename - String that represents filename
+     * 
+     * @return InputStream of file, or null if file doesnt exists.
+     */
     @Override
     public InputStream getResource(String filename) {
         if (filename == null) {
